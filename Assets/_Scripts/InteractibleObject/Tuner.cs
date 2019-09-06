@@ -6,6 +6,7 @@ public class Tuner : CustomInteractible
 {
     public Transform RotationObject;
 	public float angle;
+	public Vector2 clamp;
     Vector3 oldDir;
     // Start is called before the first frame update
     void Start()
@@ -32,8 +33,9 @@ public class Tuner : CustomInteractible
     {
 		
 		angle+= Vector3.SignedAngle(oldDir, transform.InverseTransformDirection(hand.PivotPoser.up), Vector3.forward);
+		angle = Mathf.Clamp (angle, clamp.x, clamp.y);
         RotationObject.localEulerAngles = new Vector3(0, 0, angle);
-        GetMyGrabPoserTransform(hand).transform.rotation = Quaternion.LookRotation(transform.forward, transform.InverseTransformDirection(hand.PivotPoser.up));
+//        GetMyGrabPoserTransform(hand).transform.rotation = Quaternion.LookRotation(transform.forward, transform.InverseTransformDirection(hand.PivotPoser.up));
 		GetMyGrabPoserTransform (hand).transform.position = Vector3.MoveTowards (GetMyGrabPoserTransform (hand).transform.position, transform.TransformPoint(Vector3.zero), Time.deltaTime*.5f);
         oldDir = transform.InverseTransformDirection(hand.PivotPoser.up);
     }

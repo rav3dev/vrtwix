@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class Button : CustomInteractible
 {
 	public float distanseToPress;
     public float DistanceDettach=.05f;
+
+	public UnityEvent ButtonDown, ButtonUp, ButtonUpdate;
 	float startZCoordinate;
+	bool press;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,19 @@ public class Button : CustomInteractible
 			float tempDistance = Mathf.Clamp (transform.InverseTransformPoint (hand.PivotPoser.position).z - startZCoordinate, 0, distanseToPress);
 			if (tempDistance == distanseToPress) {
 				GetComponentInChildren<MeshRenderer> ().material.color = Color.blue;
+				if (!press) {
+					ButtonDown.Invoke ();
+					print ("down");
+				}
+				press = true;
+				ButtonUpdate.Invoke ();
+				print ("update");
+			} else {
+				if (press) {
+					ButtonUp.Invoke ();
+					print ("up");
+				}
+				press = false;
 			}
 			GetMyGrabPoserTransform (hand).localPosition = new Vector3 (0, 0, tempDistance);
 			GetMyGrabPoserTransform (hand).rotation = Quaternion.LookRotation (GetMyGrabPoserTransform (hand).forward, hand.PivotPoser.up);

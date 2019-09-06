@@ -30,6 +30,14 @@ public class CustomInteractible : MonoBehaviour {
         return null;
     }
 
+	public SteamVR_Skeleton_Poser GetMyGrabPoser(CustomHand hand) {
+		if (hand.handType == SteamVR_Input_Sources.LeftHand && leftMyGrabPoser)
+			return leftMyGrabPoser;
+		if (hand.handType == SteamVR_Input_Sources.RightHand && rightMyGrabPoser)
+			return rightMyGrabPoser;
+		return null;
+	}
+
 
 
     public Transform CloseObject(Vector3 tempPoint) {
@@ -143,6 +151,19 @@ public class CustomInteractible : MonoBehaviour {
 			leftHand = null;
 		}
 		if (hand.handType == SteamVR_Input_Sources.RightHand) {
+			rightMyGrabPoser = null;
+			rightHand = null;
+		}
+	}
+
+	public void DettachHands(){
+		if (leftHand) {
+			leftHand.DetachHand ();
+			leftMyGrabPoser = null;
+			leftHand = null;
+		}
+		if (rightHand) {
+			rightHand.DetachHand ();
 			rightMyGrabPoser = null;
 			rightHand = null;
 		}

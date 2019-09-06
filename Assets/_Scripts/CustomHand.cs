@@ -54,10 +54,13 @@ public class CustomHand : MonoBehaviour {
 		}
 		skeleton.BlendToPoser(skeleton.fallbackPoser);
 		RenderModelVisible (!HideController);
+
 	}
 	void Update () {
 		PivotUpdate ();
-		Grab2 ();
+		GrabCheck ();
+
+//		skeleton.SetRangeOfMotion (EVRSkeletalMotionRange.WithoutController, 1);
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -70,46 +73,18 @@ public class CustomHand : MonoBehaviour {
 		SelectIndexObject ();
 		SelectPinchObject ();
 		SelectGribObject ();
-
-
-//
-//		if (grabButton.GetStateDown (handType) && SelectedInteractible && !grabPoser) {
-//			grabType = GrabType.Grip;
-//			GrabStart ();
-//
-//		} else {
-//			if (pinchButton.GetStateDown (handType) && SelectedIndexInteractible && !grabPoser) {
-//				grabType = GrabType.Pinch;
-//				GrabStart ();
-//			}
-//		}
-//
-//		if (!grabPoser)
-//			grabType = GrabType.None;
-//
-//		if ((grabButton.GetState (handType)|| pinchButton.GetState(handType)) && GrabInteractible) {
-//			GrabUpdate ();
-//		}
-//
-//		if (GrabInteractible) {
-//			if ((grabButton.GetStateUp (handType)&&grabType==GrabType.Grip) || (pinchButton.GetStateUp (handType)&&grabType==GrabType.Pinch)) {
-//				GrabEnd ();
-//			}
-//		}
 		
 	}
 
-	void Grab2(){
-		if (grabType != GrabType.None) {
+	void GrabCheck(){
+		if (grabType != GrabType.None&&GrabInteractible) {
 			if (grabType == GrabType.Pinch&&pinchButton.GetStateUp(handType)) {
 				GrabInteractible.SendMessage ("GrabEnd", this, SendMessageOptions.DontRequireReceiver);
 				GrabEnd ();
-
 			}
 			if (grabType == GrabType.Grip&&grabButton.GetStateUp(handType)) {
 				GrabInteractible.SendMessage ("GrabEnd", this, SendMessageOptions.DontRequireReceiver);
 				GrabEnd ();
-
 			}
 		}
 
@@ -123,11 +98,12 @@ public class CustomHand : MonoBehaviour {
 					if (GrabInteractible) {
 						GrabInteractible.SendMessage ("GrabStart", this, SendMessageOptions.DontRequireReceiver);
 						grabType = GrabType.Select;
+						RenderModelVisible (!GrabInteractible.HideController);
 						SkeletonUpdate ();
 					}
 				}
 			} else {
-				if (SelectedPinchInteractible&&pinchButton.GetState(handType)) {
+				if (SelectedPinchInteractible&&pinchButton.GetStateDown(handType)) {
 					GrabInteractible = SelectedPinchInteractible;
 					if (GrabInteractible != OldGrabInteractible) {
 						if (OldGrabInteractible)
@@ -135,11 +111,12 @@ public class CustomHand : MonoBehaviour {
 						if (GrabInteractible) {
 							GrabInteractible.SendMessage ("GrabStart", this, SendMessageOptions.DontRequireReceiver);
 							grabType = GrabType.Pinch;
+							RenderModelVisible (!GrabInteractible.HideController);
 							SkeletonUpdate ();
 						}
 					}
 				} else {
-					if (SelectedGpibInteractible&&grabButton.GetState(handType)) {
+					if (SelectedGpibInteractible&&grabButton.GetStateDown(handType)) {
 						GrabInteractible = SelectedGpibInteractible;
 						if (GrabInteractible != OldGrabInteractible) {
 							if (OldGrabInteractible)
@@ -147,6 +124,7 @@ public class CustomHand : MonoBehaviour {
 							if (GrabInteractible) {
 								GrabInteractible.SendMessage ("GrabStart", this, SendMessageOptions.DontRequireReceiver);
 								grabType = GrabType.Grip;
+								RenderModelVisible (!GrabInteractible.HideController);
 								SkeletonUpdate ();
 							}
 						}
@@ -157,24 +135,24 @@ public class CustomHand : MonoBehaviour {
 	}
 
 
-	void GrabStart(){
-		if (grabType == GrabType.Pinch) {
-			GrabInteractible = SelectedIndexInteractible;
-			GrabInteractible.SendMessage ("PinchStart", this, SendMessageOptions.DontRequireReceiver);
-		}
-
-		if (grabType == GrabType.Grip) {
-//			GrabInteractible = SelectedInteractible;
-			GrabInteractible.SendMessage ("GrabStart", this, SendMessageOptions.DontRequireReceiver);
-		}
-
-		if (grabPoser) {
-			skeleton.BlendToPoser (grabPoser);
-			PivotUpdate ();
-		}
-		RenderModelVisible (!GrabInteractible.HideController);
-
-	}
+//	void GrabStart(){
+//		if (grabType == GrabType.Pinch) {
+//			GrabInteractible.SendMessage ("PinchStart", this, SendMessageOptions.DontRequireReceiver);
+//		}
+//
+//		if (grabType == GrabType.Grip) {
+//			GrabInteractible.SendMessage ("GrabStart", this, SendMessageOptions.DontRequireReceiver);
+//		}
+//
+//		if (grabPoser) {
+//			skeleton.BlendToPoser (grabPoser);
+//			PivotUpdate ();
+//		}
+//		RenderModelVisible (!GrabInteractible.HideController);
+//		SelectedGpibInteractible = null;
+//		SelectedPinchInteractible = null;
+//		SelectedIndexInteractible = null;
+//	}
 
 	public void GrabUpdateCustom(){
 		if (grabPoser) {
@@ -261,16 +239,18 @@ public class CustomHand : MonoBehaviour {
 		skeleton.BlendToPoser(skeleton.fallbackPoser);
 		grabPoser = null;
 		GrabInteractible=null;
+		grabType = GrabType.None;
 	}
 
 	void SelectIndexObject(){
 		if (!grabPoser) {
-		CustomInteractible SelectedInteractibleOld = SelectedIndexInteractible;
+//		CustomInteractible SelectedInteractibleOld = SelectedIndexInteractible;
 		SelectedIndexColliders = Physics.OverlapSphere (IndexPoint(), indexRadius, layerColliderChecker);
 		SelectedIndexInteractible = null;
 		for (int i = 0; i < SelectedIndexColliders.Length; i++) {
 			CustomInteractible tempCustomInteractible = SelectedIndexColliders [i].GetComponentInParent<CustomInteractible> ();
 			if (tempCustomInteractible != null && tempCustomInteractible.isInteractible&&tempCustomInteractible.grabType==GrabType.Select) {
+
 				SelectedIndexInteractible = tempCustomInteractible;
 			}
 		}
@@ -292,7 +272,7 @@ public class CustomHand : MonoBehaviour {
 
 	void SelectPinchObject(){
 		if (!grabPoser) {
-		CustomInteractible SelectedInteractibleOld = SelectedIndexInteractible;
+	//	CustomInteractible SelectedInteractibleOld = SelectedIndexInteractible;
 		SelectedPinchColliders = Physics.OverlapSphere (PinchPoint(), pinchRadius, layerColliderChecker);
 		SelectedPinchInteractible = null;
 		for (int i = 0; i < SelectedPinchColliders.Length; i++) {
@@ -319,7 +299,7 @@ public class CustomHand : MonoBehaviour {
 
 	void SelectGribObject(){
 		if (!grabPoser) {
-		CustomInteractible SelectedInteractibleOld = SelectedGpibInteractible;
+	//	CustomInteractible SelectedInteractibleOld = SelectedGpibInteractible;
 		SelectedGpibColliders = Physics.OverlapSphere (transform.TransformPoint (new Vector3 (0, 0, -.1f)), gribRadius, layerColliderChecker);
 		SelectedGpibInteractible = null;
 		for (int i = 0; i < SelectedGpibColliders.Length; i++) {
