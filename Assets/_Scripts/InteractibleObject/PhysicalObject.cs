@@ -267,6 +267,7 @@ public class PhysicalObject : CustomInteractible {
 		if (GizmoVisible) {
 //			Gizmos.DrawSphere (transform.TransformPoint(new Vector3 (0, 0, clampPosZ.x)), .05f);
 //			Gizmos.DrawSphere (transform.TransformPoint(new Vector3 (0, 0, clampPosZ.y)), .05f);
+			Gizmos.color=Color.red;
 			Gizmos.DrawLine(transform.TransformPoint(new Vector3 (0, 0, clampHandlePosZ.x)),transform.TransformPoint(new Vector3 (0, 0, clampHandlePosZ.y)));
 		}
 	}

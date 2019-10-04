@@ -10,7 +10,6 @@ public class ManualReload : CustomInteractible
 	public Vector2 ClampAngle;
 	public bool reloadHalf,reloadEnd=true,reloadFinish;
 	public bool boltAngleTrue=false,boltSlideTrue = true;
-
 	public TypeReload typeReload;
 	public enum TypeReload{
 		Slider,
@@ -21,13 +20,20 @@ public class ManualReload : CustomInteractible
 
 	public UnityEvent BulletOff,BulletOn;
 
+
 	public float returnAddSpeed=0.01f,knockback;
+	[Header("SwingReload")]
+	public Transform PointSwingReload;
+	public Vector3 localDirSwing;
+	public float MaxAngleDir, substractSpeed, returnSpeedMultiply=100;
+	Vector3 oldPosSwing;
 
 	[Header("shotgun fix")]
 	public Transform[] grabColliderObject;
 	public Transform[] reloadColliderObject;
 
 	float returnStart,returnSpeed;
+	float tempAngle;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,34 +43,53 @@ public class ManualReload : CustomInteractible
     // Update is called once per frame
     void FixedUpdate()
     {
-		if (returnAddSpeed <= 0||knockback<=0) {
-			enabled = false;
-			return;
-		}
-		if (typeReload==TypeReload.Slider){
-			if (reloadHalf) {
-				returnSpeed += returnAddSpeed;
-				ReloadObject.localPosition = Vector3.MoveTowards (Vector3.forward * returnStart, Vector3.forward * ClampPosition.y, returnSpeed*Time.deltaTime);
-				if (ReloadObject.localPosition.z >= ClampPosition.y) {
-					enabled = false;
-					if (!reloadEnd && reloadHalf) {
-						reloadEnd = true;
-						reloadHalf = false;
-						BulletOn.Invoke ();
-						returnSpeed = 0;
+		if (returnAddSpeed > 0 || knockback > 0) {		
+			if (typeReload == TypeReload.Slider) {
+				if (reloadHalf) {
+					returnSpeed += returnAddSpeed;
+					ReloadObject.localPosition = Vector3.MoveTowards (Vector3.forward * returnStart, Vector3.forward * ClampPosition.y, returnSpeed * Time.deltaTime);
+					if (ReloadObject.localPosition.z >= ClampPosition.y) {
+						enabled = false;
+						if (!reloadEnd && reloadHalf) {
+							reloadEnd = true;
+							reloadHalf = false;
+							BulletOn.Invoke ();
+							returnSpeed = 0;
+						}
+					}
+				} else {//reloadEnd
+					ReloadObject.localPosition = Vector3.MoveTowards (ReloadObject.localPosition, Vector3.forward * ClampPosition.x, knockback * Time.deltaTime);
+					if (ReloadObject.localPosition.z <= ClampPosition.x) {
+						reloadHalf = true;
+						reloadEnd = false;
+						BulletOff.Invoke ();
+						reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
 					}
 				}
-			} else {//reloadEnd
-				ReloadObject.localPosition = Vector3.MoveTowards (ReloadObject.localPosition, Vector3.forward * ClampPosition.x, knockback*Time.deltaTime);
-				if (ReloadObject.localPosition.z <= ClampPosition.x) {
-					reloadHalf = true;
-					reloadEnd = false;
-					BulletOff.Invoke ();
-					reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
-				}
+				reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
 			}
-			reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
+		} else {
+			if (PointSwingReload) {
+				if (Vector3.Angle ((PointSwingReload.position - oldPosSwing), transform.parent.TransformDirection (localDirSwing)) < MaxAngleDir) {
+					tempAngle += Mathf.Clamp((PointSwingReload.position - oldPosSwing).magnitude - substractSpeed,0,float.MaxValue)*returnSpeedMultiply;
+					if (!reloadEnd && reloadHalf && tempAngle >= ClampAngle.y) {
+						reloadEnd = true;
+						reloadFinish = true;
+						reloadHalf = false;
+						BulletOn.Invoke ();
+						enabled = false;
+					}
+
+					ReloadObject.localEulerAngles = new Vector3 (-Mathf.Clamp(tempAngle,ClampAngle.x,ClampAngle.y), 0, 0);
+				}
+
+				oldPosSwing = PointSwingReload.position;
+			} else {
+				enabled = false;
+				return;
+			}
 		}
+
     }
 
 	public void GrabStart(CustomHand hand){
@@ -73,7 +98,6 @@ public class ManualReload : CustomInteractible
 
 	public void GrabUpdate(CustomHand hand){
 		Vector3 localHand=Vector3.zero;
-		float tempAngle;
 		switch (typeReload) {
 
 		case TypeReload.Slider:
@@ -105,11 +129,14 @@ public class ManualReload : CustomInteractible
 			}
 			if (!reloadEnd && reloadHalf && tempAngle > ClampAngle.y) {
 				reloadEnd = true;
+				reloadFinish = true;
 				reloadHalf = false;
 				BulletOn.Invoke ();
 			}
 			reloadFinish = tempAngle >= ClampAngle.y;
 			ReloadObject.localEulerAngles = new Vector3 (-Mathf.Clamp(tempAngle,ClampAngle.x,ClampAngle.y), 0, 0);
+			enabled = true;
+
 
 			break;
 
@@ -124,6 +151,7 @@ public class ManualReload : CustomInteractible
 			}
 			if (!reloadEnd && reloadHalf && tempAngle > ClampAngle.y) {
 				reloadEnd = true;
+				reloadFinish = true;
 				reloadHalf = false;
 				BulletOn.Invoke ();
 			}
@@ -139,6 +167,7 @@ public class ManualReload : CustomInteractible
 					ReloadObject.localEulerAngles = new Vector3 (0, 0, ClampAngle.x);
 					if (!reloadEnd && reloadHalf){
 						reloadEnd = true;
+						reloadFinish = true;
 						reloadHalf = false;
 						BulletOn.Invoke ();
 					}

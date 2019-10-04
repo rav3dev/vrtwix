@@ -52,7 +52,7 @@ public class CustomHand : MonoBehaviour {
 		if (GetComponentInChildren<SteamVR_RenderModel> ()) {
 			RenderModel = GetComponentInChildren<SteamVR_RenderModel> ();
 		}
-		skeleton.BlendToPoser(skeleton.fallbackPoser);
+//		skeleton.BlendToPoser(skeleton.fallbackPoser);
 		RenderModelVisible (!HideController);
 
 	}
@@ -223,8 +223,8 @@ public class CustomHand : MonoBehaviour {
 	void GrabEnd(){
 		skeleton.transform.localPosition = Vector3.zero;
 		skeleton.transform.localEulerAngles = Vector3.zero; ///save coord
-
-		skeleton.BlendToPoser(skeleton.fallbackPoser);
+		skeleton.BlendToSkeleton (.1f);
+//		skeleton.BlendToPoser(skeleton.fallbackPoser,0);
 		RenderModelVisible (!HideController);
 
 		grabPoser = null;
@@ -236,7 +236,9 @@ public class CustomHand : MonoBehaviour {
 		skeleton.transform.localPosition = Vector3.zero;
 		skeleton.transform.localEulerAngles = Vector3.zero; ///save coord
 
-		skeleton.BlendToPoser(skeleton.fallbackPoser);
+//		skeleton.BlendToPoser(skeleton.fallbackPoser,0);
+		skeleton.BlendToSkeleton (.1f);
+//		skeleton.skeletonBlend=1;
 		grabPoser = null;
 		GrabInteractible=null;
 		grabType = GrabType.None;
@@ -327,6 +329,7 @@ public class CustomHand : MonoBehaviour {
 		if (skeleton&&grabPoser)
 		skeleton.BlendToPoser (grabPoser);
 		PivotUpdate ();
+
 	}
 
 	public void PivotUpdate(){

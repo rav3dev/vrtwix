@@ -19,7 +19,6 @@ public class PrimitiveWeapon : PhysicalObject
 	public Magazine attachMagazine;
 	public Bullet bulletInside;
 	public Vector3 outBulletSpeed;
-	public Transform speed;
 //	[HideInInspector]
 	public Collider[] myCollidersToIgnore; //для игнора магазина
     // Start is called before the first frame update
@@ -47,10 +46,7 @@ public class PrimitiveWeapon : PhysicalObject
 			MyRigidbody.velocity += transform.TransformPoint (recoil.localPosition/Time.fixedDeltaTime);
 			MyRigidbody.angularVelocity += PhysicalObject.GetAngularVelocities (transform.rotation, recoil.rotation);
 		}
-		if (speed) {
-			speed.localScale = Vector3.one * MyRigidbody.GetPointVelocity (speed.position).magnitude;
-			speed.rotation = Quaternion.LookRotation (MyRigidbody.GetPointVelocity (speed.position));
-		}
+
 
 		RecoilReturn ();
 	}
