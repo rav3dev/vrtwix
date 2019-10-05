@@ -52,7 +52,7 @@ public class CustomHand : MonoBehaviour {
 		if (GetComponentInChildren<SteamVR_RenderModel> ()) {
 			RenderModel = GetComponentInChildren<SteamVR_RenderModel> ();
 		}
-//		skeleton.BlendToPoser(skeleton.fallbackPoser);
+		skeleton.BlendToPoser(skeleton.fallbackPoser, 5f);
 		RenderModelVisible (!HideController);
 
 	}
@@ -196,20 +196,22 @@ public class CustomHand : MonoBehaviour {
 
 			GrabInteractible.SendMessage ("GrabUpdate",this,SendMessageOptions.DontRequireReceiver);
 
-//
-//			skeleton.transform.position= grabPoser.transform.TransformPoint(inverceLocalPosition);
-//			skeleton.transform.rotation= grabPoser.transform.rotation*Quaternion.Inverse(grabPoser.GetBlendedPose(skeleton).rotation);
+//          
+
+            // TEMPORARY SOLUTION , NO SYNC BETWEEN HAND AND OBJECT 
+			skeleton.transform.position= grabPoser.transform.TransformPoint(inverceLocalPosition);
+    		skeleton.transform.rotation= grabPoser.transform.rotation*Quaternion.Inverse(grabPoser.GetBlendedPose(skeleton).rotation);
 		}
 
 
 	}
 
-	void LateUpdate(){
-		if (grabPoser) {
-			skeleton.transform.position = grabPoser.transform.TransformPoint (inverceLocalPosition);
-			skeleton.transform.rotation = grabPoser.transform.rotation * Quaternion.Inverse (grabPoser.GetBlendedPose (skeleton).rotation);
-		}
-	}
+	//void LateUpdate(){ // FIX DIFFERENCE SYNC BETWEEN HAND AND OBJECT
+	//	if (grabPoser) {
+	//		skeleton.transform.position = grabPoser.transform.TransformPoint (inverceLocalPosition);
+	//		skeleton.transform.rotation = grabPoser.transform.rotation * Quaternion.Inverse (grabPoser.GetBlendedPose (skeleton).rotation);
+	//	}
+	//}
 
 	public void RenderModelVisible(bool visible){
 		if (RenderModel){
@@ -223,8 +225,8 @@ public class CustomHand : MonoBehaviour {
 	void GrabEnd(){
 		skeleton.transform.localPosition = Vector3.zero;
 		skeleton.transform.localEulerAngles = Vector3.zero; ///save coord
-		skeleton.BlendToSkeleton (.1f);
-//		skeleton.BlendToPoser(skeleton.fallbackPoser,0);
+//		skeleton.BlendToSkeleton (.1f);
+		skeleton.BlendToPoser(skeleton.fallbackPoser, 5f);
 		RenderModelVisible (!HideController);
 
 		grabPoser = null;
@@ -236,8 +238,8 @@ public class CustomHand : MonoBehaviour {
 		skeleton.transform.localPosition = Vector3.zero;
 		skeleton.transform.localEulerAngles = Vector3.zero; ///save coord
 
-//		skeleton.BlendToPoser(skeleton.fallbackPoser,0);
-		skeleton.BlendToSkeleton (.1f);
+		skeleton.BlendToPoser(skeleton.fallbackPoser, 5f);
+//		skeleton.BlendToSkeleton (.1f);
 //		skeleton.skeletonBlend=1;
 		grabPoser = null;
 		GrabInteractible=null;

@@ -20438,7 +20438,7 @@ PrefabInstance:
     - target: {fileID: 114000011668634522, guid: a7c2b37096983fb40addeabf8a2aefbe,
         type: 3}
       propertyPath: previewPoseSelection
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114000011668634522, guid: a7c2b37096983fb40addeabf8a2aefbe,
         type: 3}
@@ -20448,6 +20448,16 @@ PrefabInstance:
     - target: {fileID: 114000011668634522, guid: a7c2b37096983fb40addeabf8a2aefbe,
         type: 3}
       propertyPath: showLeftPreview
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011668634522, guid: a7c2b37096983fb40addeabf8a2aefbe,
+        type: 3}
+      propertyPath: blendEditorExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011668634522, guid: a7c2b37096983fb40addeabf8a2aefbe,
+        type: 3}
+      propertyPath: poseEditorExpanded
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
