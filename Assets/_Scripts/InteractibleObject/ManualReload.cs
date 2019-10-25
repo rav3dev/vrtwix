@@ -85,8 +85,8 @@ public class ManualReload : CustomInteractible
 			if (!reloadFinish&&tempAngle>ClampAngle.x&&!leftHand&&!rightHand) {
 				tempAngle -= returnAddSpeed;
 			}
-			PointSwingReload.rotation = Quaternion.LookRotation (PointSwingReload.position - oldPosSwing-oldVelosity);
-			PointSwingReload.localScale = Vector3.one * (PointSwingReload.position - oldPosSwing-oldVelosity).magnitude;
+//			PointSwingReload.rotation = Quaternion.LookRotation (PointSwingReload.position - oldPosSwing-oldVelosity);
+//			PointSwingReload.localScale = Vector3.one * (PointSwingReload.position - oldPosSwing-oldVelosity).magnitude;
 			if (Vector3.Angle ((PointSwingReload.position - oldPosSwing), transform.parent.TransformDirection (localDirSwing)) < MaxAngleDir) {
 				float tempSwingReload = Mathf.Clamp((PointSwingReload.position - oldPosSwing).magnitude - substractSpeed,0,float.MaxValue)*returnSpeedMultiply;
 				if (tempSwingReload > 0) {
