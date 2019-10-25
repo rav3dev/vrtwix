@@ -40,11 +40,13 @@ public class steeringWheel : CustomInteractible {
 
 
 		if (hand.handType == SteamVR_Input_Sources.LeftHand) {
-			angle-=Vector2.SignedAngle (tempPoser.localPosition, oldPosLeft)*(leftHand&&rightHand?(Mathf.Epsilon+hand.Squeeze)/(Mathf.Epsilon+(leftHand.Squeeze+rightHand.Squeeze)):1f);
+				angle-=Vector2.SignedAngle (tempPoser.localPosition, oldPosLeft)*(leftHand&&rightHand?leftHand.Squeeze==rightHand.Squeeze?.5f:hand.Squeeze/(Mathf.Epsilon+(leftHand.Squeeze+rightHand.Squeeze)):1f);
+			
 			oldPosLeft = new Vector2 (HandTolocalPos.x, HandTolocalPos.y);
 		} else {
 			if (hand.handType == SteamVR_Input_Sources.RightHand) {
-				angle-=Vector2.SignedAngle (tempPoser.localPosition, oldPosRight)*(leftHand&&rightHand?(Mathf.Epsilon+hand.Squeeze)/(Mathf.Epsilon+(leftHand.Squeeze+rightHand.Squeeze)):1f);
+					angle-=Vector2.SignedAngle (tempPoser.localPosition, oldPosRight)*(leftHand&&rightHand?leftHand.Squeeze==rightHand.Squeeze?.5f:hand.Squeeze/(Mathf.Epsilon+(leftHand.Squeeze+rightHand.Squeeze)):1f);
+				
 				oldPosRight = new Vector2 (HandTolocalPos.x, HandTolocalPos.y);
 			} 
 		}

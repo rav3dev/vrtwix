@@ -34,7 +34,6 @@ public class CustomHand : MonoBehaviour {
 	public SteamVR_Action_Boolean boola;
 	public SteamVR_Action_Vibration hapticSignal=SteamVR_Input.GetAction<SteamVR_Action_Vibration>("Haptic");
 	bool setHandTransform;
-	public Vector3 tv3;
 	// Use this for initialization
 	void Start () {
 		if (!PivotPoser)
@@ -61,11 +60,9 @@ public class CustomHand : MonoBehaviour {
 //		SetRenderModels ();
 	}
 	void Update () {
-		HapticResponse (tv3.x, tv3.y, tv3.z); 	
+//		HapticResponse (tv3.x, tv3.y, tv3.z); 	
 		PivotUpdate ();
 		GrabCheck ();
-//		print ();
-//		skeleton.SetRangeOfMotion (EVRSkeletalMotionRange.WithoutController, 1);
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
