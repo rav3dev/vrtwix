@@ -67,12 +67,12 @@ public class PrimitiveWeapon : PhysicalObject
 		}
 	}
 
-	public void RevilverArmed(){
+	public void RevolverArmed(){
 		armed = true;
 		attachMagazine.canLoad = false;
 	}
 
-	public void RevilverNoArmed(){
+	public void RevolverNoArmed(){
 		armed = false;
 		attachMagazine.canLoad = true;
 	}

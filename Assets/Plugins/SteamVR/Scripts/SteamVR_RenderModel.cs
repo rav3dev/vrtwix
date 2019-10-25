@@ -50,7 +50,7 @@ namespace Valve.VR
 
         private Dictionary<string, Transform> componentAttachPoints = new Dictionary<string, Transform>();
 
-        private List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
+        public List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
 
         // If someone knows how to keep these from getting cleaned up every time
         // you exit play mode, let me know.  I've tried marking the RenderModel

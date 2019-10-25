@@ -51,7 +51,6 @@ public class joystick : CustomInteractible {
 			tempPoser.position = Stick.TransformPoint(new Vector3(0,0, handleDistance));
 		}
 	}
-     
 
 	public void GrabStart(CustomHand hand){
 		SetInteractibleVariable (hand);

@@ -8,8 +8,8 @@ public class ManualReload : CustomInteractible
 	public Transform ReloadObject;
 	public Vector2 ClampPosition;
 	public Vector2 ClampAngle;
-	public bool reloadHalf,reloadEnd=true,reloadFinish;
-	public bool boltAngleTrue=false,boltSlideTrue = true;
+	public bool reloadHalf,reloadEnd=true,reloadFinish,handDrop;
+	public bool boltAngleTrue=false,boltSlideTrue = true,reloadLikeM4;
 	public TypeReload typeReload;
 	public enum TypeReload{
 		Slider,
@@ -26,12 +26,13 @@ public class ManualReload : CustomInteractible
 	public Transform PointSwingReload;
 	public Vector3 localDirSwing;
 	public float MaxAngleDir, substractSpeed, returnSpeedMultiply=100;
-	Vector3 oldPosSwing;
+	Vector3 oldPosSwing,oldVelosity;
 
 	[Header("shotgun fix")]
 	public Transform[] grabColliderObject;
 	public Transform[] reloadColliderObject;
 
+	float PositionReload;
 	float returnStart,returnSpeed;
 	float tempAngle;
     // Start is called before the first frame update
@@ -43,53 +44,81 @@ public class ManualReload : CustomInteractible
     // Update is called once per frame
     void FixedUpdate()
     {
-		if (returnAddSpeed > 0 || knockback > 0) {		
-			if (typeReload == TypeReload.Slider) {
-				if (reloadHalf) {
-					returnSpeed += returnAddSpeed;
-					ReloadObject.localPosition = Vector3.MoveTowards (Vector3.forward * returnStart, Vector3.forward * ClampPosition.y, returnSpeed * Time.deltaTime);
-					if (ReloadObject.localPosition.z >= ClampPosition.y) {
-						enabled = false;
-						if (!reloadEnd && reloadHalf) {
-							reloadEnd = true;
-							reloadHalf = false;
-							BulletOn.Invoke ();
-							returnSpeed = 0;
-						}
-					}
-				} else {//reloadEnd
-					ReloadObject.localPosition = Vector3.MoveTowards (ReloadObject.localPosition, Vector3.forward * ClampPosition.x, knockback * Time.deltaTime);
-					if (ReloadObject.localPosition.z <= ClampPosition.x) {
-						reloadHalf = true;
-						reloadEnd = false;
-						BulletOff.Invoke ();
-						reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
-					}
-				}
-				reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
-			}
-		} else {
-			if (PointSwingReload) {
-				if (Vector3.Angle ((PointSwingReload.position - oldPosSwing), transform.parent.TransformDirection (localDirSwing)) < MaxAngleDir) {
-					tempAngle += Mathf.Clamp((PointSwingReload.position - oldPosSwing).magnitude - substractSpeed,0,float.MaxValue)*returnSpeedMultiply;
-					if (!reloadEnd && reloadHalf && tempAngle >= ClampAngle.y) {
+		if (typeReload == TypeReload.Slider&&returnAddSpeed > 0 || knockback > 0) {		
+			if (reloadHalf||handDrop) {
+				returnSpeed += returnAddSpeed;
+
+//					ReloadObject.localPosition = Vector3.MoveTowards (Vector3.forward * returnStart, Vector3.forward * ClampPosition.y, returnSpeed * Time.deltaTime);
+
+				PositionReload=Mathf.MoveTowards(returnStart,ClampPosition.y,returnSpeed*Time.deltaTime);
+				if (PositionReload >= ClampPosition.y) {
+					enabled = false;
+					if (!reloadEnd && reloadHalf) {
+						handDrop = false;
 						reloadEnd = true;
-						reloadFinish = true;
 						reloadHalf = false;
 						BulletOn.Invoke ();
-						enabled = false;
+						returnSpeed = 0;
 					}
+				}
+			} else {//reloadEnd
+//					ReloadObject.localPosition = Vector3.MoveTowards (ReloadObject.localPosition, Vector3.forward * ClampPosition.x, knockback * Time.deltaTime);
+				PositionReload=Mathf.MoveTowards(PositionReload,ClampPosition.x,knockback*Time.deltaTime);
+				if (PositionReload <= ClampPosition.x) {
+					reloadHalf = true;
+					reloadEnd = false;
+					BulletOff.Invoke ();
+					reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
+				}
+			}
+			if (reloadLikeM4) {
+				if (PositionReload > ReloadObject.localPosition.z) {
+					ReloadObject.localPosition = Vector3.forward * PositionReload;
+				}
+			} else {
+				ReloadObject.localPosition = Vector3.forward * PositionReload;
+			}
+			reloadFinish = PositionReload >= ClampPosition.y;
+		} 
 
-					ReloadObject.localEulerAngles = new Vector3 (-Mathf.Clamp(tempAngle,ClampAngle.x,ClampAngle.y), 0, 0);
+		if (typeReload == TypeReload.Cracking&&PointSwingReload) {
+			if (!reloadFinish&&tempAngle>ClampAngle.x&&!leftHand&&!rightHand) {
+				tempAngle -= returnAddSpeed;
+			}
+			PointSwingReload.rotation = Quaternion.LookRotation (PointSwingReload.position - oldPosSwing-oldVelosity);
+			PointSwingReload.localScale = Vector3.one * (PointSwingReload.position - oldPosSwing-oldVelosity).magnitude;
+			if (Vector3.Angle ((PointSwingReload.position - oldPosSwing), transform.parent.TransformDirection (localDirSwing)) < MaxAngleDir) {
+				float tempSwingReload = Mathf.Clamp((PointSwingReload.position - oldPosSwing).magnitude - substractSpeed,0,float.MaxValue)*returnSpeedMultiply;
+				if (tempSwingReload > 0) {
+					
+					tempAngle += tempSwingReload;
+				}
+				if (!reloadHalf&&tempAngle < ClampAngle.x) {
+					reloadHalf = true;
+					reloadEnd = false;
+					BulletOff.Invoke ();
+					reloadFinish = false;
+				}
+				if (!reloadEnd && reloadHalf && tempAngle >= ClampAngle.y) {
+					reloadEnd = true;
+					reloadFinish = true;
+					reloadHalf = false;
+					BulletOn.Invoke ();
+					enabled = false;
 				}
 
-				oldPosSwing = PointSwingReload.position;
-			} else {
-				enabled = false;
-				return;
-			}
-		}
 
+			}
+			ReloadObject.localEulerAngles = new Vector3 (-Mathf.Clamp(tempAngle,ClampAngle.x,ClampAngle.y), 0, 0);
+			oldVelosity = PointSwingReload.position - oldPosSwing;
+			oldPosSwing = PointSwingReload.position;
+
+			if (grabColliderObject != null && reloadColliderObject != null && grabColliderObject.Length == reloadColliderObject.Length) {
+				for (int i = 0; i < grabColliderObject.Length; i++) {
+					grabColliderObject [i].SetPositionAndRotation (reloadColliderObject [i].position, reloadColliderObject [i].rotation);
+				}
+			}
+		} 
     }
 
 	public void GrabStart(CustomHand hand){
@@ -108,7 +137,7 @@ public class ManualReload : CustomInteractible
 				reloadEnd = false;
 				BulletOff.Invoke ();
 			}
-
+			handDrop = true;
 			if (!reloadEnd && reloadHalf && ReloadObject.localPosition.z > ClampPosition.y) {
 				reloadEnd = true;
 				reloadHalf = false;
@@ -116,6 +145,7 @@ public class ManualReload : CustomInteractible
 			}
 			reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
 			ReloadObject.localPosition = new Vector3 (0, 0, Mathf.Clamp (ReloadObject.transform.localPosition.z, ClampPosition.x, ClampPosition.y));
+			PositionReload = ReloadObject.localPosition.z;
 			break;
 		case TypeReload.Cracking:
 			localHand = transform.InverseTransformPoint (hand.PivotPoser.position);
@@ -137,7 +167,12 @@ public class ManualReload : CustomInteractible
 			ReloadObject.localEulerAngles = new Vector3 (-Mathf.Clamp(tempAngle,ClampAngle.x,ClampAngle.y), 0, 0);
 			enabled = true;
 
-
+			//для дробовика с разломаным стволом фикс
+			if (grabColliderObject != null && reloadColliderObject != null && grabColliderObject.Length == reloadColliderObject.Length) {
+				for (int i = 0; i < grabColliderObject.Length; i++) {
+					grabColliderObject [i].SetPositionAndRotation (reloadColliderObject [i].position, reloadColliderObject [i].rotation);
+				}
+			}
 			break;
 
 		case TypeReload.LeverAction:
@@ -209,12 +244,7 @@ public class ManualReload : CustomInteractible
 			break;
 		}
 
-		//для дробовика с разломаным стволом фикс
-		if (grabColliderObject != null && reloadColliderObject != null && grabColliderObject.Length == reloadColliderObject.Length) {
-			for (int i = 0; i < grabColliderObject.Length; i++) {
-				grabColliderObject [i].SetPositionAndRotation (reloadColliderObject [i].position, reloadColliderObject [i].rotation);
-			}
-		}
+
 	}
 
 	public void GrabEnd(CustomHand hand){

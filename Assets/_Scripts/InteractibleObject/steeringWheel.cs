@@ -14,20 +14,7 @@ public class steeringWheel : CustomInteractible {
 	void Start () {
 		if (grabPoints!=null&&grabPoints.Count>0)
 			radius = grabPoints [0].transform.localPosition.magnitude;
-		
 	}
-	
-	// Update is called once per frame
-//	void Update () {
-//		target.localPosition = new Vector3 (target.localPosition.x, target.localPosition.y);
-////		float ChangeAngle=oldAngle-Vector2.SignedAngle (target.localPosition, Vector2.up);
-//		angle -=Vector2.SignedAngle (target.localPosition, oldPos);
-//		angle = Mathf.Clamp (angle, -clamp, clamp);
-////		oldAngle = Vector2.SignedAngle (target.localPosition, oldPos);
-//		oldPos = new Vector2 (target.localPosition.x, target.localPosition.y);
-//		rot.localEulerAngles = new Vector3 (0, 0, angle);
-//	}
-
 	public void GrabStart(CustomHand hand){
 		SetInteractibleVariable (hand);
 		hand.SkeletonUpdate ();
@@ -51,12 +38,13 @@ public class steeringWheel : CustomInteractible {
 		HandTolocalPos.z = 0;
 		tempPoser.localPosition = HandTolocalPos;
 
+
 		if (hand.handType == SteamVR_Input_Sources.LeftHand) {
-			angle-=Vector2.SignedAngle (tempPoser.localPosition, oldPosLeft)*(leftHand&&rightHand?0.5f:1f);
+			angle-=Vector2.SignedAngle (tempPoser.localPosition, oldPosLeft)*(leftHand&&rightHand?(Mathf.Epsilon+hand.Squeeze)/(Mathf.Epsilon+(leftHand.Squeeze+rightHand.Squeeze)):1f);
 			oldPosLeft = new Vector2 (HandTolocalPos.x, HandTolocalPos.y);
 		} else {
 			if (hand.handType == SteamVR_Input_Sources.RightHand) {
-				angle-=Vector2.SignedAngle (tempPoser.localPosition, oldPosRight)*(leftHand&&rightHand?0.5f:1f);
+				angle-=Vector2.SignedAngle (tempPoser.localPosition, oldPosRight)*(leftHand&&rightHand?(Mathf.Epsilon+hand.Squeeze)/(Mathf.Epsilon+(leftHand.Squeeze+rightHand.Squeeze)):1f);
 				oldPosRight = new Vector2 (HandTolocalPos.x, HandTolocalPos.y);
 			} 
 		}

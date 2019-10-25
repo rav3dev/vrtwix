@@ -32,6 +32,9 @@ public class CustomHand : MonoBehaviour {
 //	[HideInInspector]
 	public float Squeeze;
 	public SteamVR_Action_Boolean boola;
+	public SteamVR_Action_Vibration hapticSignal=SteamVR_Input.GetAction<SteamVR_Action_Vibration>("Haptic");
+	bool setHandTransform;
+	public Vector3 tv3;
 	// Use this for initialization
 	void Start () {
 		if (!PivotPoser)
@@ -52,14 +55,16 @@ public class CustomHand : MonoBehaviour {
 		if (GetComponentInChildren<SteamVR_RenderModel> ()) {
 			RenderModel = GetComponentInChildren<SteamVR_RenderModel> ();
 		}
-		skeleton.BlendToPoser(skeleton.fallbackPoser, 5f);
-		RenderModelVisible (!HideController);
-
+		skeleton.BlendToSkeleton ();
+//		skeleton.BlendToPoser(skeleton.fallbackPoser);
+//		RenderModelVisible (!HideController);
+//		SetRenderModels ();
 	}
 	void Update () {
+		HapticResponse (tv3.x, tv3.y, tv3.z); 	
 		PivotUpdate ();
 		GrabCheck ();
-
+//		print ();
 //		skeleton.SetRangeOfMotion (EVRSkeletalMotionRange.WithoutController, 1);
 	}
 	// Update is called once per frame
@@ -97,6 +102,7 @@ public class CustomHand : MonoBehaviour {
 						OldGrabInteractible.SendMessage ("GrabEnd", this, SendMessageOptions.DontRequireReceiver);
 					if (GrabInteractible) {
 						GrabInteractible.SendMessage ("GrabStart", this, SendMessageOptions.DontRequireReceiver);
+						setHandTransform = false;
 						grabType = GrabType.Select;
 						RenderModelVisible (!GrabInteractible.HideController);
 						SkeletonUpdate ();
@@ -110,6 +116,7 @@ public class CustomHand : MonoBehaviour {
 							OldGrabInteractible.SendMessage ("GrabEnd", this, SendMessageOptions.DontRequireReceiver);
 						if (GrabInteractible) {
 							GrabInteractible.SendMessage ("GrabStart", this, SendMessageOptions.DontRequireReceiver);
+							setHandTransform = false;
 							grabType = GrabType.Pinch;
 							RenderModelVisible (!GrabInteractible.HideController);
 							SkeletonUpdate ();
@@ -123,6 +130,7 @@ public class CustomHand : MonoBehaviour {
 								OldGrabInteractible.SendMessage ("GrabEnd", this, SendMessageOptions.DontRequireReceiver);
 							if (GrabInteractible) {
 								GrabInteractible.SendMessage ("GrabStart", this, SendMessageOptions.DontRequireReceiver);
+								setHandTransform = false;
 								grabType = GrabType.Grip;
 								RenderModelVisible (!GrabInteractible.HideController);
 								SkeletonUpdate ();
@@ -135,51 +143,35 @@ public class CustomHand : MonoBehaviour {
 	}
 
 
-//	void GrabStart(){
-//		if (grabType == GrabType.Pinch) {
-//			GrabInteractible.SendMessage ("PinchStart", this, SendMessageOptions.DontRequireReceiver);
-//		}
-//
-//		if (grabType == GrabType.Grip) {
-//			GrabInteractible.SendMessage ("GrabStart", this, SendMessageOptions.DontRequireReceiver);
-//		}
-//
-//		if (grabPoser) {
-//			skeleton.BlendToPoser (grabPoser);
-//			PivotUpdate ();
-//		}
-//		RenderModelVisible (!GrabInteractible.HideController);
-//		SelectedGpibInteractible = null;
-//		SelectedPinchInteractible = null;
-//		SelectedIndexInteractible = null;
-//	}
-
 	public void GrabUpdateCustom(){
 		if (grabPoser) {
-			skeleton.BlendToPoser (grabPoser);
+			skeleton.BlendToPoser (grabPoser,0);
 
 			posSavePoser = grabPoser.transform.localPosition;
 			rotSavePoser = grabPoser.transform.localEulerAngles;
 
-			grabPoser.transform.rotation=transform.rotation*grabPoser.GetBlendedPose(skeleton).rotation;
-			grabPoser.transform.position = transform.TransformPoint(grabPoser.GetBlendedPose (skeleton).position);
+			grabPoser.transform.rotation = transform.rotation * grabPoser.GetBlendedPose (skeleton).rotation;
+			grabPoser.transform.position = transform.TransformPoint (grabPoser.GetBlendedPose (skeleton).position);
 
 			PivotUpdate ();
 
-			inverceLocalPosition=grabPoser.transform.InverseTransformPoint (transform.position);	
+			inverceLocalPosition = grabPoser.transform.InverseTransformPoint (transform.position);	
 
 			grabPoser.transform.localPosition = posSavePoser;
 			grabPoser.transform.localEulerAngles = rotSavePoser;
 
-			skeleton.transform.position= grabPoser.transform.TransformPoint(inverceLocalPosition);
-			skeleton.transform.rotation= grabPoser.transform.rotation*Quaternion.Inverse(grabPoser.GetBlendedPose(skeleton).rotation);
+			skeleton.transform.position = grabPoser.transform.TransformPoint (inverceLocalPosition);
+			skeleton.transform.rotation = grabPoser.transform.rotation * Quaternion.Inverse (grabPoser.GetBlendedPose (skeleton).rotation);
 		}
+//		} else {
+//			skeleton.BlendToSkeleton ();
+//		}
 	}
 
 	void GrabUpdate(){
 		
 		if (grabPoser) {
-			skeleton.BlendToPoser (grabPoser);
+			skeleton.BlendToPoser (grabPoser,0);
 
 			posSavePoser = grabPoser.transform.localPosition;
 			rotSavePoser = grabPoser.transform.localEulerAngles;
@@ -196,22 +188,29 @@ public class CustomHand : MonoBehaviour {
 
 			GrabInteractible.SendMessage ("GrabUpdate",this,SendMessageOptions.DontRequireReceiver);
 
-//          
-
-            // TEMPORARY SOLUTION , NO SYNC BETWEEN HAND AND OBJECT 
-			skeleton.transform.position= grabPoser.transform.TransformPoint(inverceLocalPosition);
-    		skeleton.transform.rotation= grabPoser.transform.rotation*Quaternion.Inverse(grabPoser.GetBlendedPose(skeleton).rotation);
+//
+//			skeleton.transform.position= grabPoser.transform.TransformPoint(inverceLocalPosition);
+//			skeleton.transform.rotation= grabPoser.transform.rotation*Quaternion.Inverse(grabPoser.GetBlendedPose(skeleton).rotation);
 		}
+//		} else {
+//			skeleton.BlendToSkeleton ();
+//		}
 
 
 	}
 
-	//void LateUpdate(){ // FIX DIFFERENCE SYNC BETWEEN HAND AND OBJECT
-	//	if (grabPoser) {
-	//		skeleton.transform.position = grabPoser.transform.TransformPoint (inverceLocalPosition);
-	//		skeleton.transform.rotation = grabPoser.transform.rotation * Quaternion.Inverse (grabPoser.GetBlendedPose (skeleton).rotation);
-	//	}
-	//}
+	public void HapticResponse(float hlength,float hfreq,float hpower){
+		hapticSignal.Execute (0, hlength , hfreq , hpower , handType);
+
+	}
+
+	void LateUpdate(){
+		if (grabPoser&&setHandTransform) {
+			skeleton.transform.position = grabPoser.transform.TransformPoint (inverceLocalPosition);
+			skeleton.transform.rotation = grabPoser.transform.rotation * Quaternion.Inverse (grabPoser.GetBlendedPose (skeleton).rotation);
+		}
+		setHandTransform = true;
+	}
 
 	public void RenderModelVisible(bool visible){
 		if (RenderModel){
@@ -222,11 +221,28 @@ public class CustomHand : MonoBehaviour {
 		}
 	}
 
+	public void SetRenderModels(){
+//		mrcontroller=RenderModel.GetComponentsInChildren<MeshRenderer> ();
+		StartCoroutine (startHide ());
+	}
+
+	IEnumerator startHide(){
+		while (true) {
+			if (RenderModel.meshRenderers.Count > 0) {
+				RenderModel.SetMeshRendererState (!HideController);
+				break;
+			}
+			yield return new WaitForSeconds (0);
+		}
+
+
+	}
+
 	void GrabEnd(){
 		skeleton.transform.localPosition = Vector3.zero;
 		skeleton.transform.localEulerAngles = Vector3.zero; ///save coord
-//		skeleton.BlendToSkeleton (.1f);
-		skeleton.BlendToPoser(skeleton.fallbackPoser, 5f);
+		skeleton.BlendToSkeleton (0);
+//		skeleton.BlendToPoser(skeleton.fallbackPoser,0);
 		RenderModelVisible (!HideController);
 
 		grabPoser = null;
@@ -238,8 +254,8 @@ public class CustomHand : MonoBehaviour {
 		skeleton.transform.localPosition = Vector3.zero;
 		skeleton.transform.localEulerAngles = Vector3.zero; ///save coord
 
-		skeleton.BlendToPoser(skeleton.fallbackPoser, 5f);
-//		skeleton.BlendToSkeleton (.1f);
+//		skeleton.BlendToPoser(skeleton.fallbackPoser,0);
+		skeleton.BlendToSkeleton (0);
 //		skeleton.skeletonBlend=1;
 		grabPoser = null;
 		GrabInteractible=null;
@@ -328,10 +344,15 @@ public class CustomHand : MonoBehaviour {
 		}
 	}
 	public void SkeletonUpdate(){
-		if (skeleton&&grabPoser)
-		skeleton.BlendToPoser (grabPoser);
-		PivotUpdate ();
-
+		if (skeleton){
+			if (grabPoser) {
+				skeleton.BlendToPoser (grabPoser);
+				PivotUpdate ();
+			}
+//			}else{
+//				skeleton.BlendToSkeleton ();
+//			}
+		}
 	}
 
 	public void PivotUpdate(){
@@ -365,4 +386,6 @@ public class CustomHand : MonoBehaviour {
 		if (handType==SteamVR_Input_Sources.LeftHand)
 			Gizmos.DrawWireSphere (transform.TransformPoint (new Vector3 (-0.03009196f, -0.07610637f, -0.004979379f)), indexRadius);
     }
+
+
 }
