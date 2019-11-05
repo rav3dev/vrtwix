@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Valve.VR;
 public class PrimitiveWeapon : PhysicalObject
 {
@@ -19,14 +20,18 @@ public class PrimitiveWeapon : PhysicalObject
 	public Magazine attachMagazine;
 	public Bullet bulletInside;
 	public Vector3 outBulletSpeed;
+
+	public ManualReload manualReload;
 //	[HideInInspector]
 	public Collider[] myCollidersToIgnore; //для игнора магазина
+
+	public UnityEvent ShootEvent;
     // Start is called before the first frame update
     void Start()
     {
 		Initialize ();
 		trigger= GetComponentInChildren<Trigger> ();
-
+		manualReload = GetComponentInChildren<ManualReload> ();
 		if (!detachableMag) {
 			attachMagazine = GetComponentInChildren<Magazine> ();
 		}
@@ -112,10 +117,19 @@ public class PrimitiveWeapon : PhysicalObject
 			}
 		}else{
 			if (typeRevolver) {
-				if (attachMagazine.ShootFromMagazine ()) {
-					Recoil ();
-					IsShoot = true;
+				if (manualReload.typeReload == ManualReload.TypeReload.Revolver) {
+					if (attachMagazine.ShootFromMagazineRevolver ()) {
+						Recoil ();
+						IsShoot = true;
+					}
 				}
+				if (manualReload.typeReload == ManualReload.TypeReload.Cracking) {
+					if (attachMagazine.ShootFromMagazine ()) {
+						Recoil ();
+						IsShoot = true;
+					}
+				}
+
 			} else {
 				if (bulletInside && bulletInside.armed) {
 					Recoil ();
@@ -123,6 +137,9 @@ public class PrimitiveWeapon : PhysicalObject
 					IsShoot = true;
 				}
 			}
+		}
+		if (IsShoot) {
+			ShootEvent.Invoke ();
 		}
 		return IsShoot;
 	}
