@@ -211,10 +211,7 @@ public class CustomHand : MonoBehaviour {
 
 	public void RenderModelVisible(bool visible){
 		if (RenderModel){
-			MeshRenderer[] tempMeshRenderer = RenderModel.GetComponentsInChildren<MeshRenderer> ();
-			for (int i = 0; i < tempMeshRenderer.Length; i++) {
-				tempMeshRenderer [i].enabled = visible;
-			}
+			RenderModel.SetMeshRendererState (visible);
 		}
 	}
 

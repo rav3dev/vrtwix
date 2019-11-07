@@ -12,20 +12,28 @@ public class Magazine : MonoBehaviour
 	public Transform[] ContainAmmo;
 	public PrimitiveWeapon primitiveWeapon;
 	public Collider[] MagazineColliders; //IgnoreCollider
+	PrimitiveWeapon primitiveWeaponRevolver;
+
+	public float ang,id;
     // Start is called before the first frame update
     void Start()
     {
 		MagazineColliders = GetComponentsInChildren<Collider> ();
 		if (Revolver) {
+			primitiveWeaponRevolver = GetComponentInParent<PrimitiveWeapon> ();
 			stickingAmmo.AddRange (new Bullet[capacity]);
 		}
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	void Update(){
+		ang = ((id<0?capacity+id:id) * 360 / capacity)%360;
+//		id =getBulletIdRevolver(ang);
+	}
+
+	public int getBulletIdRevolver(float tempAngle){
+		float TempId = capacity/360f *(tempAngle<0?360f+tempAngle:tempAngle);
+		return Mathf.RoundToInt (TempId)%capacity;
+	}
 
 	public void GrabStart(CustomHand hand){
 		if (primitiveWeapon) {
@@ -68,16 +76,30 @@ public class Magazine : MonoBehaviour
 		stickingAmmo [closeId] = bullet;
 		ammo++;
 
-		stickingAmmo [closeId].transform.parent = ContainAmmo [ammo - 1];
+		stickingAmmo [closeId].transform.parent = ContainAmmo [closeId];
 		stickingAmmo [closeId].transform.localPosition = Vector3.zero;
 		stickingAmmo [closeId].transform.localRotation = Quaternion.identity;
 
 		bullet.EnterMagazine ();
 	}
 
-	public bool ShootFromMagazine(){
+	public bool ShootFromMagazineRevolver(){
 		if (!Revolver)
 			return false;
+
+//		int tempId = (primitiveWeaponRevolver.manualReload.revolverBulletID+1)%capacity;
+		int tempId = primitiveWeaponRevolver.manualReload.revolverBulletID;
+		if (stickingAmmo [tempId] != null&&stickingAmmo[tempId].armed) {
+			stickingAmmo [tempId].ChangeModel ();
+			return true;
+		}
+		return false;
+	}
+
+	public bool ShootFromMagazine(){//по очередди
+		if (!Revolver)
+			return false;
+
 		for (int i = 0; i < stickingAmmo.Count; i++) {
 			if (stickingAmmo [i] != null&&stickingAmmo[i].armed) {
 				stickingAmmo [i].ChangeModel ();

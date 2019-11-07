@@ -4,6 +4,7 @@ using UnityEngine;
 using Valve.VR;
 public class Trigger : MonoBehaviour
 {
+	public float Axis;
 	public Vector2 angle;
 	public SteamVR_Action_Single triggerAxis=SteamVR_Input.GetAction<SteamVR_Action_Single>("Trigger");
 	public SteamVR_Action_Boolean triggerClick=SteamVR_Input.GetAction<SteamVR_Action_Boolean>("TriggerClick");
@@ -33,14 +34,18 @@ public class Trigger : MonoBehaviour
 		}
 		switch (typeShoot) {
 		case TypeShoot.Semi:
-			if (!isClick&&triggerClick.GetStateDown (hand.handType) && manualReload.reloadFinish && primitiveWeapon.Shoot ()) {
-				isClick = true;
-				if (manualReload.typeReload == ManualReload.TypeReload.Slider) {
-					manualReload.enabled = true;
-
+			if (!isClick && triggerClick.GetStateDown (hand.handType)) {
+				if (manualReload.typeReload == ManualReload.TypeReload.Revolver) {
+					manualReload.RevolverNextBullet ();
+				}
+				if (manualReload.reloadFinish && primitiveWeapon.Shoot ()) {
+					isClick = true;
+					if (manualReload.typeReload == ManualReload.TypeReload.Slider) {
+						manualReload.enabled = true;
+					}
 				}
 			}
-			break;
+		break;
 
 		case TypeShoot.Automatic:
 			if (triggerClick.GetState (hand.handType) && manualReload.reloadFinish && primitiveWeapon.Shoot ()) {
@@ -48,31 +53,17 @@ public class Trigger : MonoBehaviour
 					manualReload.enabled = true;
 				}
 			}
-			break;
+		break;
 		default:
-			break;
+		break;
 		}
+		Axis=triggerAxis.GetAxis (hand.handType);
+		transform.localEulerAngles = new Vector3 (Mathf.Lerp (angle.x, angle.y, Axis), 0);
 
-//		if (!isClick) {
-//			if (triggerClick.GetState (hand.handType)) {
-//				if (!isClick) {
-//					if (manualReload.reloadFinish&&primitiveWeapon.Shoot ()) {
-//						if (manualReload.typeReload == ManualReload.TypeReload.Slider) {
-//							manualReload.enabled = true;
-//						}
-//					}
-//				}
-//				isClick = true;
-//			
-//			}
-//		} else {
-//			if (!triggerClick.GetState (hand.handType)) {
-//				isClick = false;
-//			}
-//		}
 
-		transform.localEulerAngles = new Vector3 (Mathf.Lerp (angle.x, angle.y, triggerAxis.GetAxis (hand.handType)), 0);
-
+		if (manualReload.typeReload == ManualReload.TypeReload.Revolver) {
+			manualReload.CustomRevolverUpdate ();
+		}
     }
 
 }
