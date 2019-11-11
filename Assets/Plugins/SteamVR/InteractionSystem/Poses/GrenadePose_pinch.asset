@@ -3,9 +3,8 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -21,8 +20,8 @@ MonoBehaviour:
     pinkyFingerMovementType: 2
     ignoreRootPoseData: 1
     ignoreWristPoseData: 1
-    position: {x: 0.07351208, y: -0.073002905, z: -0.13498215}
-    rotation: {x: -0.08544908, y: 0.40353027, z: 0.7872387, w: -0.45838526}
+    position: {x: 0.008443584, y: -0.01567426, z: -0.098644085}
+    rotation: {x: 0.091749325, y: 0.08066435, z: 0.88095105, w: -0.45716596}
     bonePositions:
     - {x: -0, y: 0, z: 0}
     - {x: -0.04273381, y: 0.037440903, z: 0.16297305}
@@ -96,8 +95,8 @@ MonoBehaviour:
     pinkyFingerMovementType: 2
     ignoreRootPoseData: 1
     ignoreWristPoseData: 1
-    position: {x: -0.07351194, y: -0.07300309, z: -0.1349821}
-    rotation: {x: 0.08544908, y: 0.40353027, z: 0.7872387, w: 0.45838526}
+    position: {x: -0.008443301, y: -0.015674656, z: -0.098643966}
+    rotation: {x: -0.091749325, y: 0.08066435, z: 0.88095105, w: 0.45716596}
     bonePositions:
     - {x: -0, y: 0, z: 0}
     - {x: -0.04273381, y: 0.037440903, z: 0.16297305}

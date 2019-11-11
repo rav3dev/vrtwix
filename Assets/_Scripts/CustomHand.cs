@@ -217,20 +217,20 @@ public class CustomHand : MonoBehaviour {
 
 	public void SetRenderModels(){
 //		mrcontroller=RenderModel.GetComponentsInChildren<MeshRenderer> ();
-		StartCoroutine (startHide ());
+		//StartCoroutine (startHide ());
 	}
 
-	IEnumerator startHide(){
-		while (true) {
-			if (RenderModel.meshRenderers.Count > 0) {
-				RenderModel.SetMeshRendererState (!HideController);
-				break;
-			}
-			yield return new WaitForSeconds (0);
-		}
+	//IEnumerator startHide(){
+	//	while (true) {
+	//		if (RenderModel.meshRenderers.Count > 0) {
+	//			RenderModel.SetMeshRendererState (!HideController);
+	//			break;
+	//		}
+	//		yield return new WaitForSeconds (0);
+	//	}
 
 
-	}
+	//}
 
 	void GrabEnd(){
 		skeleton.transform.localPosition = Vector3.zero;

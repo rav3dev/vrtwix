@@ -144,7 +144,7 @@ namespace Valve.VR
             }
             else
             {
-                Debug.LogError("<b>[SteamVR]</b> Tried to async load: " + openVRDeviceName + ". Loaded: " + deviceName);
+                Debug.LogError("<b>[SteamVR]</b> Tried to async load: " + openVRDeviceName + ". Loaded: " + deviceName, this);
                 loadedOpenVRDeviceSuccess = true; //try anyway
             }
         }
@@ -184,8 +184,8 @@ namespace Valve.VR
 		    Application.onBeforeRender -= OnBeforeRender;
             SteamVR_Events.System(EVREventType.VREvent_Quit).Remove(OnQuit);
         }
-	    protected void OnBeforeRender() 
-        { 
+	    protected void OnBeforeRender()
+        {
             PreCull();
         }
 #else
