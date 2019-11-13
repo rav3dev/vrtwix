@@ -153,10 +153,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -213,10 +211,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -364,10 +360,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -485,10 +479,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -545,10 +537,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -1738,10 +1728,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -2565,10 +2553,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -2625,10 +2611,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -2946,10 +2930,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -3129,10 +3111,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -3353,10 +3333,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - SteeringWheel (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 867086a136f95934697f5132d0564077, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -4474,10 +4452,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -5355,10 +5331,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -5445,10 +5419,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -5909,10 +5881,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -6320,10 +6290,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - SteeringWheel (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 867086a136f95934697f5132d0564077, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -6511,9 +6479,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 449234239}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -6649,10 +6616,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -6797,10 +6762,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -6979,10 +6942,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - StickHorizonttal (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 50b385893c654454c864cd2aeb6a665b, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -7070,10 +7031,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -7346,10 +7305,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -7610,10 +7567,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -8274,10 +8229,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -9013,10 +8966,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -9496,10 +9447,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -9587,10 +9536,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -10821,10 +10768,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -11025,6 +10970,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013038800862, guid: 638779290bce1af49b356f33dcc6fccf,
+        type: 3}
+      propertyPath: updatePose
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 638779290bce1af49b356f33dcc6fccf, type: 3}
 --- !u!4 &299570411 stripped
@@ -11068,9 +11018,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1101910011}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -11206,10 +11155,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -11504,9 +11451,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1078822844}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -12562,10 +12508,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -13626,10 +13570,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -13850,9 +13792,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 855265928}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -14452,10 +14393,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -14742,10 +14681,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -14802,10 +14739,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -14973,7 +14908,6 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
-  meshRenderers: []
 --- !u!1 &393514794
 GameObject:
   m_ObjectHideFlags: 0
@@ -15499,10 +15433,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -15559,10 +15491,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -15866,10 +15796,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -17030,9 +16958,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1502929751}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -17172,10 +17099,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -17912,10 +17837,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -18003,10 +17926,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -18243,10 +18164,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -19348,10 +19267,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -19469,10 +19386,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -19745,10 +19660,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -19927,10 +19840,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -22190,10 +22101,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -22342,10 +22251,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -23108,10 +23015,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -23171,10 +23076,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - StickFree (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: b6cfbac0d317a9943b816474949100e3, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -23233,10 +23136,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -23799,10 +23700,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -23948,10 +23847,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -24240,10 +24137,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - Index (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 91c79863dce0f004e85c3292a9705b34, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -24321,6 +24216,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012125075130, guid: 6def53d002137b747aec0b29551e0e25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012051789102, guid: 6def53d002137b747aec0b29551e0e25,
+        type: 3}
+      propertyPath: updatePose
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -25229,10 +25129,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -26139,10 +26037,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -26840,10 +26736,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -27253,10 +27147,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -28942,10 +28834,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -29245,10 +29135,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -29597,10 +29485,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -30018,10 +29904,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -30489,10 +30373,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -31181,10 +31063,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -31239,6 +31119,169 @@ Transform:
   m_Father: {fileID: 204339016}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!43 &866535134
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &866669429
 GameObject:
   m_ObjectHideFlags: 0
@@ -31303,10 +31346,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -31365,9 +31406,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 475202508}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -31888,10 +31928,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -32363,10 +32401,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -32454,10 +32490,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -32696,10 +32730,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -32913,10 +32945,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - Reload (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 9b24590168447224eaeac1fc6dd33dc7, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -32961,9 +32991,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 994497951}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -33935,10 +33964,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -34376,7 +34403,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954497088}
-  m_Mesh: {fileID: 1103180235}
+  m_Mesh: {fileID: 866535134}
 --- !u!23 &954497091
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34395,7 +34422,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1855065222}
+  - {fileID: 1714632798}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -34498,10 +34525,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -34558,10 +34583,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -34650,10 +34673,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -35445,10 +35466,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -35959,10 +35978,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -36310,10 +36327,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -36406,10 +36421,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -36466,10 +36479,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -37132,10 +37143,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -37851,10 +37860,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -38034,10 +38041,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -38094,10 +38099,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -38293,10 +38296,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -38445,10 +38446,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -39003,10 +39002,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -39170,10 +39167,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - Index (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 91c79863dce0f004e85c3292a9705b34, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -39643,10 +39638,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -39756,169 +39749,6 @@ Transform:
   m_Father: {fileID: 1053100082}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1103180235
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0.01, z: 0}
-      m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 288
-    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0.01, z: 0}
-    m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1104191475
 GameObject:
   m_ObjectHideFlags: 0
@@ -40244,10 +40074,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -40801,7 +40629,6 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
-  meshRenderers: []
 --- !u!1 &1139166579
 GameObject:
   m_ObjectHideFlags: 0
@@ -40919,9 +40746,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1007181010}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -41119,10 +40945,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -41568,10 +41392,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -42212,9 +42034,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 242435470}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -42305,10 +42126,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -42503,10 +42322,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -42732,9 +42549,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1105365165}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -43779,10 +43595,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -44005,10 +43819,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -44184,10 +43996,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -45655,9 +45465,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1903282203}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -45977,10 +45786,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -46225,10 +46032,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -46345,10 +46150,8 @@ MonoBehaviour:
   blendEditorExpanded: 0
   poseNames:
   - Index (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 91c79863dce0f004e85c3292a9705b34, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -46571,10 +46374,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -46631,10 +46432,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -46691,10 +46490,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -47535,10 +47332,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -48104,10 +47899,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -48462,10 +48255,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -48713,10 +48504,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -49103,10 +48892,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -49587,10 +49374,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -49647,10 +49432,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -50075,10 +49858,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -50376,10 +50157,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -50861,10 +50640,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -51352,10 +51129,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 1
@@ -51459,10 +51234,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -52796,10 +52569,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -53010,10 +52781,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -53072,10 +52841,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -53135,9 +52902,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1341172149}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -53272,10 +53038,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -53332,10 +53096,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -53640,10 +53402,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -54277,10 +54037,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -54499,10 +54257,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -54621,10 +54377,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -54789,10 +54543,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -55107,10 +54859,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -55817,10 +55567,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -56064,10 +55812,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -57290,10 +57036,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -57519,10 +57263,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -57968,10 +57710,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -58212,10 +57952,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -58272,10 +58010,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -59146,6 +58882,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1714632798
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1714881467
 GameObject:
   m_ObjectHideFlags: 0
@@ -59240,10 +59010,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -60143,10 +59911,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -60264,10 +60030,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -60325,10 +60089,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -60445,10 +60207,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -60816,10 +60576,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -61261,10 +61019,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -61321,10 +61077,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -61937,9 +61691,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 986902943}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -62403,10 +62156,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -62815,10 +62566,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -63083,40 +62832,6 @@ Transform:
   m_Father: {fileID: 586883309}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1855065222
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1858345947
 GameObject:
   m_ObjectHideFlags: 0
@@ -63298,10 +63013,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -63509,10 +63222,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -64028,9 +63739,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 425191732}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -64718,10 +64428,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -64935,10 +64643,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -65243,9 +64949,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1008883551}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -65447,10 +65152,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -65551,10 +65254,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -65672,10 +65373,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -66257,9 +65956,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1358723076}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -67912,10 +67610,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -68035,10 +67731,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - StickHorizonttal (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 50b385893c654454c864cd2aeb6a665b, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -68113,9 +67807,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 988968141}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -68799,10 +68492,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -69115,10 +68806,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - axe (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -69469,10 +69158,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -70040,10 +69727,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -70900,10 +70585,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -71028,9 +70711,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 90037382}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -71391,10 +71073,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -71520,9 +71200,8 @@ MonoBehaviour:
   - fallback_relaxed (MAIN)
   - fallback_point
   - fallback_fist
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 206247141}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: 213b7d69786635c498d1287c5505990e, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 416ca9f76f309e5478daf527e55b0c80, type: 2}
@@ -71658,10 +71337,8 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - tuner (MAIN)
-  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-    type: 3}
-  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-    type: 3}
+  overridePreviewLeftHandPrefab: {fileID: 0}
+  overridePreviewRightHandPrefab: {fileID: 0}
   skeletonMainPose: {fileID: 11400000, guid: d64cb2af2666c5e478c62ecd5202865f, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
