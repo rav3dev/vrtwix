@@ -94,12 +94,10 @@ public class ManualReload : CustomInteractible
 			reloadFinish = PositionReload >= ClampPosition.y;
 		} 
 
-		if (typeReload == TypeReload.Cracking&&PointSwingReload) {
+		if (typeReload == TypeReload.Cracking) {
 			if (!reloadFinish&&tempAngle>ClampAngle.x&&!leftHand&&!rightHand) {
 				tempAngle -= returnAddSpeed;
 			}
-//			PointSwingReload.rotation = Quaternion.LookRotation (PointSwingReload.position - oldPosSwing-oldVelosity);
-//			PointSwingReload.localScale = Vector3.one * (PointSwingReload.position - oldPosSwing-oldVelosity).magnitude;
 			if (Vector3.Angle (Velosity, transform.parent.TransformDirection (localDirSwing)) < MaxAngleDir) {
 				float tempSwingReload = Mathf.Clamp(Velosity.magnitude - substractSpeed,0,float.MaxValue)*returnSpeedMultiply;
 					tempAngle += tempSwingReload;
@@ -116,14 +114,14 @@ public class ManualReload : CustomInteractible
 					BulletOn.Invoke ();
 					enabled = false;
 				}
-
-
 			}
 			ReloadObject.localEulerAngles = new Vector3 (-Mathf.Clamp(tempAngle,ClampAngle.x,ClampAngle.y), 0, 0);
-			speedSwing = PointSwingReload.position - oldPosSwing;
-			Velosity = speedSwing - oldSpeedSwing;// PointSwingReload.position - oldPosSwing;
-			oldSpeedSwing = speedSwing;
-			oldPosSwing = PointSwingReload.position;
+			if (PointSwingReload){
+				speedSwing = PointSwingReload.position - oldPosSwing;
+				Velosity = speedSwing - oldSpeedSwing;// PointSwingReload.position - oldPosSwing;
+				oldSpeedSwing = speedSwing;
+				oldPosSwing = PointSwingReload.position;
+			}
 
 			if (grabColliderObject != null && reloadColliderObject != null && grabColliderObject.Length == reloadColliderObject.Length) {
 				for (int i = 0; i < grabColliderObject.Length; i++) {
