@@ -18,8 +18,6 @@ public class CustomHand : MonoBehaviour {
 		Pinch,
 	}
 	public SteamVR_RenderModel RenderModel;
-
-	public int ind;
 	public CustomHand otherCustomHand;
 	public Collider[] SelectedGpibColliders,SelectedIndexColliders,SelectedPinchColliders;
 	public CustomInteractible SelectedIndexInteractible,SelectedPinchInteractible,SelectedGpibInteractible,GrabInteractible;
@@ -250,6 +248,7 @@ public class CustomHand : MonoBehaviour {
 
 //		skeleton.BlendToPoser(skeleton.fallbackPoser,0);
 		skeleton.BlendToSkeleton (0);
+		RenderModelVisible (!HideController);
 //		skeleton.skeletonBlend=1;
 		grabPoser = null;
 		GrabInteractible=null;
