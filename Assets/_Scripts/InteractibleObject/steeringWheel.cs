@@ -10,6 +10,7 @@ public class steeringWheel : CustomInteractible {
 	public Transform RotationObject;
 
 	public float radius;
+	bool ReversHand;
 	// Use this for initialization
 	void Start () {
 		if (grabPoints!=null&&grabPoints.Count>0)
@@ -30,6 +31,7 @@ public class steeringWheel : CustomInteractible {
 				oldPosRight = new Vector2 (HandTolocalPos.x, HandTolocalPos.y);
 			} 
 		}
+		ReversHand = Vector3.Angle (transform.forward, hand.PivotPoser.forward) < 90;
 	}
 
 	public void GrabUpdate(CustomHand hand){
@@ -53,7 +55,7 @@ public class steeringWheel : CustomInteractible {
 		angle = Mathf.Clamp (angle, -clamp, clamp);
 		RotationObject.localEulerAngles=new Vector3 (0, 0, angle);
 		tempPoser.localPosition = tempPoser.localPosition.normalized * radius;
-		tempPoser.rotation = Quaternion.LookRotation (transform.forward, tempPoser.position-transform.position);
+		tempPoser.rotation = Quaternion.LookRotation (ReversHand? transform.forward:-transform.forward, tempPoser.position-transform.position);
 
 	}
 
