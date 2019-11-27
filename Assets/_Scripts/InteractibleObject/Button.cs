@@ -38,15 +38,12 @@ public class Button : CustomInteractible
 				GetComponentInChildren<MeshRenderer> ().material.color = Color.blue;
 				if (!press) {
 					ButtonDown.Invoke ();
-					print ("down");
 				}
 				press = true;
 				ButtonUpdate.Invoke ();
-				print ("update");
 			} else {
 				if (press) {
 					ButtonUp.Invoke ();
-					print ("up");
 				}
 				press = false;
 			}
