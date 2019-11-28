@@ -36,8 +36,7 @@ public class Tuner : CustomInteractible
 		if (clamp != Vector2.zero)
 		angle = Mathf.Clamp (angle, clamp.x, clamp.y);
         RotationObject.localEulerAngles = new Vector3(0, 0, angle);
-//        GetMyGrabPoserTransform(hand).transform.rotation = Quaternion.LookRotation(transform.forward, transform.InverseTransformDirection(hand.PivotPoser.up));
-		GetMyGrabPoserTransform (hand).transform.position = Vector3.MoveTowards (GetMyGrabPoserTransform (hand).transform.position, transform.TransformPoint(Vector3.zero), Time.deltaTime*.5f);
+		GetMyGrabPoserTransform (hand).transform.position = transform.position;// Vector3.MoveTowards (GetMyGrabPoserTransform (hand).transform.position, transform.TransformPoint(Vector3.zero), Time.deltaTime*.5f);
         oldDir = transform.InverseTransformDirection(hand.PivotPoser.up);
     }
 
@@ -46,9 +45,4 @@ public class Tuner : CustomInteractible
         DettachHand(hand);
     }
 
-	void OnDrawGizmos(){
-		Gizmos.DrawRay(transform.position,transform.TransformDirection(oldDir));
-		if (rightHand)
-		Gizmos.DrawRay(transform.position,transform.TransformDirection(transform.InverseTransformDirection(rightHand.PivotPoser.up)));
-	}
 }
