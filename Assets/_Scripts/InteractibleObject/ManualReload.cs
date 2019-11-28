@@ -26,7 +26,7 @@ public class ManualReload : CustomInteractible
 	[Header("SwingReload")]
 	public Transform PointSwingReload;
 	public Vector3 localDirSwing,bulletOffSwingDir;
-	public float MaxAngleDir, substractSpeed, returnSpeedMultiply=100;
+	public float MaxAngleDir=45, substractSpeed=300,  returnSpeedMultiply=500,substractSpeedBullet=300,returnSpeedMultiplyBullet=500;
 	Vector3 oldPosSwing,speedSwing,oldSpeedSwing,Velosity;
 
 	[Header("shotgun fix")]
@@ -160,8 +160,8 @@ public class ManualReload : CustomInteractible
 				float tempSwingReload = Mathf.Clamp(Velosity.magnitude - substractSpeed*Time.deltaTime,0,float.MaxValue)*returnSpeedMultiply;
 				tempAngle -= tempSwingReload*Time.deltaTime;
 			}
-			if (!reloadFinish&&Vector3.Angle (Velosity, transform.parent.TransformDirection (bulletOffSwingDir)) < MaxAngleDir) {
-				float tempSwingReload = Mathf.Clamp(Velosity.magnitude - substractSpeed*Time.deltaTime,0,float.MaxValue)*returnSpeedMultiply;
+			if (!reloadFinish&&Vector3.Angle (Velosity, transform.parent.TransformDirection (bulletOffSwingDir)) < MaxAngleDir) {//вылет патронов с магазина
+				float tempSwingReload = Mathf.Clamp(Velosity.magnitude - substractSpeedBullet*Time.deltaTime,0,float.MaxValue)*returnSpeedMultiplyBullet;
 				if (tempSwingReload > 0) {
 					BulletOff.Invoke ();
 				}
