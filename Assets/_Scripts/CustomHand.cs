@@ -35,8 +35,8 @@ public class CustomHand : MonoBehaviour {
 	bool setHandTransform;
 	float blendToAnimation=1,blendToPose=1;
 
-	Vector3 endFramePos;
-	Quaternion endFrameRot;
+	Vector3 endFramePos,oldInterpolatePos;
+	Quaternion endFrameRot,oldInterpolateRot;
 	// Use this for initialization
 	void Start () {
 		if (!PivotPoser)
@@ -96,10 +96,10 @@ public class CustomHand : MonoBehaviour {
 				blendToAnimation += 1f / blend * Time.deltaTime;
 				blendToAnimation = Mathf.Clamp01 (blendToAnimation);
 				blendToPose += 1f / blendPosition * Time.deltaTime;
-				blendToPose = Mathf.Clamp01 (blendToAnimation);
+				blendToPose = Mathf.Clamp01 (blendToPose);
 			} else {
 				blendToAnimation = 1;
-				blendToPose=1;
+//				blendToPose=1;
 			}
 
 			CustomInteractible OldGrabInteractible=GrabInteractible;
@@ -115,8 +115,8 @@ public class CustomHand : MonoBehaviour {
 						RenderModelVisible (!GrabInteractible.HideController);
 						SkeletonUpdate ();
 						blendToPose=1;
-//						endFramePos = skeleton.transform.position;
-//						endFrameRot = skeleton.transform.rotation;
+						endFramePos = skeleton.transform.position;
+						endFrameRot = skeleton.transform.rotation;
 					}
 				}
 			} else {
@@ -132,8 +132,8 @@ public class CustomHand : MonoBehaviour {
 							RenderModelVisible (!GrabInteractible.HideController);
 							SkeletonUpdate ();
 							blendToPose=1;
-//							endFramePos = skeleton.transform.position;
-//							endFrameRot = skeleton.transform.rotation;
+							endFramePos = skeleton.transform.position;
+							endFrameRot = skeleton.transform.rotation;
 						}
 					}
 				} else {
@@ -149,8 +149,8 @@ public class CustomHand : MonoBehaviour {
 								RenderModelVisible (!GrabInteractible.HideController);
 								SkeletonUpdate ();
 								blendToPose=1;
-//								endFramePos = skeleton.transform.position;
-//								endFrameRot = skeleton.transform.rotation;
+								endFramePos = skeleton.transform.position;
+								endFrameRot = skeleton.transform.rotation;
 							}
 						}
 					}
@@ -190,7 +190,7 @@ public class CustomHand : MonoBehaviour {
 				blendToPose = Mathf.Clamp01 (blendToPose);
 			} else {
 				blendToAnimation = 0;
-				blendToPose = 0;
+//				blendToPose = 0;
 			}
 			skeleton.skeletonBlend = blendToAnimation;
 
@@ -232,7 +232,7 @@ public class CustomHand : MonoBehaviour {
 				blendToPose = Mathf.Clamp01 (blendToPose);
 			} else {
 				blendToAnimation = 0;
-				blendToPose = 0;
+//				blendToPose = 0;
 			}
 			skeleton.skeletonBlend = blendToAnimation;
 
@@ -260,17 +260,20 @@ public class CustomHand : MonoBehaviour {
 				
 				skeleton.transform.position = grabPoser.transform.TransformPoint (inverceLocalPosition);
 				skeleton.transform.rotation = grabPoser.transform.rotation * Quaternion.Inverse (grabPoser.GetBlendedPose (skeleton).rotation);
+//				if (blendToPose <1) {
 
+//				}
 //				if (blendToAnimation > 0 && blendToAnimation < 1) {
 //					skeleton.transform.position = Vector3.Lerp (skeleton.transform.position, skeleton.transform.parent.position, blendToAnimation);
 //					skeleton.transform.rotation = Quaternion.Lerp (skeleton.transform.rotation, skeleton.transform.parent.rotation, blendToAnimation);
 				skeleton.transform.position = Vector3.Lerp (skeleton.transform.position, endFramePos, blendToPose);
 				skeleton.transform.rotation = Quaternion.Lerp (skeleton.transform.rotation, endFrameRot, blendToPose);
-				endFramePos = skeleton.transform.position;
-				endFrameRot = skeleton.transform.rotation;
+//				endFramePos = skeleton.transform.position;
+//				endFrameRot = skeleton.transform.rotation;
 //					skeleton.transform.position = Vector3.Lerp (endFramePos, skeleton.transform.parent.position, blendToAnimation);
 //					skeleton.transform.rotation = Quaternion.Lerp (endFrameRot, skeleton.transform.parent.rotation, blendToAnimation);
-				
+				oldInterpolatePos = skeleton.transform.position;
+				oldInterpolateRot = skeleton.transform.rotation;
 //				}
 			} else {
 				setHandTransform = true;
@@ -279,8 +282,8 @@ public class CustomHand : MonoBehaviour {
 //			if (blendToAnimation > 0 && blendToAnimation < 1) {
 			skeleton.transform.position = Vector3.Lerp (endFramePos, skeleton.transform.parent.position, blendToPose);
 			skeleton.transform.rotation = Quaternion.Lerp (endFrameRot, skeleton.transform.parent.rotation, blendToPose);
-			endFramePos = skeleton.transform.position;
-			endFrameRot = skeleton.transform.rotation;
+//			endFramePos = skeleton.transform.position;
+//			endFrameRot = skeleton.transform.rotation;
 //			}
 		}
 
@@ -312,8 +315,8 @@ public class CustomHand : MonoBehaviour {
 
 	void GrabEnd(){
 //		if (skeleton.transform.position!=Vector3.zero) {
-//			endFramePos = skeleton.transform.position;
-//			endFrameRot = skeleton.transform.rotation;
+		endFramePos = oldInterpolatePos;
+		endFrameRot = oldInterpolateRot;
 //		}
 		skeleton.transform.localPosition = Vector3.zero;
 		skeleton.transform.localEulerAngles = Vector3.zero; ///save coord
@@ -321,7 +324,7 @@ public class CustomHand : MonoBehaviour {
 
 //		skeleton.BlendToPoser(skeleton.fallbackPoser,0);
 		RenderModelVisible (!HideController);
-
+		blendToPose = 0;
 		grabPoser = null;
 		GrabInteractible = null;
 		grabType = GrabType.None;
