@@ -49,7 +49,7 @@ public class CustomInteractible : MonoBehaviour {
                     MinDistance = Vector3.Distance(tempPoint, grabPoints[i].transform.position);
                     TempClose = grabPoints[i].transform;
                 }
-            }
+            } 
         }
         return TempClose;
     }
