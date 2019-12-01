@@ -20,17 +20,10 @@ public class Toggle : CustomInteractible
 		}
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-		
-//		GetMyGrabPoserTransform() 
-    }
-
-
 	public void GrabStart(CustomHand hand){
 		SetInteractibleVariable(hand);
 		hand.SkeletonUpdate();
+		Grab.Invoke ();
 	}
 
 
@@ -45,6 +38,6 @@ public class Toggle : CustomInteractible
 
 	public void GrabEnd(CustomHand hand){
 		DettachHand (hand);
-
+		ReleaseHand.Invoke ();
 	}
 }

@@ -28,6 +28,7 @@ public class Button : CustomInteractible
         hand.SkeletonUpdate();
         startZCoordinate = transform.InverseTransformPoint(hand.PivotPoser.position).z;
         hand.grabType = CustomHand.GrabType.Select;
+		Grab.Invoke ();
     }
 
     void GrabUpdate(CustomHand hand)
@@ -74,5 +75,6 @@ public class Button : CustomInteractible
 
             GetComponentInChildren<MeshRenderer>().material.color = Color.grey;
         }
+		ReleaseHand.Invoke ();
     }
 }

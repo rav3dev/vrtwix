@@ -39,6 +39,9 @@ public class ManualReload : CustomInteractible
 	Magazine magazineRevolver;
 	Trigger trigger;
 	Vector3 revolverDrumDirection;
+	[Header("Sounds Events")]
+	public UnityEvent clampReloadHalf;
+	public UnityEvent clampReloadEnd;
 //	[HideInInspector]
 	public int revolverBulletID=0;
 
@@ -71,6 +74,7 @@ public class ManualReload : CustomInteractible
 						reloadEnd = true;
 						reloadHalf = false;
 						BulletOn.Invoke ();
+						clampReloadEnd.Invoke ();
 						returnSpeed = 0;
 					}
 				}
@@ -81,6 +85,7 @@ public class ManualReload : CustomInteractible
 					reloadHalf = true;
 					reloadEnd = false;
 					BulletOff.Invoke ();
+					clampReloadHalf.Invoke ();
 					reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
 				}
 			}
@@ -107,12 +112,14 @@ public class ManualReload : CustomInteractible
 					reloadHalf = true;
 					reloadEnd = false;
 					BulletOff.Invoke ();
+					clampReloadHalf.Invoke ();
 					reloadFinish = false;
 				}
 				if (!reloadEnd && reloadHalf && tempAngle >= ClampAngle.y) {
 					reloadEnd = true;
 					reloadFinish = true;
 					reloadHalf = false;
+					clampReloadEnd.Invoke ();
 					BulletOn.Invoke ();
 					enabled = false;
 				}
@@ -139,6 +146,7 @@ public class ManualReload : CustomInteractible
 				reloadFinish = true;
 				reloadHalf = false;
 				BulletOn.Invoke ();
+				clampReloadEnd.Invoke ();
 			}
 			reloadFinish = tempAngle >= ClampAngle.y;
 			if (reloadFinish){
@@ -169,12 +177,14 @@ public class ManualReload : CustomInteractible
 			if (reloadEnd && !reloadHalf && tempAngle >= ClampAngle.y) {
 				reloadHalf = true;
 				reloadEnd = false;
+				clampReloadHalf.Invoke ();
 //				BulletOff.Invoke ();
 			}
 			if (!reloadEnd && reloadHalf && tempAngle <= ClampAngle.x) {
 				reloadEnd = true;
 				reloadFinish = true;
 				reloadHalf = false;
+				clampReloadEnd.Invoke ();
 			}
 
 			tempAngle = Mathf.Clamp (tempAngle, ClampAngle.x, ClampAngle.y);
@@ -228,6 +238,7 @@ public class ManualReload : CustomInteractible
 	public void GrabStart(CustomHand hand){
 		SetInteractibleVariable (hand);
 		revolverDrumDirection=hand.PivotPoser.InverseTransformDirection (ReloadObject.GetChild (0).up);
+		Grab.Invoke ();
 	}
 
 	public void GrabUpdate(CustomHand hand){
@@ -241,12 +252,14 @@ public class ManualReload : CustomInteractible
 				reloadHalf = true;
 				reloadEnd = false;
 				BulletOff.Invoke ();
+				clampReloadHalf.Invoke ();
 			}
 			handDrop = true;
 			if (!reloadEnd && reloadHalf && ReloadObject.localPosition.z > ClampPosition.y) {
 				reloadEnd = true;
 				reloadHalf = false;
 				BulletOn.Invoke ();
+				clampReloadEnd.Invoke ();
 			}
 
 			reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
@@ -261,6 +274,7 @@ public class ManualReload : CustomInteractible
 				reloadHalf = true;
 				reloadEnd = false;
 				BulletOff.Invoke ();
+				clampReloadHalf.Invoke ();
 				reloadFinish = false;
 			}
 			if (!reloadEnd && reloadHalf && tempAngle > ClampAngle.y) {
@@ -268,6 +282,7 @@ public class ManualReload : CustomInteractible
 				reloadFinish = true;
 				reloadHalf = false;
 				BulletOn.Invoke ();
+				clampReloadEnd.Invoke ();
 			}
 			reloadFinish = tempAngle >= ClampAngle.y;
 			ReloadObject.localEulerAngles = new Vector3 (0, 0, tempAngle);
@@ -289,12 +304,14 @@ public class ManualReload : CustomInteractible
 				reloadHalf = true;
 				reloadEnd = false;
 				BulletOff.Invoke ();
+				clampReloadHalf.Invoke ();
 			}
 			if (!reloadEnd && reloadHalf && tempAngle > ClampAngle.y) {
 				reloadEnd = true;
 				reloadFinish = true;
 				reloadHalf = false;
 				BulletOn.Invoke ();
+				clampReloadEnd.Invoke ();
 			}
 			reloadFinish = tempAngle >= ClampAngle.y;
 			tempAngle = Mathf.Clamp (tempAngle, ClampAngle.x, ClampAngle.y);
@@ -313,6 +330,7 @@ public class ManualReload : CustomInteractible
 						reloadFinish = true;
 						reloadHalf = false;
 						BulletOn.Invoke ();
+						clampReloadEnd.Invoke ();
 					}
 				}
 				if (Vector3.SignedAngle (transform.up, ReloadObject.up, transform.forward) > ClampAngle.y) {
@@ -333,6 +351,7 @@ public class ManualReload : CustomInteractible
 						reloadHalf = true;
 						reloadEnd = false;
 						BulletOff.Invoke ();
+						clampReloadHalf.Invoke ();
 					}
 				}
 				boltSlideTrue = false;
@@ -354,12 +373,14 @@ public class ManualReload : CustomInteractible
 			if (reloadEnd && !reloadHalf && tempAngle >= ClampAngle.y) {
 				reloadHalf = true;
 				reloadEnd = false;
+				clampReloadHalf.Invoke ();
 //				BulletOff.Invoke ();
 			}
 			if (!reloadEnd && reloadHalf && tempAngle <= ClampAngle.x) {
 				reloadEnd = true;
 				reloadFinish = true;
 				reloadHalf = false;
+				clampReloadEnd.Invoke ();
 			}
 			enabled = true;
 			reloadFinish = tempAngle <= ClampAngle.x;
@@ -379,6 +400,7 @@ public class ManualReload : CustomInteractible
 
 
 	public void GrabEnd(CustomHand hand){
+		ReleaseHand.Invoke ();
 		if (typeReload == TypeReload.Slider) {
 			enabled = true;
 			returnSpeed = 0;

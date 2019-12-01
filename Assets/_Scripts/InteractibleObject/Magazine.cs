@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class Magazine : MonoBehaviour
 {
 	public bool Revolver = false,canLoad=true;  //револьвер это типа можно стрелять с магазина
@@ -15,6 +15,8 @@ public class Magazine : MonoBehaviour
 	PrimitiveWeapon primitiveWeaponRevolver;
 
 	public float ang,id;
+	[Header("Sounds Events")]
+	public UnityEvent addBullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,7 @@ public class Magazine : MonoBehaviour
 		stickingAmmo [ammo - 1].transform.localPosition = Vector3.zero;
 		stickingAmmo [ammo - 1].transform.localRotation = Quaternion.identity;
 		bullet.EnterMagazine ();
+		addBullet.Invoke ();
 	}
 
 	void AddBulletClose(Bullet bullet){

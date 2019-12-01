@@ -24,8 +24,9 @@ public class PrimitiveWeapon : PhysicalObject
 	public ManualReload manualReload;
 //	[HideInInspector]
 	public Collider[] myCollidersToIgnore; //для игнора магазина
-
+	[Header("Sounds Events")]
 	public UnityEvent ShootEvent;
+	public UnityEvent MagazineLoad,MagazineUnload;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,7 @@ public class PrimitiveWeapon : PhysicalObject
 
 	public void GrabStart(CustomHand hand){
 		GrabStartCustom (hand);
+		Grab.Invoke ();
 	}
 
 	public void GrabUpdate(CustomHand hand){
@@ -60,6 +62,7 @@ public class PrimitiveWeapon : PhysicalObject
 		recoilCurrentAngle = 0;
 		recoil.localPosition = Vector3.zero;
 		GrabEndCustom (hand);
+		ReleaseHand.Invoke ();
 	}
 
 	public void LoadBullet(){
@@ -146,6 +149,7 @@ public class PrimitiveWeapon : PhysicalObject
 
 	public void UnloadMagazine(){
 		attachMagazine.UnloadMagazine (outBulletSpeed);
+		MagazineUnload.Invoke ();
 	}
 
 	void OnTriggerEnter(Collider c){
@@ -168,7 +172,7 @@ public class PrimitiveWeapon : PhysicalObject
 				attachMagazine = tempMagazine;
 				tempMagazine.primitiveWeapon = this;
 				tempMagazine.canLoad = false;
-
+				MagazineLoad.Invoke ();
 				return;
 			}
 				

@@ -84,7 +84,7 @@ public class PhysicalObject : CustomInteractible {
 			LocalDirectionWithPivotLeft = leftMyGrabPoser.transform.InverseTransformDirection (transform.up);
 			LocalDirectionWithPivotRight = rightMyGrabPoser.transform.InverseTransformDirection (transform.up);
 		}
-		
+		Grab.Invoke ();
 	}
 
 	public void GrabUpdate(CustomHand hand){
@@ -128,10 +128,10 @@ public class PhysicalObject : CustomInteractible {
 
 	public void GrabEnd(CustomHand hand){
 		DettachHand (hand);
-
 		if (!leftHand && !rightHand) {
 			saveVariables.LoadProperty (MyRigidbody);
 		}
+		ReleaseHand.Invoke ();
 	}
 
 	public void Initialize(){

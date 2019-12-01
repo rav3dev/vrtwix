@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Valve.VR;
 public class CustomInteractible : MonoBehaviour {
 
@@ -11,7 +12,9 @@ public class CustomInteractible : MonoBehaviour {
     public SteamVR_Skeleton_Poser leftMyGrabPoser, rightMyGrabPoser;
     public bool TwoHanded, HideController;
 	public CustomHand.GrabType grabType=CustomHand.GrabType.Grip;
-
+	[Header("SoundEvents")]
+	public UnityEvent Grab;
+	public UnityEvent ReleaseHand;
 
 
     public Transform GetMyGrabPoserTransform() {
@@ -167,10 +170,6 @@ public class CustomInteractible : MonoBehaviour {
 			rightMyGrabPoser = null;
 			rightHand = null;
 		}
-	}
-
-	public void SetInteractible(bool b){
-		
 	}
 
 }

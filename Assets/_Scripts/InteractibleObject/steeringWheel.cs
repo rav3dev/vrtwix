@@ -32,6 +32,7 @@ public class steeringWheel : CustomInteractible {
 			} 
 		}
 		ReversHand = Vector3.Angle (transform.forward, hand.PivotPoser.forward) < 90;
+		Grab.Invoke ();
 	}
 
 	public void GrabUpdate(CustomHand hand){
@@ -61,5 +62,6 @@ public class steeringWheel : CustomInteractible {
 
 	public void GrabEnd(CustomHand hand){
 		DettachHand (hand);
+		ReleaseHand.Invoke ();
 	}
 }
