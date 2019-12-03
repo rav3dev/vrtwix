@@ -42,6 +42,7 @@ public class ManualReload : CustomInteractible
 	[Header("Sounds Events")]
 	public UnityEvent clampReloadHalf;
 	public UnityEvent clampReloadEnd;
+	public UnityEvent boltPosition,boltAngle;
 //	[HideInInspector]
 	public int revolverBulletID=0;
 
@@ -335,6 +336,9 @@ public class ManualReload : CustomInteractible
 				}
 				if (Vector3.SignedAngle (transform.up, ReloadObject.up, transform.forward) > ClampAngle.y) {
 					ReloadObject.localEulerAngles = new Vector3 (0, 0, ClampAngle.y);
+					if (!boltAngleTrue) {
+						boltAngle.Invoke ();
+					}
 					boltAngleTrue = true;
 				} else {
 					boltAngleTrue = false;
@@ -354,10 +358,14 @@ public class ManualReload : CustomInteractible
 						clampReloadHalf.Invoke ();
 					}
 				}
-				boltSlideTrue = false;
+
 				if (ReloadObject.localPosition.z > ClampPosition.y) {
-					
+					if (!boltSlideTrue) {
+						boltPosition.Invoke ();
+					}
 					boltSlideTrue = true;
+				} else {
+					boltSlideTrue = false;
 				}
 				ReloadObject.localPosition = new Vector3 (0, 0, Mathf.Clamp (ReloadObject.transform.localPosition.z, ClampPosition.x, ClampPosition.y));
 			} else {

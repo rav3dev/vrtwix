@@ -7,10 +7,10 @@ public class CustomInteractible : MonoBehaviour {
 
     public bool isInteractible = true;
 
-    public List<SteamVR_Skeleton_Poser> grabPoints;
+    public List<SteamVR_Skeleton_Poser> grabPoints,secondPoses;
     public CustomHand leftHand, rightHand;
     public SteamVR_Skeleton_Poser leftMyGrabPoser, rightMyGrabPoser;
-    public bool TwoHanded, HideController;
+    public bool TwoHanded, useSecondPose, HideController;
 	public CustomHand.GrabType grabType=CustomHand.GrabType.Grip;
 	[Header("SoundEvents")]
 	public UnityEvent Grab;
@@ -53,6 +53,14 @@ public class CustomInteractible : MonoBehaviour {
                     TempClose = grabPoints[i].transform;
                 }
             } 
+			if (useSecondPose) {
+				for (int i = 0; i < secondPoses.Count; i++) {
+					if (Vector3.Distance(tempPoint, secondPoses[i].transform.position) < MinDistance) {
+						MinDistance = Vector3.Distance(tempPoint, secondPoses[i].transform.position);
+						TempClose = secondPoses[i].transform;
+					}
+				} 
+			}
         }
         return TempClose;
     }
@@ -69,6 +77,16 @@ public class CustomInteractible : MonoBehaviour {
                     }
                 }
             }
+			if (useSecondPose&&ifOtherHandUseMainPoseOnThisObject()) {
+				for (int i = 0; i < secondPoses.Count; i++) {
+					if (secondPoses [i] != leftMyGrabPoser && secondPoses [i] != rightMyGrabPoser) {
+						if (Vector3.Distance (tempPoint, secondPoses [i].transform.position) < MinDistance) {
+							MinDistance = Vector3.Distance (tempPoint, secondPoses [i].transform.position);
+							TempClose = secondPoses [i];
+						}
+					}
+				} 
+			}
         }
         return TempClose;
     }
@@ -102,20 +120,6 @@ public class CustomInteractible : MonoBehaviour {
         }
     }
 
-    public bool CanSelected(CustomHand hand) {
-        if (!leftHand && !rightHand)
-        {
-            return true;
-        } else {
-            if ((leftHand && leftHand == hand) || (rightHand && rightHand == hand))
-            {
-                return true;
-            }
-            else
-                return false;
-        }
-    }
-
 	public void SetInteractibleVariable(CustomHand hand,SteamVR_Skeleton_Poser poser){
 		if (hand.handType == SteamVR_Input_Sources.LeftHand) {
 			if (leftHand)
@@ -144,6 +148,50 @@ public class CustomInteractible : MonoBehaviour {
 			//haptic
 		}
 	}
+
+	public bool ifOtherHandUseMainPoseOnThisObject(){
+		bool tempBool=false;
+		if (rightHand) {
+			if (grabPoints.Contains (rightHand.grabPoser)) {
+				tempBool = true;
+			}
+		}
+
+
+		if (leftHand) {
+			if (grabPoints.Contains (leftHand.grabPoser)) {
+				tempBool = true;
+			}
+		}
+
+		return tempBool;
+	}
+
+	public bool ifUseSecondPose(){
+		bool tempBool=false;
+		if (leftHand && rightHand) {
+			if (secondPoses.Contains (leftHand.grabPoser)||secondPoses.Contains(rightHand.grabPoser)) {
+				tempBool = true;
+			}
+		}
+		return tempBool;
+	}
+
+    public bool CanSelected(CustomHand hand) {
+        if (!leftHand && !rightHand)
+        {
+            return true;
+        } else {
+            if ((leftHand && leftHand == hand) || (rightHand && rightHand == hand))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+    }
+
+
 
 
 
