@@ -45,6 +45,13 @@ public class ManualReload : CustomInteractible
 	public UnityEvent boltPosition,boltAngle;
 //	[HideInInspector]
 	public int revolverBulletID=0;
+	public enum TypeHandGrabRotation{
+		freeze,
+		free,
+		vertical,
+		horizontal,
+	}
+	public TypeHandGrabRotation typeHandGrabRotation;
 
 	bool revolverReadyShoot;
     // Start is called before the first frame update
@@ -265,6 +272,17 @@ public class ManualReload : CustomInteractible
 
 			reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
 			ReloadObject.localPosition = new Vector3 (0, 0, Mathf.Clamp (ReloadObject.transform.localPosition.z, ClampPosition.x, ClampPosition.y));
+			if (typeHandGrabRotation != TypeHandGrabRotation.freeze) {
+				if (typeHandGrabRotation == TypeHandGrabRotation.horizontal) {
+					grabPoints [0].transform.rotation = Quaternion.LookRotation (-grabPoints [0].transform.parent.right, hand.PivotPoser.up);
+				} else {
+					if (typeHandGrabRotation == TypeHandGrabRotation.vertical) {
+						grabPoints [0].transform.rotation = Quaternion.LookRotation (grabPoints [0].transform.parent.up, hand.PivotPoser.up);
+					} else {
+						grabPoints [0].transform.rotation = hand.PivotPoser.rotation;
+					}
+				}
+			}
 			PositionReload = ReloadObject.localPosition.z;
 			break;
 		case TypeReload.Cracking:
