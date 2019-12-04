@@ -83,7 +83,13 @@ public class PhysicalObject : CustomInteractible {
 			LocalDirectionWithPivotLeft = leftMyGrabPoser.transform.InverseTransformDirection (transform.up);
 			LocalDirectionWithPivotRight = rightMyGrabPoser.transform.InverseTransformDirection (transform.up);
 		}
-		Grab.Invoke ();//sound
+		if (pickReleaseOnce){
+			if (!leftHand||!rightHand){
+				Grab.Invoke ();//sound
+			}
+		}else{
+			Grab.Invoke ();
+		}
 	}
 
 	public void GrabUpdate(CustomHand hand){
@@ -140,7 +146,14 @@ public class PhysicalObject : CustomInteractible {
 		if (!leftHand && !rightHand) {
 			saveVariables.LoadProperty (MyRigidbody);
 		}
-		ReleaseHand.Invoke ();
+		if (pickReleaseOnce){
+			if (!rightHand&&!leftHand){
+				ReleaseHand.Invoke ();//sound
+			}
+		}else{
+			ReleaseHand.Invoke ();
+		}
+
 	}
 
 	public void Initialize(){
@@ -177,7 +190,13 @@ public class PhysicalObject : CustomInteractible {
 			LocalDirectionWithPivotLeft = leftMyGrabPoser.transform.InverseTransformDirection (transform.up);
 			LocalDirectionWithPivotRight = rightMyGrabPoser.transform.InverseTransformDirection (transform.up);
 		}
-		Grab.Invoke ();//sound
+		if (pickReleaseOnce){
+			if (!leftHand||!rightHand){
+				Grab.Invoke ();//sound
+			}
+		}else{
+			Grab.Invoke ();
+		}
 	}
 
 	public void GrabUpdateCustom(CustomHand hand){
@@ -235,7 +254,13 @@ public class PhysicalObject : CustomInteractible {
 		if (!leftHand && !rightHand) {
 			saveVariables.LoadProperty (MyRigidbody);
 		}
-		ReleaseHand.Invoke ();
+		if (pickReleaseOnce){
+			if (!rightHand&&!leftHand){
+				ReleaseHand.Invoke ();//sound
+			}
+		}else{
+			ReleaseHand.Invoke ();
+		}
 	}
 
 
