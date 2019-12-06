@@ -12,10 +12,12 @@ public class CustomInteractible : MonoBehaviour {
     public SteamVR_Skeleton_Poser leftMyGrabPoser, rightMyGrabPoser;
     public bool TwoHanded, useSecondPose, HideController;
 	public CustomHand.GrabType grabType=CustomHand.GrabType.Grip;
+
 	[Header("SoundEvents")]
+	public bool pickReleaseOnce;
 	public UnityEvent Grab;
 	public UnityEvent ReleaseHand;
-
+//
 
     public Transform GetMyGrabPoserTransform() {
         if (leftMyGrabPoser)
