@@ -1,6 +1,0 @@
-This software includes third-party software subject to the associated copyrights, as follows:
-
-Name: unity3d-reorderable-list
-Repo: https://github.com/rotorz/unity3d-reorderable-list
-License: MIT (https://github.com/rotorz/unity3d-reorderable-list/blob/master/LICENSE)
-Copyright (c) 2013-2017 Rotorz Limited

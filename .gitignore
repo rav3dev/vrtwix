@@ -67,7 +67,5 @@ Assets/Plugins/RainbowAssets/!Core/Source.meta
 Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Source.meta
 unityProject.vrmanifest
 Assets/Plugins
-Assets/Plugins/*
 Assets/SteamVR
-Assets/SteamVR/*
 Assets/SteamVR.meta
