@@ -4,73 +4,42 @@ using UnityEngine;
 
 public class VelocityFix : MonoBehaviour
 {
-//	public Rigidbody r;
-//	public int posFrames=10, rotFrames=10;
-//	public float positionMultiply=1.1f,rotationMultiply=1.1f;
-//	public Vector3[] posSave, rotSave;
+	Rigidbody rigidBody;
+    [Tooltip("How many frames to average over for computing velocity")]
+    public int velocityAverageFrames = 5;
+    [Tooltip("How many frames to average over for computing angular velocity")]
+    public int angularVelocityAverageFrames = 11;
+    [Tooltip("Start estimating velocity even if it's not grabbed ( on awake )")]
+    public bool estimateOnAwake = false;
 
-//	int currentframe;
-    // Start is called before the first frame update
+    private Coroutine routine;
+    private int sampleCount;
+    private Vector3[] velocitySamples;
+    private Vector3[] angularVelocitySamples;
+
     void Start()
     {
-//		r=GetComponent<Rigidbody> ();
+        rigidBody=GetComponent<Rigidbody> ();
 
     }
 
-    // Update is called once per frame
-
+    // FIRED WHEN RECIEVED A MESSAGE 
 	void GrabStart(CustomHand hand)
 	{
-//		posSave = new Vector3[posFrames];
-//		rotSave = new Vector3[rotFrames];
-//		currentframe = 0;
 		BeginEstimatingVelocity();
 	}
 
-	void GrabUpdate(CustomHand hand){
-//		currentframe++;
-//		posSave [currentframe % posFrames] = r.velocity;
-//		rotSave [currentframe % rotFrames] = r.angularVelocity;
-	}
-
-	void GrabEnd(CustomHand hand)
+    // FIRED WHEN RECIEVED A MESSAGE 
+    void GrabEnd(CustomHand hand)
     {
 
-		GetComponent<Rigidbody> ().velocity = GetVelocityEstimate ();
-		GetComponent<Rigidbody> ().angularVelocity = GetAngularVelocityEstimate ();
-//		Vector3 tempPos = Vector3.zero;
-//		for (int i = 0; i < posSave.Length; i++) {
-//			tempPos += posSave [i];
-//		}
-//
-//		r.velocity = tempPos/posFrames*positionMultiply;
-//
-//		Vector3 tempRot = Vector3.zero;
-//		for (int i = 0; i < rotSave.Length; i++) {
-//			tempRot += rotSave [i];
-//		}
-//
-//		r.angularVelocity = tempRot/rotFrames*rotationMultiply;
+        rigidBody.velocity = GetVelocityEstimate ();
+        rigidBody.angularVelocity = GetAngularVelocityEstimate ();
     }
-
-	[Tooltip( "How many frames to average over for computing velocity" )]
-	public int velocityAverageFrames = 5;
-	[Tooltip( "How many frames to average over for computing angular velocity" )]
-	public int angularVelocityAverageFrames = 11;
-
-	public bool estimateOnAwake = false;
-
-	private Coroutine routine;
-	private int sampleCount;
-	private Vector3[] velocitySamples;
-	private Vector3[] angularVelocitySamples;
-
-
 	//-------------------------------------------------
 	public void BeginEstimatingVelocity()
 	{
 		FinishEstimatingVelocity();
-
 		routine = StartCoroutine( EstimateVelocityCoroutine() );
 	}
 
@@ -167,7 +136,7 @@ public class VelocityFix : MonoBehaviour
 		Quaternion previousRotation = transform.rotation;
 		while ( true )
 		{
-			yield return new WaitForFixedUpdate();//WaitForEndOfFrame
+			yield return new WaitForFixedUpdate();
 
 			float velocityFactor = 1.0f / Time.deltaTime;
 
