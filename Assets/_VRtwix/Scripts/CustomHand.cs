@@ -18,6 +18,7 @@ public class CustomHand : MonoBehaviour {
 		Pinch,
 	}
 	public SteamVR_RenderModel RenderModel;
+	[Range(0.001f,1f)]
 	public float blend=.1f,blendPosition=.1f;
 	public CustomHand otherCustomHand;
 	public Collider[] SelectedGpibColliders,SelectedIndexColliders,SelectedPinchColliders;
@@ -30,7 +31,6 @@ public class CustomHand : MonoBehaviour {
 	public bool HideController;
 //	[HideInInspector]
 	public float Squeeze;
-	public SteamVR_Action_Boolean boola;
 	public SteamVR_Action_Vibration hapticSignal=SteamVR_Input.GetAction<SteamVR_Action_Vibration>("Haptic");
 	bool setHandTransform;
 	float blendToAnimation=1,blendToPose=1;
@@ -296,21 +296,6 @@ public class CustomHand : MonoBehaviour {
 		}
 	}
 
-	public void SetRenderModels(){
-//		mrcontroller=RenderModel.GetComponentsInChildren<MeshRenderer> ();
-//		StartCoroutine (startHide ());
-	}
-
-	//IEnumerator startHide(){
-	//	while (true) {
-	//		if (RenderModel.meshRenderers.Count > 0) {
-	//			RenderModel.SetMeshRendererState (!HideController);
-	//			break;
-	//		}
-	//		yield return new WaitForSeconds (0);
-	//	}
-	//}
-
 	void GrabEnd(){
 //		if (skeleton.transform.position!=Vector3.zero) {
 		endFramePos = oldInterpolatePos;
@@ -337,80 +322,54 @@ public class CustomHand : MonoBehaviour {
 //		CustomInteractible SelectedInteractibleOld = SelectedIndexInteractible;
 		SelectedIndexColliders = Physics.OverlapSphere (IndexPoint(), indexRadius, layerColliderChecker);
 		SelectedIndexInteractible = null;
+        float tempCloseDistance = float.MaxValue;
 		for (int i = 0; i < SelectedIndexColliders.Length; i++) {
 			CustomInteractible tempCustomInteractible = SelectedIndexColliders [i].GetComponentInParent<CustomInteractible> ();
-			if (tempCustomInteractible != null && tempCustomInteractible.isInteractible&&tempCustomInteractible.grabType==GrabType.Select) {
-
-				SelectedIndexInteractible = tempCustomInteractible;
+                if (tempCustomInteractible != null && tempCustomInteractible.isInteractible && tempCustomInteractible.grabType == GrabType.Select)
+                {
+                    if (Vector3.Distance(tempCustomInteractible.transform.position, IndexPoint()) < tempCloseDistance)
+                    {
+                        tempCloseDistance = Vector3.Distance(tempCustomInteractible.transform.position, IndexPoint());
+                        SelectedIndexInteractible = tempCustomInteractible;
+                    }
+                }
 			}
-		}
-
-//		if (SelectedInteractibleOld != SelectedIndexInteractible) {
-//			if (SelectedInteractibleOld) {
-//				if (grabType==GrabType.None||grabType==GrabType.Select)
-//					SelectedInteractibleOld.gameObject.SendMessage ("SelectIndexEnd", this, SendMessageOptions.DontRequireReceiver);
-//			}
-//		if (SelectedIndexInteractible&&!grabPoser)
-//				SelectedIndexInteractible.gameObject.SendMessage ("SelectIndexStart", this, SendMessageOptions.DontRequireReceiver);
-//		} else {
-//			if (SelectedIndexInteractible)
-//				if (grabType==GrabType.None||grabType==GrabType.Select)
-//					SelectedIndexInteractible.gameObject.SendMessage ("SelectIndexUpdate", this, SendMessageOptions.DontRequireReceiver);
-//		}
 		}
 	}
 
 	void SelectPinchObject(){
 		if (!grabPoser) {
-	//	CustomInteractible SelectedInteractibleOld = SelectedIndexInteractible;
-		SelectedPinchColliders = Physics.OverlapSphere (PinchPoint(), pinchRadius, layerColliderChecker);
-		SelectedPinchInteractible = null;
-		for (int i = 0; i < SelectedPinchColliders.Length; i++) {
-			CustomInteractible tempCustomInteractible = SelectedPinchColliders [i].GetComponentInParent<CustomInteractible> ();
-			if (tempCustomInteractible != null && tempCustomInteractible.isInteractible&&tempCustomInteractible.grabType==GrabType.Pinch) {
-				SelectedPinchInteractible = tempCustomInteractible;
-			}
-		}
-
-//		if (SelectedInteractibleOld != SelectedIndexInteractible) {
-//			if (SelectedInteractibleOld) {
-//				if (grabType==GrabType.None||grabType==GrabType.Select)
-//					SelectedInteractibleOld.gameObject.SendMessage ("SelectIndexEnd", this, SendMessageOptions.DontRequireReceiver);
-//			}
-//			if (SelectedIndexInteractible&&!grabPoser)
-//				SelectedIndexInteractible.gameObject.SendMessage ("SelectIndexStart", this, SendMessageOptions.DontRequireReceiver);
-//		} else {
-//			if (SelectedIndexInteractible)
-//			if (grabType==GrabType.None||grabType==GrabType.Select)
-//				SelectedIndexInteractible.gameObject.SendMessage ("SelectIndexUpdate", this, SendMessageOptions.DontRequireReceiver);
-//		}
+	        SelectedPinchColliders = Physics.OverlapSphere (PinchPoint(), pinchRadius, layerColliderChecker);
+	        SelectedPinchInteractible = null;
+            float tempCloseDistance = float.MaxValue;
+            for (int i = 0; i < SelectedPinchColliders.Length; i++) {
+		        CustomInteractible tempCustomInteractible = SelectedPinchColliders [i].GetComponentInParent<CustomInteractible> ();
+		        if (tempCustomInteractible != null && tempCustomInteractible.isInteractible&&tempCustomInteractible.grabType==GrabType.Pinch) {
+                    if (Vector3.Distance(tempCustomInteractible.transform.position, PinchPoint()) < tempCloseDistance)
+                    {
+                        tempCloseDistance = Vector3.Distance(tempCustomInteractible.transform.position, PinchPoint());
+                        SelectedPinchInteractible = tempCustomInteractible;
+                    }
+		        }
+	        }
 		}
 	}
 
 	void SelectGribObject(){
 		if (!grabPoser) {
-	//	CustomInteractible SelectedInteractibleOld = SelectedGpibInteractible;
-		SelectedGpibColliders = Physics.OverlapSphere (transform.TransformPoint (new Vector3 (0, 0, -.1f)), gribRadius, layerColliderChecker);
-		SelectedGpibInteractible = null;
-		for (int i = 0; i < SelectedGpibColliders.Length; i++) {
-			CustomInteractible tempCustomInteractible = SelectedGpibColliders [i].GetComponentInParent<CustomInteractible> ();
-			if (tempCustomInteractible != null && tempCustomInteractible.isInteractible&&tempCustomInteractible.grabType==GrabType.Grip) {
-				SelectedGpibInteractible = tempCustomInteractible;
-			}
-		}
-//		if (SelectedInteractibleOld != SelectedInteractible) {
-//			if (SelectedInteractibleOld) {
-//				if (grabType==GrabType.None||grabType==GrabType.Select)
-//					SelectedInteractibleOld.gameObject.SendMessage ("SelectEnd", this, SendMessageOptions.DontRequireReceiver);
-//			}
-//		if (SelectedInteractible&&!grabPoser)
-//				SelectedInteractible.gameObject.SendMessage ("SelectStart", this, SendMessageOptions.DontRequireReceiver);
-//		} else {
-//			if (SelectedInteractible) {
-//				if (grabType==GrabType.None||grabType==GrabType.Select)
-//				SelectedInteractible.gameObject.SendMessage ("SelectUpdate", this, SendMessageOptions.DontRequireReceiver);
-//			}
-//		}
+		    SelectedGpibColliders = Physics.OverlapSphere (GrabPoint(), gribRadius, layerColliderChecker);
+		    SelectedGpibInteractible = null;
+            float tempCloseDistance = float.MaxValue;
+            for (int i = 0; i < SelectedGpibColliders.Length; i++) {
+			    CustomInteractible tempCustomInteractible = SelectedGpibColliders [i].GetComponentInParent<CustomInteractible> ();
+			    if (tempCustomInteractible != null && tempCustomInteractible.isInteractible&&tempCustomInteractible.grabType==GrabType.Grip) {
+                    if (Vector3.Distance(tempCustomInteractible.transform.position, GrabPoint()) < tempCloseDistance)
+                    {
+                        tempCloseDistance = Vector3.Distance(tempCustomInteractible.transform.position, GrabPoint());
+                        SelectedGpibInteractible = tempCustomInteractible;
+                    }
+			    }
+		    }
 		}
 	}
 	public void SkeletonUpdate(){

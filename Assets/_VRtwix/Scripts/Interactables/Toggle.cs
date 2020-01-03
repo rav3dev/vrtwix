@@ -4,19 +4,19 @@ using UnityEngine;
 using UnityEngine.Events;
 public class Toggle : CustomInteractible
 {
-	public UnityEvent e;
+	public UnityEvent SwithOn, SwithOff;
 	public float angle,distance;
 	public Vector2 Switch;
 	public bool onOrOff;
-	public Transform RotationObject;
+	public Transform MoveObject;
     // Start is called before the first frame update
     void Start()
     {
 		distance = grabPoints [0].transform.localPosition.magnitude;
 		if (onOrOff) {
-			RotationObject.localEulerAngles = new Vector3 (Switch.x, 0);
+            MoveObject.localEulerAngles = new Vector3 (Switch.x, 0);
 		} else {
-			RotationObject.localEulerAngles = new Vector3 (Switch.y, 0);
+            MoveObject.localEulerAngles = new Vector3 (Switch.y, 0);
 		}
     }
 
@@ -29,15 +29,18 @@ public class Toggle : CustomInteractible
 
 	public void GrabUpdate(CustomHand hand){
 		angle = -Vector2.SignedAngle (new Vector2(transform.InverseTransformPoint(hand.PivotPoser.position).y, transform.InverseTransformPoint(hand.PivotPoser.position).z),Vector2.up);
-		if (angle<Switch.x)
-			RotationObject.localEulerAngles = new Vector3 (Switch.x, 0);
-		if (angle>Switch.y)
-			RotationObject.localEulerAngles = new Vector3 (Switch.y, 0);
-		GetMyGrabPoserTransform (hand).position = RotationObject.position+ RotationObject.forward * distance;
+        MoveObject.localEulerAngles = new Vector3 (Mathf.Clamp(angle,Switch.x,Switch.y), 0);
+		//GetMyGrabPoserTransform (hand).position = RotationObject.position+ RotationObject.forward * distance;
 	}
 
 	public void GrabEnd(CustomHand hand){
-		DettachHand (hand);
+        onOrOff = angle < 0;
+        if (onOrOff)
+            SwithOn.Invoke();
+        else
+            SwithOff.Invoke();
+        MoveObject.localEulerAngles = new Vector3(angle<0?Switch.x:Switch.y, 0);
+        DettachHand (hand);
 		ReleaseHand.Invoke ();
 	}
 }

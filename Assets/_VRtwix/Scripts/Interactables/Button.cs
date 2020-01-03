@@ -6,21 +6,18 @@ public class Button : CustomInteractible
 {
     public float distanseToPress;
     public float DistanceDettach = .05f;
-
+    [Range(.1f,1f)]
+    public float DistanceMultiply=.1f;
+    public Transform MoveObject;
     public UnityEvent ButtonDown, ButtonUp, ButtonUpdate;
-    float startZCoordinate;
+    float startZCoordinate,StartButtonPosition;
     bool press;
     // Start is called before the first frame update
     void Start()
     {
-
+        StartButtonPosition = MoveObject.localPosition.z;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 
     void GrabStart(CustomHand hand)
     {
@@ -37,8 +34,8 @@ public class Button : CustomInteractible
         {
             hand.SkeletonUpdate();
             GetComponentInChildren<MeshRenderer>().material.color = Color.grey;
-            float tempDistance = Mathf.Clamp(transform.InverseTransformPoint(hand.PivotPoser.position).z - startZCoordinate, 0, distanseToPress);
-            if (tempDistance == distanseToPress)
+            float tempDistance = Mathf.Clamp(StartButtonPosition+(transform.InverseTransformPoint(hand.PivotPoser.position).z - startZCoordinate)*DistanceMultiply, StartButtonPosition, distanseToPress);
+            if (tempDistance >= distanseToPress)
             {
                 GetComponentInChildren<MeshRenderer>().material.color = Color.blue;
                 if (!press)
@@ -56,8 +53,8 @@ public class Button : CustomInteractible
                 }
                 press = false;
             }
-            GetMyGrabPoserTransform(hand).localPosition = new Vector3(0, 0, tempDistance);
-            GetMyGrabPoserTransform(hand).rotation = Quaternion.LookRotation(GetMyGrabPoserTransform(hand).forward, hand.PivotPoser.up);
+            MoveObject.localPosition = new Vector3(0, 0, tempDistance);
+            MoveObject.rotation = Quaternion.LookRotation(GetMyGrabPoserTransform(hand).forward, hand.PivotPoser.up);
             hand.GrabUpdateCustom();
             if (Vector3.Distance(transform.position, hand.PivotPoser.position) > DistanceDettach)
             {
@@ -70,7 +67,7 @@ public class Button : CustomInteractible
     {
         if ((rightHand || leftHand) && GetMyGrabPoserTransform(hand))
         {
-            GetMyGrabPoserTransform(hand).localPosition = Vector3.zero;
+            MoveObject.localPosition = new Vector3(0, 0, StartButtonPosition);
             DettachHand(hand);
 
             GetComponentInChildren<MeshRenderer>().material.color = Color.grey;

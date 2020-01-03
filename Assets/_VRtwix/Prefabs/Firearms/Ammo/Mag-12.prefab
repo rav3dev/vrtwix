@@ -178,6 +178,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  twoHandTypeOnlyBackHandRotation: 0
   handleObject: []
   MyRigidbody: {fileID: 0}
   GizmoVisible: 0
@@ -643,7 +644,7 @@ GameObject:
   - component: {fileID: 2431908060331501009}
   - component: {fileID: 2431908060331501008}
   - component: {fileID: 2431908060331501007}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ammo Receiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}

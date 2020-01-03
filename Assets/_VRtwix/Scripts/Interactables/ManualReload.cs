@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class ManualReload : CustomInteractible
 {
 	[Space]
-	public Transform ReloadObject,HummerRevolver;
+	public Transform ReloadObject,Zatvor,HummerRevolver;
 	public Vector2 ClampPosition;
 	public Vector2 ClampAngle;
 	[HideInInspector]
@@ -106,7 +106,10 @@ public class ManualReload : CustomInteractible
 			} else {
 				ReloadObject.localPosition = Vector3.forward * PositionReload;
 			}
-			reloadFinish = PositionReload >= ClampPosition.y;
+            if (Zatvor)
+            Zatvor.localPosition = Vector3.forward * PositionReload;
+
+            reloadFinish = PositionReload >= ClampPosition.y;
 			if (ReloadObject.localPosition.z == ClampPosition.x) {
 				if (!clampXCheck) {
 					clampX.Invoke ();
@@ -323,7 +326,10 @@ public class ManualReload : CustomInteractible
 
 			reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
 			ReloadObject.localPosition = new Vector3 (0, 0, Mathf.Clamp (ReloadObject.transform.localPosition.z, ClampPosition.x, ClampPosition.y));
-			if (typeHandGrabRotation != TypeHandGrabRotation.freeze) {
+            if (Zatvor)
+            Zatvor.localPosition = ReloadObject.localPosition;
+
+            if (typeHandGrabRotation != TypeHandGrabRotation.freeze) {
 				if (typeHandGrabRotation == TypeHandGrabRotation.horizontal) {
 					grabPoints [0].transform.rotation = Quaternion.LookRotation (-grabPoints [0].transform.parent.right, hand.PivotPoser.up);
 				} else {

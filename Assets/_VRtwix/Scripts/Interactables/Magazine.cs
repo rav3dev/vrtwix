@@ -40,6 +40,7 @@ public class Magazine : MonoBehaviour
 	public void GrabStart(CustomHand hand){
 		if (primitiveWeapon) {
 			primitiveWeapon.attachMagazine = null;
+            transform.parent = null;
 			canLoad = true;
 			for (int i = 0; i < primitiveWeapon.myCollidersToIgnore.Length; i++) {
 				for (int j = 0; j < MagazineColliders.Length; j++) {
@@ -56,12 +57,22 @@ public class Magazine : MonoBehaviour
 		bullet.DettachBullet ();
 		stickingAmmo.Add (bullet);
 		ammo = stickingAmmo.Count;
-		stickingAmmo [ammo - 1].transform.parent = ContainAmmo [ammo - 1];
-		stickingAmmo [ammo - 1].transform.localPosition = Vector3.zero;
-		stickingAmmo [ammo - 1].transform.localRotation = Quaternion.identity;
+        //stickingAmmo [ammo - 1].transform.parent = ContainAmmo [ammo - 1];
+        //stickingAmmo [ammo - 1].transform.localPosition = Vector3.zero;
+        //stickingAmmo [ammo - 1].transform.localRotation = Quaternion.identity;
+        SortingBulletInMagazine();
 		bullet.EnterMagazine ();
 		addBullet.Invoke ();
 	}
+
+    void SortingBulletInMagazine() {
+        for (int i = 0; i < stickingAmmo.Count; i++)
+        {
+            stickingAmmo[i].transform.parent = ContainAmmo[ammo-i-1];
+            stickingAmmo[i].transform.localPosition = Vector3.zero;
+            stickingAmmo[i].transform.localRotation = Quaternion.identity;
+        }
+    }
 
 	void AddBulletClose(Bullet bullet){
 		if (!Revolver&&!canLoad)
@@ -132,6 +143,7 @@ public class Magazine : MonoBehaviour
 		Bullet tempReturn=stickingAmmo[ammo-1];
 		stickingAmmo.RemoveAt(ammo-1);
 		ammo = stickingAmmo.Count;
+        SortingBulletInMagazine();
 		return tempReturn;
 	}
 
@@ -142,19 +154,6 @@ public class Magazine : MonoBehaviour
 					AddBulletClose (c.attachedRigidbody.GetComponent<Bullet> ());
 				}
 			}
-//			ContactPoint[] tempContactPoint = c.contacts;
-//			for (int i = 0; i < tempContactPoint.Length; i++) {
-//				if (EnterBullet.Contains (tempContactPoint [i].thisCollider)) {
-//					int tempIdEnter = EnterBullet.IndexOf (tempContactPoint [i].thisCollider);
-//					if (tempContactPoint [i].otherCollider.attachedRigidbody && tempContactPoint [i].otherCollider.attachedRigidbody.GetComponent<Bullet> ()) {
-//						if (tempContactPoint [i].otherCollider.attachedRigidbody.GetComponent<Bullet> ().ammoType == ammoType) {
-//
-//							return;
-//						
-//						}
-//					}
-//				}
-//			}
 		} else {
 			if (c.attachedRigidbody && c.attachedRigidbody.GetComponent<Bullet> () && c.attachedRigidbody.GetComponent<Bullet> ().ammoType == ammoType) {
 				if (ammo < capacity) {
