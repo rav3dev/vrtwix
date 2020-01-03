@@ -5,6 +5,9 @@
 ## Current Status:
 Not ready ( refabrishing )
 
+## Introduction
+VRtwix - is a simple and lightweight interaction & weaponary solutions for Unity VR.
+
 # Documentation
 
 Coming soon. Library isn't in working state yet
