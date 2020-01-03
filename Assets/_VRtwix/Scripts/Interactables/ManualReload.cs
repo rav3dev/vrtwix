@@ -9,7 +9,7 @@ public class ManualReload : CustomInteractible
 	public Vector2 ClampPosition;
 	public Vector2 ClampAngle;
 	[HideInInspector]
-	public bool reloadHalf,reloadEnd=true,reloadFinish,handDrop,boltAngleTrue=false,boltSlideTrue = true;
+	public bool reloadHalf,reloadEnd=true,reloadFinish=true,handDrop,boltAngleTrue=false,boltSlideTrue = true;
 	public bool reloadLikeM4;
 	public TypeReload typeReload;
 	public enum TypeReload{

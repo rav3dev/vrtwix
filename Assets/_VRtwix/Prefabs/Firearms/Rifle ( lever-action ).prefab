@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 5671833863298869363}
   - component: {fileID: 5671833863298869356}
   m_Layer: 0
-  m_Name: Shotgun ( lever-action )
+  m_Name: Rifle ( lever-action )
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5671833863503672366}
   m_Layer: 0
-  m_Name: bulletInside
+  m_Name: Loaded Ammo Nest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -551,7 +551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5671833864169878102}
   m_Layer: 0
-  m_Name: bulletOut
+  m_Name: Casing Extractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

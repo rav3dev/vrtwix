@@ -675,7 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3302143303317060975}
   m_Layer: 0
-  m_Name: Casing Spawner
+  m_Name: Casing Extractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

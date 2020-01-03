@@ -565,7 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8365775720369730994}
   m_Layer: 0
-  m_Name: Speed
+  m_Name: Cracking Speed Sensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
