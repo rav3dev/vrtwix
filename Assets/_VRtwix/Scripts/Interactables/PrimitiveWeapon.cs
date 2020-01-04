@@ -164,7 +164,7 @@ public class PrimitiveWeapon : PhysicalObject
 						Physics.IgnoreCollision(myCollidersToIgnore[j],tempMagazine.MagazineColliders[k]);
 					}
 				}
-
+                // ADD CHECK FOR PhysicalObject
 				tempMagazine.GetComponent<PhysicalObject> ().DettachHands ();
 				tempMagazine.GetComponent<PhysicalObject> ().MyRigidbody.isKinematic = true;
 				tempMagazine.transform.parent = magazineAttachPoint;
