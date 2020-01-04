@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VelocityFix : MonoBehaviour
 {
-	Rigidbody rigidBody;
+	Rigidbody rigidBody; 
     [Tooltip("How many frames to average over for computing velocity")]
     public int velocityAverageFrames = 5;
     [Tooltip("How many frames to average over for computing angular velocity")]

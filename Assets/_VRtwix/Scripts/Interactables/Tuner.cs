@@ -4,21 +4,10 @@ using UnityEngine;
 
 public class Tuner : CustomInteractible
 {
-    public Transform RotationObject;
-	public float angle;
-	public Vector2 clamp;
-    Vector3 oldDir;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public Transform RotationObject; //вращающийся объект
+	public float angle; //угол поворота
+	public Vector2 clamp; //ограничения поворота, если 0 то нету ограничений
+    Vector3 oldDir; //старый поворот руки
 
 	public void GrabStart(CustomHand hand)
     {

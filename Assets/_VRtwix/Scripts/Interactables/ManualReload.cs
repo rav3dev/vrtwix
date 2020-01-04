@@ -5,13 +5,13 @@ using UnityEngine.Events;
 public class ManualReload : CustomInteractible
 {
 	[Space]
-	public Transform ReloadObject,Zatvor,HummerRevolver;
-	public Vector2 ClampPosition;
-	public Vector2 ClampAngle;
-	[HideInInspector]
-	public bool reloadHalf,reloadEnd=true,reloadFinish=true,handDrop,boltAngleTrue=false,boltSlideTrue = true;
-	public bool reloadLikeM4;
-	public TypeReload typeReload;
+	public Transform ReloadObject,Zatvor,HummerRevolver; //Объект перезарядки, затвор, ударный механизм револьвера
+	public Vector2 ClampPosition; //ограничения позиции
+	public Vector2 ClampAngle; //ограничения вращения
+    [HideInInspector]
+	public bool reloadHalf,reloadEnd=true,reloadFinish=true,handDrop,boltAngleTrue=false,boltSlideTrue = true; //переменные для роботы перезарядки
+	public bool reloadLikeAR; //как AR
+    public TypeReload typeReload; //тип перезарядки
 	public enum TypeReload{
 		Slider,
 		Cracking,
@@ -22,16 +22,15 @@ public class ManualReload : CustomInteractible
 
 	public UnityEvent BulletOff,BulletOn;
 
-
-	public float returnAddSpeed=0.01f,knockback;
+	public float returnAddSpeed=0.01f,knockback; //возвращение затвора, отдача затвора от выстрела
 	[Header("SwingReload")]
-	public Transform PointSwingReload;
-	public Vector3 localDirSwing,bulletOffSwingDir;
-	public float MaxAngleDir=45, substractSpeed=300,  returnSpeedMultiply=500,substractSpeedBullet=300,returnSpeedMultiplyBullet=500;
-	Vector3 oldPosSwing,speedSwing,oldSpeedSwing,Velosity;
+	public Transform PointSwingReload; //точка просчета рывка
+	public Vector3 localDirSwing,bulletOffSwingDir; //направление для возвращение барабана / выброса пули
+	public float MaxAngleDir=45, substractSpeed=300,  returnSpeedMultiply=500,substractSpeedBullet=300,returnSpeedMultiplyBullet=500;//угол в котором просчитывается направление, мертвая зона если скорость руки ниже этой, умножение скорости
+    Vector3 oldPosSwing, speedSwing, oldSpeedSwing, Velosity;
 
 	[Header("shotgun fix")]
-	public Transform[] grabColliderObject;
+	public Transform[] grabColliderObject; //фикс коллайдеров если согнут ствол
 	public Transform[] reloadColliderObject;
 
 	float PositionReload;
@@ -53,10 +52,10 @@ public class ManualReload : CustomInteractible
 		vertical,
 		horizontal,
 	}
-	public TypeHandGrabRotation typeHandGrabRotation;
+	public TypeHandGrabRotation typeHandGrabRotation; //тип держания ручки затвора
 
 	bool revolverReadyShoot,clampXCheck,clampYCheck;
-    // Start is called before the first frame update
+
     void Start()
     {
 		enabled = false;
@@ -66,17 +65,13 @@ public class ManualReload : CustomInteractible
 		magazineRevolver = GetComponentInParent<PrimitiveWeapon> ().GetComponentInChildren<Magazine> ();
 		trigger =  GetComponentInParent<PrimitiveWeapon> ().GetComponentInChildren<Trigger> ();
     }
-
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
 		if (typeReload == TypeReload.Slider&&returnAddSpeed > 0 || knockback > 0) {		
 			if (reloadHalf||handDrop) {
 				returnSpeed += returnAddSpeed*Time.deltaTime;
-
-//					ReloadObject.localPosition = Vector3.MoveTowards (Vector3.forward * returnStart, Vector3.forward * ClampPosition.y, returnSpeed * Time.deltaTime);
-
-				PositionReload=Mathf.MoveTowards(returnStart,ClampPosition.y,returnSpeed*Time.deltaTime);
+                PositionReload=Mathf.MoveTowards(returnStart,ClampPosition.y,returnSpeed*Time.deltaTime);
 				if (PositionReload >= ClampPosition.y) {
 					enabled = false;
 					if (!reloadEnd && reloadHalf) {
@@ -89,7 +84,6 @@ public class ManualReload : CustomInteractible
 					}
 				}
 			} else {//reloadEnd
-//					ReloadObject.localPosition = Vector3.MoveTowards (ReloadObject.localPosition, Vector3.forward * ClampPosition.x, knockback * Time.deltaTime);
 				PositionReload=Mathf.MoveTowards(PositionReload,ClampPosition.x,knockback*Time.deltaTime);
 				if (PositionReload <= ClampPosition.x) {
 					reloadHalf = true;
@@ -99,7 +93,7 @@ public class ManualReload : CustomInteractible
 					reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
 				}
 			}
-			if (reloadLikeM4) {
+			if (reloadLikeAR) {
 				if (PositionReload > ReloadObject.localPosition.z) {
 					ReloadObject.localPosition = Vector3.forward * PositionReload;
 				}
@@ -132,8 +126,6 @@ public class ManualReload : CustomInteractible
 			if (!reloadFinish&&tempAngle>ClampAngle.x&&!leftHand&&!rightHand) {
 				tempAngle -= returnAddSpeed*Time.deltaTime;
 			}
-//			PointSwingReload.rotation = Quaternion.LookRotation (PointSwingReload.position - oldPosSwing-oldVelosity);
-//			PointSwingReload.localScale = Vector3.one * (PointSwingReload.position - oldPosSwing-oldVelosity).magnitude;
 			if (Vector3.Angle (Velosity, transform.parent.TransformDirection (localDirSwing)) < MaxAngleDir) {
 				float tempSwingReload = Mathf.Clamp(Velosity.magnitude - substractSpeed*Time.deltaTime,0,float.MaxValue)*returnSpeedMultiply;
 				tempAngle += tempSwingReload*Time.deltaTime;
@@ -158,7 +150,7 @@ public class ManualReload : CustomInteractible
 			tempAngle = Mathf.Clamp (tempAngle, ClampAngle.x, ClampAngle.y);
 			ReloadObject.localEulerAngles = new Vector3 (-tempAngle, 0, 0);
 			speedSwing = (PointSwingReload.position - oldPosSwing);
-			Velosity = (speedSwing - oldSpeedSwing)/Time.deltaTime;// PointSwingReload.position - oldPosSwing;
+			Velosity = (speedSwing - oldSpeedSwing)/Time.deltaTime;
 			oldSpeedSwing = speedSwing;
 			oldPosSwing = PointSwingReload.position;
 
@@ -200,14 +192,6 @@ public class ManualReload : CustomInteractible
 			}
 			tempAngle = Mathf.Clamp (tempAngle, ClampAngle.x, ClampAngle.y);
 			ReloadObject.localEulerAngles = new Vector3 (tempAngle, 0, 0);
-//			if (tempAngle == ClampAngle.x) {
-//				if (!clampXCheck) {
-//					clampX.Invoke ();
-//					clampXCheck = true;
-//				}
-//			} else {
-//				clampXCheck = false;
-//			}
 			if (tempAngle == ClampAngle.y) {
 				if (!clampYCheck) {
 					clampY.Invoke ();
@@ -225,8 +209,6 @@ public class ManualReload : CustomInteractible
 			if (tempAngle<ClampAngle.y&&!leftHand&&!rightHand&!reloadFinish) {
 				tempAngle += returnAddSpeed*Time.deltaTime;
 			}
-//			//			PointSwingReload.rotation = Quaternion.LookRotation (PointSwingReload.position - oldPosSwing-oldVelosity);
-//			//			PointSwingReload.localScale = Vector3.one * (PointSwingReload.position - oldPosSwing-oldVelosity).magnitude;
 			if (Vector3.Angle (Velosity, transform.parent.TransformDirection (localDirSwing)) < MaxAngleDir) {
 				float tempSwingReload = Mathf.Clamp(Velosity.magnitude - substractSpeed*Time.deltaTime,0,float.MaxValue)*returnSpeedMultiply;
 				tempAngle -= tempSwingReload*Time.deltaTime;
@@ -241,7 +223,6 @@ public class ManualReload : CustomInteractible
 				reloadHalf = true;
 				reloadEnd = false;
 				clampReloadHalf.Invoke ();
-//				BulletOff.Invoke ();
 			}
 			if (!reloadEnd && reloadHalf && tempAngle <= ClampAngle.x) {
 				reloadEnd = true;
@@ -256,12 +237,6 @@ public class ManualReload : CustomInteractible
 			Velosity = (speedSwing - oldSpeedSwing)/Time.deltaTime;
 			oldSpeedSwing = speedSwing;
 			oldPosSwing = PointSwingReload.position;
-//
-//			if (grabColliderObject != null && reloadColliderObject != null && grabColliderObject.Length == reloadColliderObject.Length) {
-//				for (int i = 0; i < grabColliderObject.Length; i++) {
-//					grabColliderObject [i].SetPositionAndRotation (reloadColliderObject [i].position, reloadColliderObject [i].rotation);
-//				}
-//			}
 		} 
 
     }

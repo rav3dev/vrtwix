@@ -4,32 +4,37 @@ using UnityEngine;
 using UnityEngine.Events;
 public class Magazine : MonoBehaviour
 {
-	public bool Revolver = false,canLoad=true;  //револьвер это типа можно стрелять с магазина
-	public string ammoType;
-	public int capacity,ammo;
-//	public List<Collider> EnterBullet;
-	public List<Bullet> stickingAmmo;
-	public Transform[] ContainAmmo;
-	public PrimitiveWeapon primitiveWeapon;
+    public bool Revolver = false; //револьвер, это типа можно стрелять с магазина как в револьвере или дробовике
+    public bool canLoad = true;  //можно ли засунуть туда патроны, чтобы когда прикреплен к оружию не засовывались патроны
+	public string ammoType; // тип патронов
+	public int capacity,ammo; // Вместительность, текужее количество патронов
+	public List<Bullet> stickingAmmo; // торчащщие пули
+    public Transform[] ContainAmmo; // места для патронов
+	public PrimitiveWeapon primitiveWeapon; //Оружие к которому приклеплем магазин
 	public Collider[] MagazineColliders; //IgnoreCollider
-	PrimitiveWeapon primitiveWeaponRevolver;
+	PrimitiveWeapon primitiveWeaponRevolver; //Револьвер к которому приклеплем магазин
 
-	public float ang,id;
+    public float ang,id; //угол поворота барабана, id текущей пули
 	[Header("Sounds Events")]
 	public UnityEvent addBullet;
-    // Start is called before the first frame update
+
     void Start()
     {
 		MagazineColliders = GetComponentsInChildren<Collider> ();
-		if (Revolver) {
-			primitiveWeaponRevolver = GetComponentInParent<PrimitiveWeapon> ();
-			stickingAmmo.AddRange (new Bullet[capacity]);
-		}
+        if (Revolver)
+        {
+            primitiveWeaponRevolver = GetComponentInParent<PrimitiveWeapon>();
+            stickingAmmo.AddRange(new Bullet[capacity]);
+            enabled = true;
+        }
+        else
+        {
+            enabled = false;
+        }
     }
 
 	void Update(){
 		ang = ((id<0?capacity+id:id) * 360 / capacity)%360;
-//		id =getBulletIdRevolver(ang);
 	}
 
 	public int getBulletIdRevolver(float tempAngle){
@@ -57,9 +62,6 @@ public class Magazine : MonoBehaviour
 		bullet.DettachBullet ();
 		stickingAmmo.Add (bullet);
 		ammo = stickingAmmo.Count;
-        //stickingAmmo [ammo - 1].transform.parent = ContainAmmo [ammo - 1];
-        //stickingAmmo [ammo - 1].transform.localPosition = Vector3.zero;
-        //stickingAmmo [ammo - 1].transform.localRotation = Quaternion.identity;
         SortingBulletInMagazine();
 		bullet.EnterMagazine ();
 		addBullet.Invoke ();
@@ -137,8 +139,7 @@ public class Magazine : MonoBehaviour
 		}
 		ammo = 0;
 	}
-
-//	[ContextMenu("RemoveBullet")]
+    
 	public Bullet GetBullet(){
 		Bullet tempReturn=stickingAmmo[ammo-1];
 		stickingAmmo.RemoveAt(ammo-1);

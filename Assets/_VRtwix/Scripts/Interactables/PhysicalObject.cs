@@ -4,22 +4,21 @@ using UnityEngine;
 using Valve.VR;
 [RequireComponent(typeof(Rigidbody))]
 public class PhysicalObject : CustomInteractible {
-    public bool twoHandTypeOnlyBackHandRotation;
+    public bool twoHandTypeOnlyBackHandRotation; //Вращение только по правой руке
 	public List<SteamVR_Skeleton_Poser> handleObject;//count=2
-//	public Transform LeftGrab,RightGrab;
-//	public CustomHand leftHand,rightHand;
-	public Rigidbody MyRigidbody;
-	public bool GizmoVisible;
-	public Vector2 clampHandlePosZ;
+	public Rigidbody MyRigidbody; 
+	public bool GizmoVisible; //отображать ли полоску где можно скользить по рукоядке
+	public Vector2 clampHandlePosZ; // ограничения рукоядки
 	[Range(0,1)]
-	public float SqueezeCheack;
+	public float SqueezeCheack; // мертвая зона в разнице сжатия
 
-//	Vector3 LocalPositonWithPivotLeft,LocalPositonWithPivotRight;
-	Vector3 LocalDirectionWithPivotLeft,LocalDirectionWithPivotRight;
-	bool leftIsForvard;
+
+	Vector3 LocalDirectionWithPivotLeft,LocalDirectionWithPivotRight; 
+	bool leftIsForvard; 
 
 	Vector3 leftHandlePos,rightHandlePos;
 	Quaternion leftHandleRot,rightHandleRot;
+
 	[System.Serializable]
 	public struct SaveVariables{
 		public float maxAngelarVelicity,mass,drag,angularDrag;
@@ -47,16 +46,14 @@ public class PhysicalObject : CustomInteractible {
 		}
 	}
 	public SaveVariables saveVariables;
-	// Use this for initialization
+
 	void Start () {
-//		print ((int)SteamVR_Input_Sources.LeftHand + " " + (int)SteamVR_Input_Sources.RightHand);
 		if (GetComponent<Rigidbody> ()) {
 			MyRigidbody = GetComponent<Rigidbody> ();
 			saveVariables.SaveProperty (MyRigidbody);
 		} 
 		enabled = false;
 	}
-
 
 	public void GrabStart(CustomHand hand){
 		Vector3 tempPosHandLocal=transform.InverseTransformPoint (hand.GrabPoint());
@@ -280,8 +277,6 @@ public class PhysicalObject : CustomInteractible {
 			ReleaseHand.Invoke ();
 		}
 	}
-
-
 
 	public static Vector3 GetAngularVelocities(Quaternion hand,Quaternion fake,float blend)
 	{

@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Launcher : MonoBehaviour
 {
-	public Transform LaunchPoint;
-
-    // Start is called before the first frame update
-    void Start()
+	public GameObject spawnObject;
+    public float force;
+    public void Spawn()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (spawnObject)
+        {
+            GameObject InstanseObject = Instantiate(spawnObject, transform.position, transform.rotation) as GameObject;
+            if (InstanseObject.GetComponent<Rigidbody>()) {
+                InstanseObject.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * force, ForceMode.VelocityChange);
+            }
+        }
     }
 }

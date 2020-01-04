@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 public class joystick : CustomInteractible {
-	public Transform Stick;
-	public Vector2 value;
-	public Vector2 clamp=new Vector2(60,60);
+	public Transform Stick; //Движущаяся чать
+	public Vector2 value; //Значение текущей позиции в %
+	public Vector2 clamp=new Vector2(60,60); //ограничение углов наклона
 
-	public Vector2 angle;
-	public float handleDistance;
-	public Quaternion rotation;
-	public bool normalize;
-	public bool returnToZero;
+	public Vector2 angle; //Угол наклона
+	float handleDistance; //запомнить Дистанцию до рукоядки
+	Quaternion rotation;
+	public bool normalize; // ограничения квадратом или кругом
+	public bool returnToZero; // возвращать в исходное состояние
 	public enum TypeHandGrabRotation{
 		free,
 		vertical,
 		horizontal,
 	}
-	public TypeHandGrabRotation typeHandGrabRotation;
+	public TypeHandGrabRotation typeHandGrabRotation; // как ведет себя рука на рукоядке
 	// Use this for initialization
 	void Start () {
 		if (grabPoints!=null&&grabPoints.Count>0)
@@ -44,8 +44,6 @@ public class joystick : CustomInteractible {
 			} else {
 				if (typeHandGrabRotation == TypeHandGrabRotation.horizontal) {
 					tempPoser.rotation = Quaternion.LookRotation (Stick.up, Stick.forward);
-				} else {
-//					tempPoser.rotation = hand.PoserPivot.rotation;
 				}
 			}
 			tempPoser.position = Stick.TransformPoint(new Vector3(0,0, handleDistance));
@@ -60,7 +58,6 @@ public class joystick : CustomInteractible {
 
 	public void GrabUpdate(CustomHand hand){
 		Transform tempPoser = GetMyGrabPoserTransform (hand);
-//		float TempDistanceToPoser=tempPoser.transform.localPosition.magnitude;
 		tempPoser.position = hand.PivotPoser.position;
 		tempPoser.localPosition = new Vector3 (tempPoser.localPosition.x, tempPoser.localPosition.y, Mathf.Abs(tempPoser.localPosition.z));
 

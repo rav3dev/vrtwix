@@ -5,30 +5,29 @@ using UnityEngine.Events;
 using Valve.VR;
 public class PrimitiveWeapon : PhysicalObject
 {
-	[Space]
-
-	public Trigger trigger;
-	public SteamVR_Skeleton_Poser triggerPoser;
-	public Transform magazineAttachPoint,bulletInsidePoint,reloadBulletSpawn;
+	[Header("PrimitiveWeapon")]
+	public Trigger trigger;//скрипт курка
+	public SteamVR_Skeleton_Poser triggerPoser;//позер, который стреляет
+	public Transform magazineAttachPoint,bulletInsidePoint,reloadBulletSpawn; //точка аттача магазина, пули внутри оружия, выбрасывание пули
 	[Header("Recoil")]
-	public Transform recoil;
+	public Transform recoil;//объект просчета отдачи
 	public float recoilAngle, recoilAngleReturn, recoilMaxAngle,recoilDistance,recoilDistanceReturn,recoilMaxDistance;
 	public float recoilCurrentAngle;
 	[Space]
-	public bool detachableMag,armed,typeRevolver;
-	public string ammoType;
-	public Magazine attachMagazine;
-	public Bullet bulletInside;
-	public Vector3 outBulletSpeed;
+	public bool detachableMag,armed,typeRevolver;//отсоединяется ли магазин, готова ли пушка стрелять, револьвер/дробовик
+	public string ammoType; //тип патронов
+	public Magazine attachMagazine; //Присоединенный магазин
+	public Bullet bulletInside; //пуля внутри
+	public Vector3 outBulletSpeed; // скорость выбрасывание пули
 
-	public ManualReload manualReload;
+	public ManualReload manualReload; // скрипт перезарядки
 //	[HideInInspector]
 	public Collider[] myCollidersToIgnore; //для игнора магазина
 	[Header("Sounds Events")]
 	public UnityEvent ShootEvent;
 	public UnityEvent ShootEmptyEvent;
 	public UnityEvent MagazineLoad,MagazineUnload;
-    // Start is called before the first frame update
+
     void Start()
     {
 		Initialize ();
