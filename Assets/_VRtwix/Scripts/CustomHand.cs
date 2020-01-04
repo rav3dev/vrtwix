@@ -20,6 +20,7 @@ public class CustomHand : MonoBehaviour {
 	public SteamVR_RenderModel RenderModel;
 	[Range(0.001f,1f)]
 	public float blend=.1f,blendPosition=.1f;
+    public bool smoothBlendPhysicsObject;
 	public CustomHand otherCustomHand;
 	public Collider[] SelectedGpibColliders,SelectedIndexColliders,SelectedPinchColliders;
 	public CustomInteractible SelectedIndexInteractible,SelectedPinchInteractible,SelectedGpibInteractible,GrabInteractible;
@@ -69,11 +70,12 @@ public class CustomHand : MonoBehaviour {
 	void FixedUpdate () {
 		Squeeze= SqueezeButton.GetAxis(handType);
 		PivotUpdate ();
-		if (grabPoser&&GrabInteractible) {
+        SelectIndexObject();
+        if (grabPoser&&GrabInteractible) {
 			GrabUpdate ();
 			return;
 		}
-		SelectIndexObject ();
+		
 		SelectPinchObject ();
 		SelectGribObject ();
 		
@@ -317,14 +319,17 @@ public class CustomHand : MonoBehaviour {
 		GrabEnd ();
 	}
 
-	void SelectIndexObject(){
-		if (!grabPoser) {
-//		CustomInteractible SelectedInteractibleOld = SelectedIndexInteractible;
-		SelectedIndexColliders = Physics.OverlapSphere (IndexPoint(), indexRadius, layerColliderChecker);
-		SelectedIndexInteractible = null;
-        float tempCloseDistance = float.MaxValue;
-		for (int i = 0; i < SelectedIndexColliders.Length; i++) {
-			CustomInteractible tempCustomInteractible = SelectedIndexColliders [i].GetComponentInParent<CustomInteractible> ();
+    void SelectIndexObject()
+    {
+        if (!grabPoser)
+        {
+            //		CustomInteractible SelectedInteractibleOld = SelectedIndexInteractible;
+            SelectedIndexColliders = Physics.OverlapSphere(IndexPoint(), indexRadius, layerColliderChecker);
+            SelectedIndexInteractible = null;
+            float tempCloseDistance = float.MaxValue;
+            for (int i = 0; i < SelectedIndexColliders.Length; i++)
+            {
+                CustomInteractible tempCustomInteractible = SelectedIndexColliders[i].GetComponentInParent<CustomInteractible>();
                 if (tempCustomInteractible != null && tempCustomInteractible.isInteractible && tempCustomInteractible.grabType == GrabType.Select)
                 {
                     if (Vector3.Distance(tempCustomInteractible.transform.position, IndexPoint()) < tempCloseDistance)
@@ -333,10 +338,26 @@ public class CustomHand : MonoBehaviour {
                         SelectedIndexInteractible = tempCustomInteractible;
                     }
                 }
-			}
-		}
-	}
-
+            }
+        }
+        else
+        {
+            if (SelectedIndexInteractible)
+            {
+                SelectedIndexColliders = Physics.OverlapSphere(IndexPoint(), indexRadius, layerColliderChecker);
+                for (int i = 0; i < SelectedIndexColliders.Length; i++)
+                {
+                    CustomInteractible tempCustomInteractible = SelectedIndexColliders[i].GetComponentInParent<CustomInteractible>();
+                    if (tempCustomInteractible&&tempCustomInteractible==SelectedIndexInteractible)
+                    {
+                        return;
+                    }
+                }
+                SelectedIndexInteractible.SendMessage("GrabEnd", this, SendMessageOptions.DontRequireReceiver);
+                GrabEnd();
+            }
+        }
+    }
 	void SelectPinchObject(){
 		if (!grabPoser) {
 	        SelectedPinchColliders = Physics.OverlapSphere (PinchPoint(), pinchRadius, layerColliderChecker);
@@ -406,6 +427,14 @@ public class CustomHand : MonoBehaviour {
 			return transform.TransformPoint(new Vector3 (-0.03009196f, -0.07610637f, -0.004979379f));
 		return Vector3.zero;
 	}
+
+    public float GetBlend() {
+        if (smoothBlendPhysicsObject)
+            return 1 - blendToPose;
+        else
+            return 1;
+            
+    }
 
 	void OnDrawGizmosSelected(){
 		Gizmos.DrawWireSphere (transform.TransformPoint (new Vector3 (0, 0, -.1f)), gribRadius);

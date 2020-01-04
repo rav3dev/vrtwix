@@ -33,8 +33,9 @@ public class Button : CustomInteractible
         if ((rightHand || leftHand) && GetMyGrabPoserTransform(hand))
         {
             hand.SkeletonUpdate();
-            GetComponentInChildren<MeshRenderer>().material.color = Color.grey;
-            float tempDistance = Mathf.Clamp(StartButtonPosition+(transform.InverseTransformPoint(hand.PivotPoser.position).z - startZCoordinate)*DistanceMultiply, StartButtonPosition, distanseToPress);
+            GetComponentInChildren<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value);// Color.grey;
+            float percentHandPose = Mathf.InverseLerp(StartButtonPosition, distanseToPress, transform.InverseTransformPoint(hand.PivotPoser.position).z);
+            float tempDistance = Mathf.Clamp(StartButtonPosition-(StartButtonPosition-transform.InverseTransformPoint(hand.PivotPoser.position).z)*DistanceMultiply, StartButtonPosition, distanseToPress);
             if (tempDistance >= distanseToPress)
             {
                 GetComponentInChildren<MeshRenderer>().material.color = Color.blue;
@@ -56,10 +57,6 @@ public class Button : CustomInteractible
             MoveObject.localPosition = new Vector3(0, 0, tempDistance);
             MoveObject.rotation = Quaternion.LookRotation(GetMyGrabPoserTransform(hand).forward, hand.PivotPoser.up);
             hand.GrabUpdateCustom();
-            if (Vector3.Distance(transform.position, hand.PivotPoser.position) > DistanceDettach)
-            {
-                GrabEnd(hand);
-            }
         }
     }
 
@@ -70,7 +67,7 @@ public class Button : CustomInteractible
             MoveObject.localPosition = new Vector3(0, 0, StartButtonPosition);
             DettachHand(hand);
 
-            GetComponentInChildren<MeshRenderer>().material.color = Color.grey;
+            GetComponentInChildren<MeshRenderer>().material.color = Color.green;
         }
 		ReleaseHand.Invoke ();
     }

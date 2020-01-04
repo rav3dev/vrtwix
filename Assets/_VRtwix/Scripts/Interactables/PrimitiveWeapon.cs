@@ -50,8 +50,8 @@ public class PrimitiveWeapon : PhysicalObject
 		if (GetMyGrabPoser(hand)==triggerPoser)
 		trigger.customUpdate (hand);
 		if (recoil) {
-			MyRigidbody.velocity += transform.TransformPoint (recoil.localPosition/Time.fixedDeltaTime);
-			MyRigidbody.angularVelocity += PhysicalObject.GetAngularVelocities (transform.rotation, recoil.rotation);
+			MyRigidbody.velocity += transform.TransformPoint (recoil.localPosition/Time.fixedDeltaTime* hand.GetBlend());
+			MyRigidbody.angularVelocity += PhysicalObject.GetAngularVelocities (transform.rotation, recoil.rotation, hand.GetBlend());
 		}
 
 
@@ -164,9 +164,12 @@ public class PrimitiveWeapon : PhysicalObject
 						Physics.IgnoreCollision(myCollidersToIgnore[j],tempMagazine.MagazineColliders[k]);
 					}
 				}
-                // ADD CHECK FOR PhysicalObject
-				tempMagazine.GetComponent<PhysicalObject> ().DettachHands ();
-				tempMagazine.GetComponent<PhysicalObject> ().MyRigidbody.isKinematic = true;
+                PhysicalObject tempPhysicalObject = tempMagazine.GetComponent<PhysicalObject>();
+                if (tempPhysicalObject)
+                {
+                    tempPhysicalObject.DettachHands();
+                    tempPhysicalObject.MyRigidbody.isKinematic = true;
+                }
 				tempMagazine.transform.parent = magazineAttachPoint;
 				tempMagazine.transform.localPosition = Vector3.zero;
 				tempMagazine.transform.localRotation = Quaternion.identity;

@@ -17,7 +17,7 @@ MonoBehaviour:
   trackingSpaceOrigin: 1
   actionsFilePath: actions.json
   steamVRInputPath: SteamVR_Input
-  inputUpdateMode: 4
+  inputUpdateMode: 2
   poseUpdateMode: 4
   activateFirstActionSetOnStart: 1
   editorAppKey: application.generated.unity.vrtwix.exe
