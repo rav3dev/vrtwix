@@ -5,7 +5,7 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 public class CustomHand : MonoBehaviour {
 	public float gripRadius,indexRadius,pinchRadius;//радиус разных захватов
-    public Vector3 grabPoint= new Vector3(0, 0, -.1f), indexPoint= new Vector3(-0.03009196f, -0.0550637f, -0.004979379f), pinchPoint= new Vector3(0, 0, -.05f); //локальная позиция точки захвата левой руки
+    public Vector3 grabPoint= new Vector3(0, 0, -.1f), indexPoint= new Vector3(-0.04f, -0.055f, -0.005f), pinchPoint= new Vector3(0, 0, -.05f); //локальная позиция точки захвата левой руки
 
     public LayerMask layerColliderChecker;//Слой который хватать
 	public SteamVR_Action_Boolean grabButton,pinchButton;//инпут захватов
@@ -62,14 +62,16 @@ public class CustomHand : MonoBehaviour {
 		skeleton.BlendToSkeleton ();
 	}
 	void Update () {
-		PivotUpdate ();
-		GrabCheck ();
+		//PivotUpdate ();
+		
 	}
 
 	void FixedUpdate () {
-		Squeeze= SqueezeButton.GetAxis(handType);
-		PivotUpdate ();
         SelectIndexObject();
+        Squeeze = SqueezeButton.GetAxis(handType);
+		PivotUpdate ();
+        GrabCheck();
+       
         if (grabPoser&&GrabInteractible) {
 			GrabUpdate ();
 			return;
@@ -300,7 +302,13 @@ public class CustomHand : MonoBehaviour {
         {
             if (SelectedIndexInteractible)
             {
-                SelectedIndexColliders = Physics.OverlapSphere(IndexPoint(), indexRadius, layerColliderChecker);
+                SelectedIndexColliders = Physics.OverlapSphere(IndexPoint(), indexRadius*2f, layerColliderChecker);
+                if (SelectedIndexColliders == null || SelectedIndexColliders.Length == 0) {
+                    SelectedIndexInteractible.SendMessage("GrabEnd", this, SendMessageOptions.DontRequireReceiver);
+                    GrabEnd();
+                    SelectedIndexInteractible = null;
+                    return;
+                }
                 for (int i = 0; i < SelectedIndexColliders.Length; i++)
                 {
                     CustomInteractible tempCustomInteractible = SelectedIndexColliders[i].GetComponentInParent<CustomInteractible>();
@@ -311,9 +319,11 @@ public class CustomHand : MonoBehaviour {
                 }
                 SelectedIndexInteractible.SendMessage("GrabEnd", this, SendMessageOptions.DontRequireReceiver);
                 GrabEnd();
+                SelectedIndexInteractible = null;
             }
         }
     }
+
 	void SelectPinchObject(){
 		if (!grabPoser) {
 	        SelectedPinchColliders = Physics.OverlapSphere (PinchPoint(), pinchRadius, layerColliderChecker);

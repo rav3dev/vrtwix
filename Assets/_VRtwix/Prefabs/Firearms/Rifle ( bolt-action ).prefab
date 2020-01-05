@@ -399,6 +399,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  twoHandTypeOnlyBackHandRotation: 0
   handleObject: []
   MyRigidbody: {fileID: 492318950503958698}
   GizmoVisible: 0
@@ -419,10 +420,10 @@ MonoBehaviour:
   reloadBulletSpawn: {fileID: 492318951964523484}
   recoil: {fileID: 492318951608676548}
   recoilAngle: 20
-  recoilAngleReturn: 1
+  recoilAngleReturn: 100
   recoilMaxAngle: 45
   recoilDistance: 0.1
-  recoilDistanceReturn: 0.01
+  recoilDistanceReturn: 1
   recoilMaxDistance: 0.2
   recoilCurrentAngle: 0
   detachableMag: 1
@@ -914,6 +915,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   ReloadObject: {fileID: 492318952022951140}
+  Zatvor: {fileID: 0}
   HummerRevolver: {fileID: 0}
   ClampPosition: {x: 0, y: 0.15}
   ClampAngle: {x: 0, y: 45}
@@ -923,7 +925,7 @@ MonoBehaviour:
   handDrop: 0
   boltAngleTrue: 0
   boltSlideTrue: 1
-  reloadLikeM4: 0
+  reloadLikeAR: 0
   typeReload: 3
   BulletOff:
     m_PersistentCalls:

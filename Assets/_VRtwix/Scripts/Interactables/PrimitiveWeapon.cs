@@ -19,7 +19,6 @@ public class PrimitiveWeapon : PhysicalObject
 	public Magazine attachMagazine; //Присоединенный магазин
 	public Bullet bulletInside; //пуля внутри
 	public Vector3 outBulletSpeed; // скорость выбрасывание пули
-
 	public ManualReload manualReload; // скрипт перезарядки
 //	[HideInInspector]
 	public Collider[] myCollidersToIgnore; //для игнора магазина
@@ -30,16 +29,17 @@ public class PrimitiveWeapon : PhysicalObject
 
     void Start()
     {
-		Initialize ();
-		trigger= GetComponentInChildren<Trigger> ();
-		manualReload = GetComponentInChildren<ManualReload> ();
-		if (!detachableMag) {
-			attachMagazine = GetComponentInChildren<Magazine> ();
-		}
+        Initialize();
+        trigger = GetComponentInChildren<Trigger>();
+        manualReload = GetComponentInChildren<ManualReload>();
+        if (!detachableMag)
+        {
+            attachMagazine = GetComponentInChildren<Magazine>();
+        }
     }
 
 
-	public void GrabStart(CustomHand hand){
+    public void GrabStart(CustomHand hand){
 		GrabStartCustom (hand);
 	}
 
@@ -49,7 +49,7 @@ public class PrimitiveWeapon : PhysicalObject
 		if (GetMyGrabPoser(hand)==triggerPoser)
 		trigger.customUpdate (hand);
 		if (recoil) {
-			MyRigidbody.velocity += transform.TransformPoint (recoil.localPosition/Time.fixedDeltaTime* hand.GetBlend());
+			MyRigidbody.velocity += transform.TransformDirection (recoil.localPosition/Time.fixedDeltaTime);
 			MyRigidbody.angularVelocity += PhysicalObject.GetAngularVelocities (transform.rotation, recoil.rotation, hand.GetBlend());
 		}
 
@@ -102,8 +102,8 @@ public class PrimitiveWeapon : PhysicalObject
 
 	void RecoilReturn(){
 		if (recoil) {
-			recoilCurrentAngle = Mathf.Clamp (recoilCurrentAngle + recoilAngleReturn, -recoilMaxAngle, 0);
-			recoil.localPosition = new Vector3 (0, 0, Mathf.Clamp (recoil.localPosition.z + recoilDistanceReturn, -recoilMaxDistance, 0));
+			recoilCurrentAngle = Mathf.Clamp (recoilCurrentAngle + recoilAngleReturn*Time.deltaTime, -recoilMaxAngle, 0);
+			recoil.localPosition = new Vector3 (0, 0, Mathf.Clamp (recoil.localPosition.z + recoilDistanceReturn * Time.deltaTime, -recoilMaxDistance, 0));
 			recoil.localEulerAngles = new Vector3 (-recoilCurrentAngle, 0, 0);
 		}
 	}

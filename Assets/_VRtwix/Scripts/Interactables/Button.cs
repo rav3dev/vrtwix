@@ -12,7 +12,7 @@ public class Button : CustomInteractible
 
     float StartButtonPosition; //Техническая переменная на старте присваивается позиция кнопки отжатой
     bool press; //проверка нажатия кнопки чтобы ButtonDown вызвать 1 раз
-    void Start()
+    void Awake()
     {
         StartButtonPosition = MoveObject.localPosition.z;
     }
@@ -59,13 +59,13 @@ public class Button : CustomInteractible
 
     void GrabEnd(CustomHand hand)
     {
-        if ((rightHand || leftHand) && GetMyGrabPoserTransform(hand))
-        {
+        //if ((rightHand || leftHand) && GetMyGrabPoserTransform(hand))
+        //{
             MoveObject.localPosition = new Vector3(0, 0, StartButtonPosition);
             DettachHand(hand);
 
             GetComponentInChildren<MeshRenderer>().material.color = Color.green;
-        }
+        //}
 		ReleaseHand.Invoke ();
     }
 }
