@@ -5,7 +5,7 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 public class CustomHand : MonoBehaviour {
 	public float gripRadius,indexRadius,pinchRadius;//радиус разных захватов
-    public Vector3 grabPoint= new Vector3(0, 0, -.1f), indexPoint= new Vector3(-0.03009196f, -0.07610637f, -0.004979379f), pinchPoint= new Vector3(0, 0, -.05f); //локальная позиция точки захвата левой руки
+    public Vector3 grabPoint= new Vector3(0, 0, -.1f), indexPoint= new Vector3(-0.03009196f, -0.0550637f, -0.004979379f), pinchPoint= new Vector3(0, 0, -.05f); //локальная позиция точки захвата левой руки
 
     public LayerMask layerColliderChecker;//Слой который хватать
 	public SteamVR_Action_Boolean grabButton,pinchButton;//инпут захватов
@@ -398,9 +398,9 @@ public class CustomHand : MonoBehaviour {
     }
 
 	void OnDrawGizmosSelected(){
-		Gizmos.DrawWireSphere (transform.TransformPoint (PinchPoint()), gripRadius);
-		Gizmos.DrawWireSphere (transform.TransformPoint (GrabPoint()), pinchRadius);
-		Gizmos.DrawWireSphere (transform.TransformPoint (IndexPoint()), indexRadius);
+		Gizmos.DrawWireSphere (PinchPoint(), gripRadius);
+		Gizmos.DrawWireSphere (GrabPoint(), pinchRadius);
+		Gizmos.DrawWireSphere (IndexPoint(), indexRadius);
     }
 
 
