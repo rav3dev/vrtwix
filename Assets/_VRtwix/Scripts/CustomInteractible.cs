@@ -44,7 +44,7 @@ public class CustomInteractible : MonoBehaviour {
 	}
 
 
-
+     
     public Transform CloseObject(Vector3 tempPoint) {
         Transform TempClose = null;
         if (grabPoints != null) {
