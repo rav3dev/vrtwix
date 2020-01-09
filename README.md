@@ -13,3 +13,6 @@ Coming soon. Library isn't in working state yet
 
 ## Contributing
 We're welcome for all contributions, this project is fresh, and need community touch! Let's make it better together :)
+
+# Showcase
+<a href="https://youtu.be/YO4i58b0LXo">![showcase](https://i.imgur.com/F06ZZQq.png)</a> <br><br>
