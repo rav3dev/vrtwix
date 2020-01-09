@@ -10,8 +10,8 @@ public class RearWheelDrive : MonoBehaviour {
 	public GameObject wheelShape;
     public ParticleSystem exhaust;
     public GameObject engineModel;
-    public joystick jstk;
-    public steeringWheel sw;
+    public Joystick jstk;
+    public SteeringWheel sw;
     //public acc
     // here we find all the WheelColliders down in the hierarchy
     public void Start()

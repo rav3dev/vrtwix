@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DebudText : MonoBehaviour {
 	public Text text;
-	public joystick joystick;
-	public steeringWheel steeringWheel;
+	public Joystick joystick;
+	public SteeringWheel steeringWheel;
 	// Use this for initialization
 	public void Start(){
 		text = GetComponent<Text> ();

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
-public class joystick : CustomInteractible {
+public class Joystick : CustomInteractible {
 	public Transform Stick; //Движущаяся чать
 	public Vector2 value; //Значение текущей позиции в %
 	public Vector2 clamp=new Vector2(60,60); //ограничение углов наклона

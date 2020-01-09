@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class steeringWheel : CustomInteractible {
+public class SteeringWheel : CustomInteractible {
 	public float angle,clamp;//угол руля, ограничение вращения
 	float angleLeft,angleRight; //угол от руля до рук
 	Vector2 oldPosLeft,oldPosRight; //старые позиции рук
