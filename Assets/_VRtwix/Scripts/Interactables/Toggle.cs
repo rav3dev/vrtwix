@@ -5,10 +5,10 @@ using UnityEngine.Events;
 public class Toggle : CustomInteractible
 {
 	public UnityEvent SwithOn, SwithOff; 
-	public float angle,distance; //угол до руки, дистанция до руки(временно не используется)
-	public Vector2 Switch; //Ограничения
-	public bool onOrOff; //включен или выключен
-	public Transform MoveObject; //движущаяся часть
+	public float angle,distance; //angle to hand, hand distance ( temporaty not using )
+	public Vector2 Switch; //limits
+	public bool onOrOff; //switched on/off
+	public Transform MoveObject; //moving part
 
     void Start()
     {
@@ -30,7 +30,7 @@ public class Toggle : CustomInteractible
 	public void GrabUpdate(CustomHand hand){
 		angle = -Vector2.SignedAngle (new Vector2(transform.InverseTransformPoint(hand.PivotPoser.position).y, transform.InverseTransformPoint(hand.PivotPoser.position).z),Vector2.up);
         MoveObject.localEulerAngles = new Vector3 (Mathf.Clamp(angle,Switch.x,Switch.y), 0);
-        //позиция руки если надо чтобы не вращалась
+        //hand position, if you need them not rotating
         //GetMyGrabPoserTransform (hand).position = RotationObject.position+ RotationObject.forward * distance; 
     }
 

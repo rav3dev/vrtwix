@@ -4,20 +4,20 @@ using UnityEngine;
 using Valve.VR;
 public class Trigger : MonoBehaviour
 {
-	public float Axis;//% нажатия кнопки
-	public Vector2 angle; //ограничения поворота
-	public SteamVR_Action_Single triggerAxis=SteamVR_Input.GetAction<SteamVR_Action_Single>("Trigger"); //инпут
-	public SteamVR_Action_Boolean triggerClick=SteamVR_Input.GetAction<SteamVR_Action_Boolean>("TriggerClick"); //инпут
-    public PrimitiveWeapon primitiveWeapon; //оружие к которому приклеплен курок
-	public ManualReload manualReload; //скрипт перезарядки который на этом оружеи
-	public bool isClick; //нажат ли курок
+	public float Axis;//button press %
+    public Vector2 angle; //turn out limit
+	public SteamVR_Action_Single triggerAxis=SteamVR_Input.GetAction<SteamVR_Action_Single>("Trigger"); //input
+	public SteamVR_Action_Boolean triggerClick=SteamVR_Input.GetAction<SteamVR_Action_Boolean>("TriggerClick"); //input
+    public PrimitiveWeapon primitiveWeapon; //weapon trigger sticked to
+	public ManualReload manualReload; //weapon reload handler
+	public bool isClick; //if trigger pressed
 	public enum TypeShoot 
 	{
 		Safety,
 		Semi,
 		Automatic,
 	}
-	;public TypeShoot typeShoot;//предохранитель
+	;public TypeShoot typeShoot;//safeguard
 
     void Start()
     {

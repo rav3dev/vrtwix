@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.Events;
 public class Button : CustomInteractible
 {
-    public float distanseToPress; //дистанция по достижении которой кнопка нажмется
+    public float distanseToPress; //button press reach distance
     [Range(.1f,1f)]
-    public float DistanceMultiply=.1f; //замедление чуствительности кнопки.
-    public Transform MoveObject; //сама кнопка которая движется
-    public UnityEvent ButtonDown, ButtonUp, ButtonUpdate; // ивенты
+    public float DistanceMultiply=.1f; //button sensetivity slowdown
+    public Transform MoveObject; //movable button object
+    public UnityEvent ButtonDown, ButtonUp, ButtonUpdate; // events
 
-    float StartButtonPosition; //Техническая переменная на старте присваивается позиция кнопки отжатой
-    bool press; //проверка нажатия кнопки чтобы ButtonDown вызвать 1 раз
+    float StartButtonPosition; //tech variable, assigned at start of pressed button
+    bool press; //button check, to ButtonDown call 1 time
     void Awake()
     {
         StartButtonPosition = MoveObject.localPosition.z;

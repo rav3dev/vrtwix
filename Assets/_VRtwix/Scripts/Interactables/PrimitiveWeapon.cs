@@ -6,22 +6,22 @@ using Valve.VR;
 public class PrimitiveWeapon : PhysicalObject
 {
 	[Header("PrimitiveWeapon")]
-	public Trigger trigger;//скрипт курка
-	public SteamVR_Skeleton_Poser triggerPoser;//позер, который стреляет
-	public Transform magazineAttachPoint,bulletInsidePoint,reloadBulletSpawn; //точка аттача магазина, пули внутри оружия, выбрасывание пули
+	public Trigger trigger;//trigger handler ( script )
+	public SteamVR_Skeleton_Poser triggerPoser;//shooting poser
+	public Transform magazineAttachPoint,bulletInsidePoint,reloadBulletSpawn; //mag attach point, ammo inside of weapon position, sleeve extraction
 	[Header("Recoil")]
-	public Transform recoil;//объект просчета отдачи
+	public Transform recoil;//recoil calculation object
 	public float recoilAngle, recoilAngleReturn, recoilMaxAngle,recoilDistance,recoilDistanceReturn,recoilMaxDistance;
 	public float recoilCurrentAngle;
 	[Space]
-	public bool detachableMag,armed,typeRevolver;//отсоединяется ли магазин, готова ли пушка стрелять, револьвер/дробовик
-	public string ammoType; //тип патронов
-	public Magazine attachMagazine; //Присоединенный магазин
-	public Bullet bulletInside; //пуля внутри
-	public Vector3 outBulletSpeed; // скорость выбрасывание пули
-	public ManualReload manualReload; // скрипт перезарядки
+	public bool detachableMag,armed,typeRevolver;//detach mags, gun ready to shoo, revolver/shotgun
+	public string ammoType; //ammo type
+	public Magazine attachMagazine; //attached mag
+	public Bullet bulletInside; //ammo inside
+	public Vector3 outBulletSpeed; // casing/ammo extraction speed
+	public ManualReload manualReload; // reload handler ( script )
 //	[HideInInspector]
-	public Collider[] myCollidersToIgnore; //для игнора магазина
+	public Collider[] myCollidersToIgnore; //to ignore mag colliders
 	[Header("Sounds Events")]
 	public UnityEvent ShootEvent;
 	public UnityEvent ShootEmptyEvent;

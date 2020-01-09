@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.Events;
 public class Magazine : MonoBehaviour
 {
-    public bool Revolver = false; //револьвер, это типа можно стрелять с магазина как в револьвере или дробовике
-    public bool canLoad = true;  //можно ли засунуть туда патроны, чтобы когда прикреплен к оружию не засовывались патроны
-	public string ammoType; // тип патронов
-	public int capacity,ammo; // Вместительность, текужее количество патронов
-	public List<Bullet> stickingAmmo; // торчащщие пули
-    public Transform[] ContainAmmo; // места для патронов
-	public PrimitiveWeapon primitiveWeapon; //Оружие к которому приклеплем магазин
+    public bool Revolver = false; //revolver, can shout from built-in mags, same as shotgun
+    public bool canLoad = true;  //ammo allowed to be inserted
+	public string ammoType; // ammo type
+	public int capacity,ammo; // capacity and current ammo amount
+	public List<Bullet> stickingAmmo; // sticking ammo
+    public Transform[] ContainAmmo; // loaded ammo posistion
+	public PrimitiveWeapon primitiveWeapon; // weapon which is attached to
 	public Collider[] MagazineColliders; //IgnoreCollider
-	PrimitiveWeapon primitiveWeaponRevolver; //Револьвер к которому приклеплем магазин
+	PrimitiveWeapon primitiveWeaponRevolver; // revolver, which is attached to
 
-    public float ang,id; //угол поворота барабана, id текущей пули
+    public float ang,id; //drum angle, id of current ammo
 	[Header("Sounds Events")]
 	public UnityEvent addBullet;
 

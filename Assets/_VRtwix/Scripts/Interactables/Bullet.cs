@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Bullet : PhysicalObject
 {
-	public string ammoType; // тип патронов
-	public bool armed=true; // готова ли стрелять пуля
-	public Mesh shellModel; // Модель на которую заменится при выстреле
+	public string ammoType; // ammo type
+	public bool armed=true; // if ammo ready to shoot
+	public Mesh shellModel; // object of casing , which will be replaced after shot
     void Start()
     {
 		Initialize ();

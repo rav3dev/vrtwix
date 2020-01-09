@@ -4,14 +4,14 @@ using UnityEngine;
 using Valve.VR;
 [RequireComponent(typeof(Rigidbody))]
 public class PhysicalObject : CustomInteractible {
-    public bool twoHandTypeOnlyBackHandRotation; //Вращение только по правой руке
-    public bool twoHandTypeMiddleRotation; //Среднее значение вращения
+    public bool twoHandTypeOnlyBackHandRotation; //rotate only right hand
+    public bool twoHandTypeMiddleRotation; //mean rotation for 2 hands
     public List<SteamVR_Skeleton_Poser> handleObject;//count=2
 	public Rigidbody MyRigidbody; 
-	public bool GizmoVisible; //отображать ли полоску где можно скользить по рукоядке
-	public Vector2 clampHandlePosZ; // ограничения рукоядки
+	public bool GizmoVisible; //display line of hand swing on long grip
+	public Vector2 clampHandlePosZ; // grip limit
 	[Range(0,1)]
-	public float SqueezeCheack; // мертвая зона в разнице сжатия
+	public float SqueezeCheack; // squeeze death zone difference
     Vector3 LocalDirectionWithPivotLeft,LocalDirectionWithPivotRight; 
 	bool leftIsForvard; 
 

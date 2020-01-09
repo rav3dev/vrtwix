@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 public class Joystick : CustomInteractible {
-	public Transform Stick; //Движущаяся чать
-	public Vector2 value; //Значение текущей позиции в %
-	public Vector2 clamp=new Vector2(60,60); //ограничение углов наклона
+	public Transform Stick; //moving part of joystick
+	public Vector2 value; //current position in %
+	public Vector2 clamp=new Vector2(60,60); //limits of incline
 
-	public Vector2 angle; //Угол наклона
-	float handleDistance; //запомнить Дистанцию до рукоядки
+	public Vector2 angle; //incline angle
+	float handleDistance; //distance to handle/grip
 	Quaternion rotation;
-	public bool normalize; // ограничения квадратом или кругом
-	public bool returnToZero; // возвращать в исходное состояние
+	public bool normalize; // square or circle limitation
+	public bool returnToZero; // return to default position
 	public enum TypeHandGrabRotation{
 		free,
 		vertical,
 		horizontal,
 	}
-	public TypeHandGrabRotation typeHandGrabRotation; // как ведет себя рука на рукоядке
+	public TypeHandGrabRotation typeHandGrabRotation; // hands grip behaviour
 	// Use this for initialization
 	void Start () {
 		if (grabPoints!=null&&grabPoints.Count>0)

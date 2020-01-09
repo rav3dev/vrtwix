@@ -7,15 +7,15 @@ public class CustomInteractible : MonoBehaviour {
 
     public bool isInteractible = true;
 
-    public List<SteamVR_Skeleton_Poser> grabPoints,secondPoses; //позеры, позеры которые не влияют на вращение
-    public CustomHand leftHand, rightHand;//рука которая держит объект
-    public SteamVR_Skeleton_Poser leftMyGrabPoser, rightMyGrabPoser;//позеры которые держат
-    public bool TwoHanded, useSecondPose, HideController;//двуручный хват,использовать ли позы которые не влияют на вращение, скрыть ли контроллер при взаимодействии
-	public CustomHand.GrabType grabType=CustomHand.GrabType.Grip;//как должен браться объект
+    public List<SteamVR_Skeleton_Poser> grabPoints,secondPoses; //not influenting on rotation posers
+    public CustomHand leftHand, rightHand;//hand which currently holding an object
+    public SteamVR_Skeleton_Poser leftMyGrabPoser, rightMyGrabPoser;//current holding posers
+    public bool TwoHanded, useSecondPose, HideController;//two handed interaction, use posers which influent on rotation, hide controllers
+	public CustomHand.GrabType grabType=CustomHand.GrabType.Grip;//how object should be grabbed
 
 	[Header("SoundEvents")]
-	public bool pickReleaseOnce; //звук только если отпустил все руки или взял всеми руками
-	public UnityEvent Grab;
+	public bool pickReleaseOnce; //sound if all hands are released or picked both hands
+    public UnityEvent Grab;
 	public UnityEvent ReleaseHand;
 //
 

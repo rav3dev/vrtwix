@@ -4,13 +4,13 @@ using UnityEngine;
 using Valve.VR;
 
 public class SteeringWheel : CustomInteractible {
-	public float angle,clamp;//угол руля, ограничение вращения
-	float angleLeft,angleRight; //угол от руля до рук
-	Vector2 oldPosLeft,oldPosRight; //старые позиции рук
-	public Transform RotationObject; //Вращающийся объект
+	public float angle,clamp;//steerwing wheel angle, rotation limit
+	float angleLeft,angleRight; //angle from steering wheel to hands
+	Vector2 oldPosLeft,oldPosRight; //old hands positions
+	public Transform RotationObject; //moving object
 
-	public float radius; //радиус руля
-	bool ReversHand; //выворачивать руки если с другой стороны взялся
+	public float radius; //wheel radius
+	bool ReversHand; //turn out hands, depending of interaction side 
 
 	void Start () {
 		if (grabPoints!=null&&grabPoints.Count>0)

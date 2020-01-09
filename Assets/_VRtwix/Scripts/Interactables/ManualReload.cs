@@ -5,13 +5,13 @@ using UnityEngine.Events;
 public class ManualReload : CustomInteractible
 {
 	[Space]
-	public Transform ReloadObject,Zatvor,HummerRevolver; //Объект перезарядки, затвор, ударный механизм револьвера
-	public Vector2 ClampPosition; //ограничения позиции
-	public Vector2 ClampAngle; //ограничения вращения
+	public Transform ReloadObject,Zatvor,HummerRevolver; //reload object, bolt, revolver hummer
+	public Vector2 ClampPosition; //position limits
+	public Vector2 ClampAngle; //angle limits
     [HideInInspector]
-	public bool reloadHalf,reloadEnd=true,reloadFinish=true,handDrop,boltAngleTrue=false,boltSlideTrue = true; //переменные для роботы перезарядки
-	public bool reloadLikeAR; //как AR
-    public TypeReload typeReload; //тип перезарядки
+	public bool reloadHalf,reloadEnd=true,reloadFinish=true,handDrop,boltAngleTrue=false,boltSlideTrue = true; //reload maintaince variables
+	public bool reloadLikeAR; //AR type ( bolt handle not moving when shooting )
+    public TypeReload typeReload; //reload type
 	public enum TypeReload{
 		Slider,
 		Cracking,
@@ -22,15 +22,15 @@ public class ManualReload : CustomInteractible
 
 	public UnityEvent BulletOff,BulletOn;
 
-	public float returnAddSpeed=0.01f,knockback; //возвращение затвора, отдача затвора от выстрела
+	public float returnAddSpeed=0.01f,knockback; //bolt return, recoil
 	[Header("SwingReload")]
-	public Transform PointSwingReload; //точка просчета рывка
-	public Vector3 localDirSwing,bulletOffSwingDir; //направление для возвращение барабана / выброса пули
+	public Transform PointSwingReload; //swing calculation points
+	public Vector3 localDirSwing,bulletOffSwingDir; //drum return direction / casings extraction direction
 	public float MaxAngleDir=45, substractSpeed=100,  returnSpeedMultiply=500,substractSpeedBullet=300,returnSpeedMultiplyBullet=500;//угол в котором просчитывается направление, мертвая зона если скорость руки ниже этой, умножение скорости
     Vector3 oldPosSwing, speedSwing, oldSpeedSwing, Velosity;
 
 	[Header("shotgun fix")]
-	public Transform[] grabColliderObject; //фикс коллайдеров если согнут ствол
+	public Transform[] grabColliderObject; //fix of cracked barrel colliders
 	public Transform[] reloadColliderObject;
 
 	float PositionReload;
@@ -52,7 +52,7 @@ public class ManualReload : CustomInteractible
 		vertical,
 		horizontal,
 	}
-	public TypeHandGrabRotation typeHandGrabRotation; //тип держания ручки затвора
+	public TypeHandGrabRotation typeHandGrabRotation; //bolt grip type
 
 	bool revolverReadyShoot,clampXCheck,clampYCheck;
 
