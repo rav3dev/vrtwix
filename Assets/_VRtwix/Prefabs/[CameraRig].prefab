@@ -379,9 +379,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b00fd3e76ea9e46b7ec3576a697bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gribRadius: 0.1
+  gripRadius: 0.1
   indexRadius: 0.01
   pinchRadius: 0.1
+  grabPoint: {x: 0, y: 0, z: -0.1}
+  indexPoint: {x: -0.04, y: -0.055, z: -0.005}
+  pinchPoint: {x: 0, y: 0, z: -0.05}
   layerColliderChecker:
     serializedVersion: 2
     m_Bits: 1
@@ -399,7 +402,7 @@ MonoBehaviour:
   RenderModel: {fileID: 0}
   blend: 0.2
   blendPosition: 0.2
-  otherCustomHand: {fileID: 0}
+  smoothBlendPhysicsObject: 0
   SelectedGpibColliders: []
   SelectedIndexColliders: []
   SelectedPinchColliders: []
@@ -416,9 +419,6 @@ MonoBehaviour:
   ToolTransform: {fileID: 0}
   HideController: 0
   Squeeze: 0
-  boola:
-    actionPath: /actions/default/in/Teleport
-    needsReinit: 0
   hapticSignal:
     actionPath: /actions/default/out/Haptic
     needsReinit: 0
@@ -511,9 +511,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b00fd3e76ea9e46b7ec3576a697bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gribRadius: 0.1
+  gripRadius: 0.1
   indexRadius: 0.01
   pinchRadius: 0.1
+  grabPoint: {x: 0, y: 0, z: -0.1}
+  indexPoint: {x: -0.04, y: -0.055, z: -0.005}
+  pinchPoint: {x: 0, y: 0, z: -0.05}
   layerColliderChecker:
     serializedVersion: 2
     m_Bits: 1
@@ -531,7 +534,7 @@ MonoBehaviour:
   RenderModel: {fileID: 0}
   blend: 0.2
   blendPosition: 0.2
-  otherCustomHand: {fileID: 0}
+  smoothBlendPhysicsObject: 0
   SelectedGpibColliders: []
   SelectedIndexColliders: []
   SelectedPinchColliders: []
@@ -548,9 +551,6 @@ MonoBehaviour:
   ToolTransform: {fileID: 0}
   HideController: 0
   Squeeze: 0
-  boola:
-    actionPath: /actions/default/in/Teleport
-    needsReinit: 0
   hapticSignal:
     actionPath: /actions/default/out/Haptic
     needsReinit: 0
