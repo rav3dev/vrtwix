@@ -30,7 +30,7 @@ Transform:
   - {fileID: 8365775720277672058}
   - {fileID: 8365775721445863969}
   m_Father: {fileID: 8365775720342084145}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8365775719854803137
 GameObject:
@@ -281,7 +281,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365775720208632847}
-  m_LocalRotation: {x: -0.707107, y: 0.70710665, z: -0.00000008940696, w: -0.0000001490116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.0202, z: 0.38430023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -303,12 +303,12 @@ MonoBehaviour:
   poseEditorExpanded: 1
   blendEditorExpanded: 1
   poseNames:
-  - axe (MAIN)
+  - rifle_crack (MAIN)
   overridePreviewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
     type: 3}
   overridePreviewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
     type: 3}
-  skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
+  skeletonMainPose: {fileID: 11400000, guid: f9658ee56d4a7174e9c4769eada7b637, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
   showRightPreview: 0
@@ -442,7 +442,6 @@ Transform:
   - {fileID: 8365775720181719262}
   - {fileID: 8365775720653680720}
   - {fileID: 8365775721032726551}
-  - {fileID: 8365775721778768208}
   - {fileID: 8365775721175750016}
   - {fileID: 8365775720369730994}
   - {fileID: 1641485343437586368}
@@ -502,6 +501,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   twoHandTypeOnlyBackHandRotation: 0
+  twoHandTypeMiddleRotation: 0
   handleObject: []
   MyRigidbody: {fileID: 8365775720342084144}
   GizmoVisible: 0
@@ -585,7 +585,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8365775720342084145}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8365775720383728853
 GameObject:
@@ -694,6 +694,7 @@ Transform:
   - {fileID: 8365775720208632840}
   - {fileID: 8365775720383728854}
   - {fileID: 8365775720678498427}
+  - {fileID: 8365775721778768208}
   m_Father: {fileID: 8365775720181719262}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -965,7 +966,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8365775720342084145}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8365775721251942130
 GameObject:
@@ -1175,13 +1176,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365775721778768214}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.003, z: 0.08}
-  m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0232, z: 0.2638}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8365775720342084145}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_Father: {fileID: 8365775720570051520}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8365775721778768215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1197,12 +1198,12 @@ MonoBehaviour:
   poseEditorExpanded: 1
   blendEditorExpanded: 1
   poseNames:
-  - axe (MAIN)
+  - rifle_barrel (MAIN)
   overridePreviewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
     type: 3}
   overridePreviewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
     type: 3}
-  skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
+  skeletonMainPose: {fileID: 11400000, guid: 883759f6333f4c14a96cfbec89d11238, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
   showRightPreview: 0

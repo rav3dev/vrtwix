@@ -26,7 +26,7 @@ public class ManualReload : CustomInteractible
 	[Header("SwingReload")]
 	public Transform PointSwingReload; //точка просчета рывка
 	public Vector3 localDirSwing,bulletOffSwingDir; //направление для возвращение барабана / выброса пули
-	public float MaxAngleDir=45, substractSpeed=300,  returnSpeedMultiply=500,substractSpeedBullet=300,returnSpeedMultiplyBullet=500;//угол в котором просчитывается направление, мертвая зона если скорость руки ниже этой, умножение скорости
+	public float MaxAngleDir=45, substractSpeed=100,  returnSpeedMultiply=500,substractSpeedBullet=300,returnSpeedMultiplyBullet=500;//угол в котором просчитывается направление, мертвая зона если скорость руки ниже этой, умножение скорости
     Vector3 oldPosSwing, speedSwing, oldSpeedSwing, Velosity;
 
 	[Header("shotgun fix")]

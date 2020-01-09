@@ -97,6 +97,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   twoHandTypeOnlyBackHandRotation: 0
+  twoHandTypeMiddleRotation: 0
   handleObject: []
   MyRigidbody: {fileID: 688704925289297883}
   GizmoVisible: 0
@@ -206,13 +207,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688704925398115089}
-  m_LocalRotation: {x: 0.001668751, y: -0.0018260772, z: 0.73818433, w: 0.6745946}
-  m_LocalPosition: {x: 0, y: 0.0019999743, z: 0.31500015}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0014775991, y: 0.0056858063, z: 0.29176402}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 688704925289297881}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0.28300002, y: 0, z: 95.15401}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &688704925398115091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,12 +229,12 @@ MonoBehaviour:
   poseEditorExpanded: 1
   blendEditorExpanded: 1
   poseNames:
-  - axe (MAIN)
+  - rifle_barrel (MAIN)
   overridePreviewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
     type: 3}
   overridePreviewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
     type: 3}
-  skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
+  skeletonMainPose: {fileID: 11400000, guid: 883759f6333f4c14a96cfbec89d11238, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
   showRightPreview: 0
@@ -888,7 +889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 688704926132036769}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1321,7 +1322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 688704926646042536}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Reloader_Grip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1476,7 +1477,7 @@ GameObject:
   - component: {fileID: 688704927210465186}
   - component: {fileID: 688704927210465197}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Reloader_Hand_Poser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1512,12 +1513,12 @@ MonoBehaviour:
   poseEditorExpanded: 1
   blendEditorExpanded: 1
   poseNames:
-  - axe (MAIN)
+  - reload_grip (MAIN)
   overridePreviewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
     type: 3}
   overridePreviewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
     type: 3}
-  skeletonMainPose: {fileID: 11400000, guid: d2379149c5b6ad0458f81daf74361114, type: 2}
+  skeletonMainPose: {fileID: 11400000, guid: 54c2452d79b6c1547ae244cde0e8a202, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
   showRightPreview: 0
