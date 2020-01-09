@@ -39,11 +39,11 @@ public class PrimitiveWeapon : PhysicalObject
     }
 
 
-    public void GrabStart(CustomHand hand){
+    new public void GrabStart(CustomHand hand){
 		GrabStartCustom (hand);
 	}
 
-	public void GrabUpdate(CustomHand hand){
+	new public void GrabUpdate(CustomHand hand){
 		GrabUpdateCustom (hand);
 
 		if (GetMyGrabPoser(hand)==triggerPoser)
@@ -57,7 +57,7 @@ public class PrimitiveWeapon : PhysicalObject
 		RecoilReturn ();
 	}
 
-	public void GrabEnd(CustomHand hand){
+	new public void GrabEnd(CustomHand hand){
 		recoilCurrentAngle = 0;
 		recoil.localPosition = Vector3.zero;
 		GrabEndCustom (hand);
