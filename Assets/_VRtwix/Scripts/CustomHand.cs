@@ -30,15 +30,26 @@ public class CustomHand : MonoBehaviour
     public SteamVR_Skeleton_Poser grabPoser;// poser of object currently interacting with
     public Vector3 posSavePoser, rotSavePoser, inverceLocalPosition;//magic variables, which are need to calculate something ( need to know )
     public Transform PivotPoser, ToolTransform;//Pivot from hands poser, hidden instrument to simplify some calculations
-    public bool HideController;//hide controller ( looks like not working he he )
-                               //	[HideInInspector]
+    public bool HideController;//hide controller
     public float Squeeze;//squeeze strength 
     public SteamVR_Action_Vibration hapticSignal = SteamVR_Input.GetAction<SteamVR_Action_Vibration>("Haptic");//Output of haptic ramble
     bool setHandTransform;//Assing position, to pass of the 1st frame, used to be a bug ( maybe remove, need to check if this bug still here )
-    float blendToAnimation = 1, blendToPose = 1;//smooth transition for animation and pose
-
+    float blendToAnimation = 1, blendToPose = 1, blendToPoseMoveObject = 1;//smooth transition for animation and pose
+    
     Vector3 endFramePos, oldInterpolatePos;
     Quaternion endFrameRot, oldInterpolateRot;
+
+    //protected SteamVR_Events.Action renderModelLoadedAction;
+
+    //protected void Awake()
+    //{
+    //    renderModelLoadedAction = SteamVR_Events.RenderModelLoadedAction(OnRenderModelLoaded);
+    //}
+
+    //private void OnRenderModelLoaded(SteamVR_RenderModel loadedRenderModel, bool success)
+    //{
+    //    print(1);
+    //}
 
     void Start()
     {
@@ -66,11 +77,7 @@ public class CustomHand : MonoBehaviour
             RenderModel = GetComponentInChildren<SteamVR_RenderModel>();
         }
         skeleton.BlendToSkeleton();
-    }
-    void Update()
-    {
-        //PivotUpdate ();
-
+        StartCoroutine(HideControllerCoroutine());
     }
 
     void FixedUpdate()
@@ -89,6 +96,19 @@ public class CustomHand : MonoBehaviour
         SelectPinchObject();
         SelectGribObject();
 
+    }
+    IEnumerator HideControllerCoroutine() {
+        while (true)
+        {
+            if (RenderModel.transform.childCount > 0)
+            {
+                RenderModel.SetMeshRendererState(!HideController);
+                break;
+            }
+            print(3);
+            yield return 0;
+        }
+        print(4);
     }
 
     void GrabCheck()
@@ -115,6 +135,8 @@ public class CustomHand : MonoBehaviour
                 blendToAnimation = Mathf.Clamp01(blendToAnimation);
                 blendToPose += 1f / blendPosition * Time.deltaTime;
                 blendToPose = Mathf.Clamp01(blendToPose);
+                blendToPoseMoveObject += 1f / blendPosition * Time.deltaTime;
+                blendToPoseMoveObject = Mathf.Clamp01(blendToPoseMoveObject);
             }
             else
             {
@@ -137,7 +159,8 @@ public class CustomHand : MonoBehaviour
                         RenderModelVisible(!GrabInteractible.HideController);
                         SkeletonUpdate();
                         blendToPose = 1;
-                        endFramePos = skeleton.transform.position;
+                        blendToPoseMoveObject = 1;
+                        endFramePos = transform.parent.InverseTransformPoint(skeleton.transform.position);
                         endFrameRot = skeleton.transform.rotation;
                     }
                 }
@@ -159,7 +182,8 @@ public class CustomHand : MonoBehaviour
                             RenderModelVisible(!GrabInteractible.HideController);
                             SkeletonUpdate();
                             blendToPose = 1;
-                            endFramePos = skeleton.transform.position;
+                            blendToPoseMoveObject = 1;
+                            endFramePos = transform.parent.InverseTransformPoint(skeleton.transform.position);
                             endFrameRot = skeleton.transform.rotation;
                         }
                     }
@@ -181,7 +205,8 @@ public class CustomHand : MonoBehaviour
                                 RenderModelVisible(!GrabInteractible.HideController);
                                 SkeletonUpdate();
                                 blendToPose = 1;
-                                endFramePos = skeleton.transform.position;
+                                blendToPoseMoveObject = 1;
+                                endFramePos = transform.parent.InverseTransformPoint(skeleton.transform.position);
                                 endFrameRot = skeleton.transform.rotation;
                             }
                         }
@@ -219,6 +244,8 @@ public class CustomHand : MonoBehaviour
                 blendToAnimation = Mathf.Clamp01(blendToAnimation);
                 blendToPose -= 1f / blendPosition * Time.deltaTime;
                 blendToPose = Mathf.Clamp01(blendToPose);
+                blendToPoseMoveObject -= 1f / blendPosition * Time.deltaTime;
+                blendToPoseMoveObject = Mathf.Clamp01(blendToPoseMoveObject);
             }
             else
             {
@@ -255,6 +282,8 @@ public class CustomHand : MonoBehaviour
                 blendToAnimation = Mathf.Clamp01(blendToAnimation);
                 blendToPose -= 1f / blendPosition * Time.deltaTime;
                 blendToPose = Mathf.Clamp01(blendToPose);
+                blendToPoseMoveObject -= 1f / blendPosition * Time.deltaTime;
+                blendToPoseMoveObject = Mathf.Clamp01(blendToPoseMoveObject);
             }
             else
             {
@@ -281,7 +310,7 @@ public class CustomHand : MonoBehaviour
                 skeleton.transform.position = grabPoser.transform.TransformPoint(inverceLocalPosition);
                 skeleton.transform.rotation = grabPoser.transform.rotation * Quaternion.Inverse(grabPoser.GetBlendedPose(skeleton).rotation);
 
-                skeleton.transform.position = Vector3.Lerp(skeleton.transform.position, endFramePos, blendToPose);
+                skeleton.transform.position = Vector3.Lerp(skeleton.transform.position, transform.parent.TransformPoint(endFramePos), blendToPose);
                 skeleton.transform.rotation = Quaternion.Lerp(skeleton.transform.rotation, endFrameRot, blendToPose);
 
                 oldInterpolatePos = skeleton.transform.position;
@@ -294,7 +323,7 @@ public class CustomHand : MonoBehaviour
         }
         else
         {
-            skeleton.transform.position = Vector3.Lerp(endFramePos, skeleton.transform.parent.position, blendToPose);
+            skeleton.transform.position = Vector3.Lerp(transform.parent.TransformPoint(endFramePos), skeleton.transform.parent.position, blendToPose);
             skeleton.transform.rotation = Quaternion.Lerp(endFrameRot, skeleton.transform.parent.rotation, blendToPose);
         }
 
@@ -311,7 +340,7 @@ public class CustomHand : MonoBehaviour
 
     void GrabEnd()
     {
-        endFramePos = oldInterpolatePos;
+        endFramePos = transform.parent.InverseTransformPoint(oldInterpolatePos);
         endFrameRot = oldInterpolateRot;
 
         skeleton.transform.localPosition = Vector3.zero;
@@ -320,6 +349,7 @@ public class CustomHand : MonoBehaviour
 
         RenderModelVisible(!HideController);
         blendToPose = 0;
+        blendToPoseMoveObject = 0;
         grabPoser = null;
         GrabInteractible = null;
         grabType = GrabType.None;
@@ -467,11 +497,18 @@ public class CustomHand : MonoBehaviour
             return transform.TransformPoint(indexPoint);
         return Vector3.zero;
     }
+    public void SetEndFramePos() {
+        endFramePos = transform.parent.InverseTransformPoint(skeleton.transform.position);
+    }
 
-    public float GetBlend()
+    public void SetBlendPose(float setBlend) {
+        blendToPoseMoveObject = setBlend;
+    }
+
+    public float GetBlendPose()
     {
         if (smoothBlendPhysicsObject)
-            return 1 - blendToPose;
+            return 1 - blendToPoseMoveObject;
         else
             return 1;
 
