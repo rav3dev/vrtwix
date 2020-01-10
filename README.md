@@ -1,5 +1,5 @@
 # Showcase
-<a href="https://youtu.be/YO4i58b0LXo">![showcase](https://i.imgur.com/F06ZZQq.png)</a> <br><br>
+<a href="https://youtu.be/YO4i58b0LXo">![showcase](https://i.imgur.com/F06ZZQq.png)</a>
 
 # Requirements 
 <b>Unity 2019.2.1f1 ( tested ) or newer</b><br>
@@ -16,3 +16,5 @@ Coming soon.
 
 ## Contributing
 We're welcome for all contributions, this project is fresh, and need community touch! Let's make it better together :)
+
+## Join VRTwix [Discord server](https://discord.gg/vVKxB9g)
