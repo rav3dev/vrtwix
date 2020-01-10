@@ -12,19 +12,19 @@ public class Bullet : PhysicalObject
 		Initialize ();
     }
     
-	void GrabStart(CustomHand hand)
+	new void GrabStart(CustomHand hand)
     {
 		GrabStartCustom(hand);
     }
 
 
 
-	public void GrabUpdate(CustomHand hand){
+	new public void GrabUpdate(CustomHand hand){
 		GrabUpdateCustom (hand);
 	}
 
 
-	public void GrabEnd(CustomHand hand){
+	new public void GrabEnd(CustomHand hand){
 		GrabEndCustom(hand);
 	}
 
