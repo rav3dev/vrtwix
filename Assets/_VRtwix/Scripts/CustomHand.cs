@@ -105,10 +105,8 @@ public class CustomHand : MonoBehaviour
                 RenderModel.SetMeshRendererState(!HideController);
                 break;
             }
-            print(3);
             yield return 0;
         }
-        print(4);
     }
 
     void GrabCheck()
