@@ -30,7 +30,7 @@ public class CustomHand : MonoBehaviour
     public SteamVR_Skeleton_Poser grabPoser;// poser of object currently interacting with
     public Vector3 posSavePoser, rotSavePoser, inverceLocalPosition;//magic variables, which are need to calculate something ( need to know )
     public Transform PivotPoser, ToolTransform;//Pivot from hands poser, hidden instrument to simplify some calculations
-    public bool HideController;//hide controller
+    public bool HideController, alwaysHideController;//hide controller
     public float Squeeze;//squeeze strength 
     public SteamVR_Action_Vibration hapticSignal = SteamVR_Input.GetAction<SteamVR_Action_Vibration>("Haptic");//Output of haptic ramble
     bool setHandTransform;//Assing position, to pass of the 1st frame, used to be a bug ( maybe remove, need to check if this bug still here )
@@ -75,9 +75,10 @@ public class CustomHand : MonoBehaviour
         if (GetComponentInChildren<SteamVR_RenderModel>())
         {
             RenderModel = GetComponentInChildren<SteamVR_RenderModel>();
+            StartCoroutine(HideControllerCoroutine());
         }
         skeleton.BlendToSkeleton();
-        StartCoroutine(HideControllerCoroutine());
+        
     }
 
     void FixedUpdate()
@@ -102,7 +103,7 @@ public class CustomHand : MonoBehaviour
         {
             if (RenderModel.transform.childCount > 0)
             {
-                RenderModel.SetMeshRendererState(!HideController);
+                RenderModelVisible(HideController);
                 break;
             }
             yield return 0;
@@ -332,7 +333,10 @@ public class CustomHand : MonoBehaviour
     {
         if (RenderModel)
         {
-            RenderModel.SetMeshRendererState(visible);
+            if (alwaysHideController)
+                RenderModel.SetMeshRendererState(false);
+            else
+                RenderModel.SetMeshRendererState(visible);
         }
     }
 
