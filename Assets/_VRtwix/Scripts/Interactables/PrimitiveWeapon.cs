@@ -50,7 +50,7 @@ public class PrimitiveWeapon : PhysicalObject
 		trigger.customUpdate (hand);
 		if (recoil) {
 			MyRigidbody.velocity += transform.TransformDirection (recoil.localPosition/Time.fixedDeltaTime);
-			MyRigidbody.angularVelocity += PhysicalObject.GetAngularVelocities (transform.rotation, recoil.rotation, hand.GetBlend());
+			MyRigidbody.angularVelocity += PhysicalObject.GetAngularVelocities (transform.rotation, recoil.rotation, hand.GetBlendPose());
 		}
 
 

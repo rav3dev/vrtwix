@@ -111,12 +111,12 @@ public class PhysicalObject : CustomInteractible {
 			if (useSecondPose&&ifUseSecondPose()) {
 				if (secondPoses.Contains (leftHand.grabPoser)) {
                     MyRigidbody.centerOfMass = transform.InverseTransformPoint (GetMyGrabPoserTransform (rightHand).position);
-					MyRigidbody.velocity = (rightHand.PivotPoser.position - GetMyGrabPoserTransform (rightHand).position) / Time.fixedDeltaTime* hand.GetBlend();
-					MyRigidbody.angularVelocity = GetAngularVelocities (rightHand.PivotPoser.rotation, GetMyGrabPoserTransform (rightHand).rotation, hand.GetBlend());
+					MyRigidbody.velocity = (rightHand.PivotPoser.position - GetMyGrabPoserTransform (rightHand).position) / Time.fixedDeltaTime* hand.GetBlendPose();
+					MyRigidbody.angularVelocity = GetAngularVelocities (rightHand.PivotPoser.rotation, GetMyGrabPoserTransform (rightHand).rotation, hand.GetBlendPose());
 				} else {
 					MyRigidbody.centerOfMass = transform.InverseTransformPoint (GetMyGrabPoserTransform (leftHand).position);
-					MyRigidbody.velocity = (leftHand.PivotPoser.position - GetMyGrabPoserTransform (leftHand).position) / Time.fixedDeltaTime* hand.GetBlend();
-					MyRigidbody.angularVelocity = GetAngularVelocities (leftHand.PivotPoser.rotation, GetMyGrabPoserTransform (leftHand).rotation, hand.GetBlend());
+					MyRigidbody.velocity = (leftHand.PivotPoser.position - GetMyGrabPoserTransform (leftHand).position) / Time.fixedDeltaTime* hand.GetBlendPose();
+					MyRigidbody.angularVelocity = GetAngularVelocities (leftHand.PivotPoser.rotation, GetMyGrabPoserTransform (leftHand).rotation, hand.GetBlendPose());
 				}
 			} else {
                 if (!twoHandTypeOnlyBackHandRotation)
@@ -152,21 +152,21 @@ public class PhysicalObject : CustomInteractible {
                 {
                     
                     MyRigidbody.centerOfMass = transform.InverseTransformPoint(rightMyGrabPoser.transform.position);
-                    MyRigidbody.velocity = (rightHand.PivotPoser.position - rightMyGrabPoser.transform.position) / Time.fixedDeltaTime* hand.GetBlend();
-                    MyRigidbody.angularVelocity = GetAngularVelocities(leftHand.ToolTransform.rotation, rightHand.ToolTransform.rotation, hand.GetBlend());
+                    MyRigidbody.velocity = (rightHand.PivotPoser.position - rightMyGrabPoser.transform.position) / Time.fixedDeltaTime* rightHand.GetBlendPose();
+                    MyRigidbody.angularVelocity = GetAngularVelocities(leftHand.ToolTransform.rotation, rightHand.ToolTransform.rotation, rightHand.GetBlendPose());
                 }
                 else
                 {
                     
                     MyRigidbody.centerOfMass = transform.InverseTransformPoint(leftMyGrabPoser.transform.position);
-                    MyRigidbody.velocity = (leftHand.PivotPoser.position - leftMyGrabPoser.transform.position) / Time.fixedDeltaTime* hand.GetBlend();
-                    MyRigidbody.angularVelocity = GetAngularVelocities(leftHand.ToolTransform.rotation, rightHand.ToolTransform.rotation, hand.GetBlend());
+                    MyRigidbody.velocity = (leftHand.PivotPoser.position - leftMyGrabPoser.transform.position) / Time.fixedDeltaTime* leftHand.GetBlendPose();
+                    MyRigidbody.angularVelocity = GetAngularVelocities(leftHand.ToolTransform.rotation, rightHand.ToolTransform.rotation, leftHand.GetBlendPose());
                 }
 			}
 		} else {//one hand
             MyRigidbody.centerOfMass = transform.InverseTransformPoint(GetMyGrabPoserTransform(hand).position);
-			MyRigidbody.velocity = (hand.PivotPoser.position - GetMyGrabPoserTransform(hand).position)/Time.fixedDeltaTime* hand.GetBlend();
-			MyRigidbody.angularVelocity = GetAngularVelocities (hand.PivotPoser.rotation, GetMyGrabPoserTransform(hand).rotation, hand.GetBlend());
+			MyRigidbody.velocity = (hand.PivotPoser.position - GetMyGrabPoserTransform(hand).position)/Time.fixedDeltaTime* hand.GetBlendPose();
+			MyRigidbody.angularVelocity = GetAngularVelocities (hand.PivotPoser.rotation, GetMyGrabPoserTransform(hand).rotation, hand.GetBlendPose());
 		}	
 	}
 
@@ -182,8 +182,17 @@ public class PhysicalObject : CustomInteractible {
 		}else{
 			ReleaseHand.Invoke ();
 		}
-
-	}
+        if (leftHand)
+        {
+            leftHand.SetBlendPose(1);
+            leftHand.SetEndFramePos();
+        }
+        if (rightHand)
+        {
+            rightHand.SetBlendPose(1);
+            rightHand.SetEndFramePos();
+        }
+    }
 
 	public void Initialize(){
 		if (GetComponent<Rigidbody> ()) {
@@ -235,18 +244,7 @@ public class PhysicalObject : CustomInteractible {
 	}
 
 	public void GrabEndCustom(CustomHand hand){
-		DettachHand (hand);
-
-		if (!leftHand && !rightHand) {
-			saveVariables.LoadProperty (MyRigidbody);
-		}
-		if (pickReleaseOnce){
-			if (!rightHand&&!leftHand){
-				ReleaseHand.Invoke ();//sound
-			}
-		}else{
-			ReleaseHand.Invoke ();
-		}
+        GrabEnd(hand);
 	}
 
 	public static Vector3 GetAngularVelocities(Quaternion hand,Quaternion fake,float blend)

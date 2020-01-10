@@ -8,7 +8,7 @@ public class ManualReload : CustomInteractible
 	public Transform ReloadObject,Zatvor,HummerRevolver; //reload object, bolt, revolver hummer
 	public Vector2 ClampPosition; //position limits
 	public Vector2 ClampAngle; //angle limits
-    [HideInInspector]
+    //[HideInInspector]
 	public bool reloadHalf,reloadEnd=true,reloadFinish=true,handDrop,boltAngleTrue=false,boltSlideTrue = true; //reload maintaince variables
 	public bool reloadLikeAR; //AR type ( bolt handle not moving when shooting )
     public TypeReload typeReload; //reload type
@@ -104,6 +104,8 @@ public class ManualReload : CustomInteractible
             Zatvor.localPosition = Vector3.forward * PositionReload;
 
             reloadFinish = PositionReload >= ClampPosition.y;
+            if (reloadFinish)
+                handDrop = false;
 			if (ReloadObject.localPosition.z == ClampPosition.x) {
 				if (!clampXCheck) {
 					clampX.Invoke ();
