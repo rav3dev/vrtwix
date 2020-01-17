@@ -11,6 +11,8 @@ public class ManualReload : CustomInteractible
     //[HideInInspector]
 	public bool reloadHalf,reloadEnd=true,reloadFinish=true,handDrop,boltAngleTrue=false,boltSlideTrue = true; //reload maintaince variables
 	public bool reloadLikeAR; //AR type ( bolt handle not moving when shooting )
+    public bool slideCatch;
+    bool noReturn;
     public TypeReload typeReload; //reload type
 	public enum TypeReload{
 		Slider,
@@ -70,8 +72,14 @@ public class ManualReload : CustomInteractible
     {
 		if (typeReload == TypeReload.Slider&&returnAddSpeed > 0 || knockback > 0) {		
 			if (reloadHalf||handDrop) {
-				returnSpeed += returnAddSpeed*Time.deltaTime;
-                PositionReload=Mathf.MoveTowards(returnStart,ClampPosition.y,returnSpeed*Time.deltaTime);
+                if (!noReturn)
+                {
+                    returnSpeed += returnAddSpeed * Time.deltaTime;
+                    PositionReload = Mathf.MoveTowards(returnStart, ClampPosition.y, returnSpeed * Time.deltaTime);
+                }
+                else {
+                    enabled = false;
+                }
 				if (PositionReload >= ClampPosition.y) {
 					enabled = false;
 					if (!reloadEnd && reloadHalf) {
@@ -91,7 +99,12 @@ public class ManualReload : CustomInteractible
 					BulletOff.Invoke ();
 					clampReloadHalf.Invoke ();
 					reloadFinish = ReloadObject.localPosition.z >= ClampPosition.y;
-				}
+                    if (slideCatch) {
+                        if (!trigger.primitiveWeapon.attachMagazine||(trigger.primitiveWeapon.attachMagazine && trigger.primitiveWeapon.attachMagazine.ammo == 0)) {
+                            noReturn = true;
+                        }
+                    }
+                }
 			}
 			if (reloadLikeAR) {
 				if (PositionReload > ReloadObject.localPosition.z) {
@@ -294,6 +307,7 @@ public class ManualReload : CustomInteractible
 				clampReloadHalf.Invoke ();
 			}
 			handDrop = true;
+            noReturn = false;
 			if (!reloadEnd && reloadHalf && ReloadObject.localPosition.z > ClampPosition.y) {
 				reloadEnd = true;
 				reloadHalf = false;
