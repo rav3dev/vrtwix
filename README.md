@@ -5,7 +5,7 @@
 VRtwix - is a simple and lightweight interaction & weaponary solutions for Unity VR.
 
 ## Requirements 
-<b>Unity 2019.2.1f1 ( tested ) or newer</b><br>
+<b>Unity 2019.3.15.f1 ( tested ) or newer</b><br>
 <b>SteamVR Unity Plugin - v2.3.2 </b>
 
 ## Setup:
