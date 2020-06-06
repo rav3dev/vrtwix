@@ -58,7 +58,7 @@ public class Joystick : CustomInteractible {
 
 	public void GrabUpdate(CustomHand hand){
 		Transform tempPoser = GetMyGrabPoserTransform (hand);
-		tempPoser.position = hand.PivotPoser.position;
+		tempPoser.position = hand.pivotPoser.position;
 		tempPoser.localPosition = new Vector3 (tempPoser.localPosition.x, tempPoser.localPosition.y, Mathf.Abs(tempPoser.localPosition.z));
 
 		angle.x = Vector2.SignedAngle(new Vector2(tempPoser.localPosition.y,tempPoser.localPosition.z),Vector2.up);
@@ -72,12 +72,12 @@ public class Joystick : CustomInteractible {
 		Stick.localRotation = Quaternion.LookRotation(Vector3.SlerpUnclamped (Vector3.SlerpUnclamped (new Vector3 (-1, -1, 1), new Vector3 (-1, 1, 1), value.x*clamp.x/90+.5f),Vector3.SlerpUnclamped (new Vector3 (1, -1, 1), new Vector3 (1, 1, 1), value.x*clamp.x/90+.5f),value.y*clamp.y/90+.5f),Vector3.up);
 
 		if (typeHandGrabRotation == TypeHandGrabRotation.vertical) {
-			tempPoser.rotation = Quaternion.LookRotation (Stick.forward, hand.PivotPoser.up);
+			tempPoser.rotation = Quaternion.LookRotation (Stick.forward, hand.pivotPoser.up);
 		} else {
 			if (typeHandGrabRotation == TypeHandGrabRotation.horizontal) {
-				tempPoser.rotation = Quaternion.LookRotation (Stick.up, hand.PivotPoser.up);
+				tempPoser.rotation = Quaternion.LookRotation (Stick.up, hand.pivotPoser.up);
 			} else {
-				tempPoser.rotation = hand.PivotPoser.rotation;
+				tempPoser.rotation = hand.pivotPoser.rotation;
 			}
 		}
 		tempPoser.position = Stick.TransformPoint(new Vector3(0,0, handleDistance));

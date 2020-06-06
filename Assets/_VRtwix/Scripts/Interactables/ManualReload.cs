@@ -290,7 +290,7 @@ public class ManualReload : CustomInteractible
 
 	public void GrabStart(CustomHand hand){
 		SetInteractibleVariable (hand);
-		revolverDrumDirection=hand.PivotPoser.InverseTransformDirection (ReloadObject.GetChild (0).up);
+		revolverDrumDirection=hand.pivotPoser.InverseTransformDirection (ReloadObject.GetChild (0).up);
 	}
 
 	public void GrabUpdate(CustomHand hand){
@@ -298,7 +298,7 @@ public class ManualReload : CustomInteractible
 		switch (typeReload) {
 
 		case TypeReload.Slider:
-			ReloadObject.transform.position = hand.PivotPoser.position;
+			ReloadObject.transform.position = hand.pivotPoser.position;
 
 			if (!reloadHalf && ReloadObject.localPosition.z < ClampPosition.x) {
 				reloadHalf = true;
@@ -322,12 +322,12 @@ public class ManualReload : CustomInteractible
 
             if (typeHandGrabRotation != TypeHandGrabRotation.freeze) {
 				if (typeHandGrabRotation == TypeHandGrabRotation.horizontal) {
-					grabPoints [0].transform.rotation = Quaternion.LookRotation (-grabPoints [0].transform.parent.right, hand.PivotPoser.up);
+					grabPoints [0].transform.rotation = Quaternion.LookRotation (-grabPoints [0].transform.parent.right, hand.pivotPoser.up);
 				} else {
 					if (typeHandGrabRotation == TypeHandGrabRotation.vertical) {
-						grabPoints [0].transform.rotation = Quaternion.LookRotation (grabPoints [0].transform.parent.up, hand.PivotPoser.up);
+						grabPoints [0].transform.rotation = Quaternion.LookRotation (grabPoints [0].transform.parent.up, hand.pivotPoser.up);
 					} else {
-						grabPoints [0].transform.rotation = hand.PivotPoser.rotation;
+						grabPoints [0].transform.rotation = hand.pivotPoser.rotation;
 					}
 				}
 			}
@@ -350,7 +350,7 @@ public class ManualReload : CustomInteractible
 			PositionReload = ReloadObject.localPosition.z;
 			break;
 		case TypeReload.Cracking:
-			localHand = transform.InverseTransformPoint (hand.PivotPoser.position);
+			localHand = transform.InverseTransformPoint (hand.pivotPoser.position);
 			tempAngle = -Vector2.SignedAngle (new Vector2 (localHand.z, localHand.y), Vector2.right);
 
 			if (!reloadHalf && tempAngle < ClampAngle.x) {
@@ -397,7 +397,7 @@ public class ManualReload : CustomInteractible
 			break;
 
 		case TypeReload.LeverAction:
-			localHand = transform.InverseTransformPoint (hand.PivotPoser.position);
+			localHand = transform.InverseTransformPoint (hand.pivotPoser.position);
 			tempAngle = Vector2.SignedAngle (new Vector2 (localHand.z, localHand.y), Vector2.left);
 			ClampPosition.x = tempAngle;
 			if (!reloadHalf && tempAngle < ClampAngle.x) {
@@ -436,8 +436,8 @@ public class ManualReload : CustomInteractible
 			}
 			break;
 		case TypeReload.BoltAction:
-			ReloadObject.position = hand.PivotPoser.position;
-			ReloadObject.rotation = Quaternion.LookRotation (transform.forward, hand.PivotPoser.position - transform.position);
+			ReloadObject.position = hand.pivotPoser.position;
+			ReloadObject.rotation = Quaternion.LookRotation (transform.forward, hand.pivotPoser.position - transform.position);
 			if (boltSlideTrue) {
 				if (Vector3.SignedAngle (transform.up, ReloadObject.up, transform.forward) < ClampAngle.x) {
 					ReloadObject.localEulerAngles = new Vector3 (0, 0, ClampAngle.x);
@@ -506,7 +506,7 @@ public class ManualReload : CustomInteractible
 			}
 			break;
 		case TypeReload.Revolver:
-			localHand = transform.InverseTransformPoint (hand.PivotPoser.position);
+			localHand = transform.InverseTransformPoint (hand.pivotPoser.position);
 			tempAngle = -Vector2.SignedAngle (new Vector2 (localHand.x, localHand.y), Vector2.up);
 			if (reloadEnd && !reloadHalf && tempAngle >= ClampAngle.y) {
 				reloadHalf = true;
@@ -524,8 +524,8 @@ public class ManualReload : CustomInteractible
 			reloadFinish = tempAngle <= ClampAngle.x;
 			tempAngle = Mathf.Clamp (tempAngle, ClampAngle.x, ClampAngle.y);
 			ReloadObject.localEulerAngles = new Vector3 (0, 0, tempAngle);
-			ReloadObject.GetChild (0).rotation = Quaternion.LookRotation (ReloadObject.forward, hand.PivotPoser.TransformDirection(revolverDrumDirection));
-			GetMyGrabPoserTransform(hand).rotation=Quaternion.LookRotation (ReloadObject.forward, hand.PivotPoser.up);
+			ReloadObject.GetChild (0).rotation = Quaternion.LookRotation (ReloadObject.forward, hand.pivotPoser.TransformDirection(revolverDrumDirection));
+			GetMyGrabPoserTransform(hand).rotation=Quaternion.LookRotation (ReloadObject.forward, hand.pivotPoser.up);
 
 			break;
 		default:
