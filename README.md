@@ -1,15 +1,29 @@
 # Showcase
 <a href="https://youtu.be/YO4i58b0LXo">![showcase](https://i.imgur.com/F06ZZQq.png)</a>
 
-# Requirements 
+## Introduction
+VRtwix - is a simple and lightweight interaction & weaponary solutions for Unity VR.
+
+## Requirements 
 <b>Unity 2019.2.1f1 ( tested ) or newer</b><br>
 <b>SteamVR Unity Plugin - v2.3.2 </b>
 
+## Setup:
+1. **Open** Unity Project
+2. Import **Steam VR** plugin
+3. Import **VRTwix** plugin
+
+You need to assign new actions "**Trigger**" and "**TriggerClick**" by:
+**`Window => SteamVR Input => add actions`**
+
+And then setup bindings:
+**`Open Binging UI" => Current Binding => Trigger => Add ( Click - triggerclick, Pull - trigger )`**
+
+![f1vXam9](https://user-images.githubusercontent.com/23486183/83937716-0fc03d80-a784-11ea-94b5-08293b2b38d0.png)
+
+
 ## Current Status:
 Not stable ( refabrishing )
-
-## Introduction
-VRtwix - is a simple and lightweight interaction & weaponary solutions for Unity VR.
 
 ## Documentation
 Coming soon.
