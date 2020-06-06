@@ -13,7 +13,7 @@ VRtwix - is a simple and lightweight interaction & weaponary solutions for Unity
 2. Import **Steam VR** plugin
 3. Import **VRTwix** plugin
 
-You need to assign new actions "**Trigger**" and "**TriggerClick**" by:
+You need to assign new actions "**Trigger ( type: vector1 )**" and "**TriggerClick ( type: boolean )**" by:
 **`Window => SteamVR Input => add actions`**
 
 And then setup bindings:
