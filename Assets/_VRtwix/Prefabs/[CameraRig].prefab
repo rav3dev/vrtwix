@@ -50,6 +50,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -192,104 +193,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3176114198375075114}
   m_Enabled: 1
---- !u!1 &3176114198824735391
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3176114198824735390}
-  - component: {fileID: 3176114198824735389}
-  m_Layer: 0
-  m_Name: Model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3176114198824735390
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176114198824735391}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3176114199907404245}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3176114198824735389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176114198824735391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5890e3cad70bea64d91aef9145ba3454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: -1
-  modelOverride: 
-  shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  verbose: 0
-  createComponents: 1
-  updateDynamically: 1
---- !u!1 &3176114199705531285
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3176114199705531284}
-  - component: {fileID: 3176114199705531283}
-  m_Layer: 0
-  m_Name: Model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3176114199705531284
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176114199705531285}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3176114199907404244}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3176114199705531283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176114199705531285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5890e3cad70bea64d91aef9145ba3454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: -1
-  modelOverride: 
-  shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  verbose: 0
-  createComponents: 1
-  updateDynamically: 1
 --- !u!1 &3176114199907404248
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +222,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3176114199705531284}
   - {fileID: 3178950850081237043}
   m_Father: {fileID: 3176114198181871483}
   m_RootOrder: 0
@@ -344,28 +246,18 @@ MonoBehaviour:
   onTransformUpdated:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onTransformChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onConnectedChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_ConnectedChangedEvent, SteamVR, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onTrackingChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_TrackingChangedEvent, SteamVR, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onDeviceIndexChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_DeviceIndexChangedEvent, SteamVR,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   broadcastDeviceChanges: 1
 --- !u!114 &3176114199907404246
 MonoBehaviour:
@@ -394,34 +286,35 @@ MonoBehaviour:
   pinchButton:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
-  SqueezeButton:
-    actionPath: /actions/default/in/Squeeze
+  hapticSignal:
+    actionPath: /actions/default/out/Haptic
+    needsReinit: 0
+  squeezeButton:
+    actionPath: 
     needsReinit: 0
   handType: 1
   grabType: 0
-  RenderModel: {fileID: 0}
+  renderModel: {fileID: 0}
   blend: 0.2
   blendPosition: 0.2
   smoothBlendPhysicsObject: 0
-  SelectedGpibColliders: []
-  SelectedIndexColliders: []
-  SelectedPinchColliders: []
-  SelectedIndexInteractible: {fileID: 0}
-  SelectedPinchInteractible: {fileID: 0}
-  SelectedGpibInteractible: {fileID: 0}
-  GrabInteractible: {fileID: 0}
+  selectedGpibColliders: []
+  selectedIndexColliders: []
+  selectedPinchColliders: []
+  selectedIndexInteractible: {fileID: 0}
+  selectedPinchInteractible: {fileID: 0}
+  selectedGpibInteractible: {fileID: 0}
+  grabInteractible: {fileID: 0}
   skeleton: {fileID: 3280539594539031563}
   grabPoser: {fileID: 0}
   posSavePoser: {x: 0, y: 0, z: 0}
   rotSavePoser: {x: 0, y: 0, z: 0}
   inverceLocalPosition: {x: 0, y: 0, z: 0}
-  PivotPoser: {fileID: 0}
-  ToolTransform: {fileID: 0}
-  HideController: 1
-  Squeeze: 0
-  hapticSignal:
-    actionPath: /actions/default/out/Haptic
-    needsReinit: 0
+  pivotPoser: {fileID: 0}
+  toolTransform: {fileID: 0}
+  hideController: 0
+  alwayshideController: 0
+  squeeze: 0
 --- !u!1 &3176114199907404249
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +344,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3176114198824735390}
   - {fileID: 3178950849491411635}
   m_Father: {fileID: 3176114198181871483}
   m_RootOrder: 1
@@ -476,28 +368,18 @@ MonoBehaviour:
   onTransformUpdated:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onTransformChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onConnectedChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_ConnectedChangedEvent, SteamVR, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onTrackingChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_TrackingChangedEvent, SteamVR, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onDeviceIndexChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_DeviceIndexChangedEvent, SteamVR,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   broadcastDeviceChanges: 1
 --- !u!114 &3176114199907404247
 MonoBehaviour:
@@ -526,34 +408,35 @@ MonoBehaviour:
   pinchButton:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
-  SqueezeButton:
-    actionPath: /actions/default/in/Squeeze
+  hapticSignal:
+    actionPath: /actions/default/out/Haptic
+    needsReinit: 0
+  squeezeButton:
+    actionPath: 
     needsReinit: 0
   handType: 2
   grabType: 0
-  RenderModel: {fileID: 0}
+  renderModel: {fileID: 0}
   blend: 0.2
   blendPosition: 0.2
   smoothBlendPhysicsObject: 0
-  SelectedGpibColliders: []
-  SelectedIndexColliders: []
-  SelectedPinchColliders: []
-  SelectedIndexInteractible: {fileID: 0}
-  SelectedPinchInteractible: {fileID: 0}
-  SelectedGpibInteractible: {fileID: 0}
-  GrabInteractible: {fileID: 0}
+  selectedGpibColliders: []
+  selectedIndexColliders: []
+  selectedPinchColliders: []
+  selectedIndexInteractible: {fileID: 0}
+  selectedPinchInteractible: {fileID: 0}
+  selectedGpibInteractible: {fileID: 0}
+  grabInteractible: {fileID: 0}
   skeleton: {fileID: 3280539593751912743}
   grabPoser: {fileID: 0}
   posSavePoser: {x: 0, y: 0, z: 0}
   rotSavePoser: {x: 0, y: 0, z: 0}
   inverceLocalPosition: {x: 0, y: 0, z: 0}
-  PivotPoser: {fileID: 0}
-  ToolTransform: {fileID: 0}
-  HideController: 1
-  Squeeze: 0
-  hapticSignal:
-    actionPath: /actions/default/out/Haptic
-    needsReinit: 0
+  pivotPoser: {fileID: 0}
+  toolTransform: {fileID: 0}
+  hideController: 0
+  alwayshideController: 0
+  squeeze: 0
 --- !u!1001 &3176114198028702729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -595,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012125075130, guid: 6def53d002137b747aec0b29551e0e25, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000012125075130, guid: 6def53d002137b747aec0b29551e0e25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -675,7 +558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013303659494, guid: 638779290bce1af49b356f33dcc6fccf, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000013303659494, guid: 638779290bce1af49b356f33dcc6fccf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

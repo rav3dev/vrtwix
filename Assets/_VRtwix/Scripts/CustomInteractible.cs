@@ -10,7 +10,7 @@ public class CustomInteractible : MonoBehaviour {
     public List<SteamVR_Skeleton_Poser> grabPoints,secondPoses; //not influenting on rotation posers
     public CustomHand leftHand, rightHand;//hand which currently holding an object
     public SteamVR_Skeleton_Poser leftMyGrabPoser, rightMyGrabPoser;//current holding posers
-    public bool TwoHanded, useSecondPose, HideController;//two handed interaction, use posers which influent on rotation, hide controllers
+    public bool twoHanded, useSecondPose, hideController;//two handed interaction, use posers which influent on rotation, hide controllers
 	public CustomHand.GrabType grabType=CustomHand.GrabType.Grip;//how object should be grabbed
 
 	[Header("SoundEvents")]
@@ -97,9 +97,9 @@ public class CustomInteractible : MonoBehaviour {
         if (hand.handType == SteamVR_Input_Sources.LeftHand) {
             if (leftHand)
                 DettachHand(leftHand);
-            if (!TwoHanded && rightHand)
+            if (!twoHanded && rightHand)
                 DettachHand(rightHand);
-            leftMyGrabPoser = ClosePoser(hand.GrabPoint());
+            leftMyGrabPoser = ClosePoser(hand.PointByPoint(hand.gripPoint));
             if (leftMyGrabPoser) {
                 hand.grabPoser = leftMyGrabPoser;
                 leftHand = hand;
@@ -110,9 +110,9 @@ public class CustomInteractible : MonoBehaviour {
         if (hand.handType == SteamVR_Input_Sources.RightHand) {
             if (rightHand)
                 DettachHand(rightHand);
-            if (!TwoHanded && leftHand)
+            if (!twoHanded && leftHand)
                 DettachHand(leftHand);
-            rightMyGrabPoser = ClosePoser(hand.GrabPoint());
+            rightMyGrabPoser = ClosePoser(hand.PointByPoint(hand.gripPoint));
             if (rightMyGrabPoser) {
                 hand.grabPoser = rightMyGrabPoser;
                 rightHand = hand;
@@ -126,7 +126,7 @@ public class CustomInteractible : MonoBehaviour {
 		if (hand.handType == SteamVR_Input_Sources.LeftHand) {
 			if (leftHand)
 				DettachHand (leftHand);
-			if (!TwoHanded && rightHand)
+			if (!twoHanded && rightHand)
 				DettachHand (rightHand);
 			leftMyGrabPoser = poser;
 			if (leftMyGrabPoser) {
@@ -139,7 +139,7 @@ public class CustomInteractible : MonoBehaviour {
 		if (hand.handType == SteamVR_Input_Sources.RightHand) {
 			if (rightHand)
 				DettachHand (rightHand);
-			if (!TwoHanded && leftHand)
+			if (!twoHanded && leftHand)
 				DettachHand (leftHand);
 			rightMyGrabPoser = poser;
 			if (rightMyGrabPoser) {

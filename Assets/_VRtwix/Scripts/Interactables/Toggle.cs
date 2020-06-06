@@ -28,7 +28,7 @@ public class Toggle : CustomInteractible
 
 
 	public void GrabUpdate(CustomHand hand){
-		angle = -Vector2.SignedAngle (new Vector2(transform.InverseTransformPoint(hand.PivotPoser.position).y, transform.InverseTransformPoint(hand.PivotPoser.position).z),Vector2.up);
+		angle = -Vector2.SignedAngle (new Vector2(transform.InverseTransformPoint(hand.pivotPoser.position).y, transform.InverseTransformPoint(hand.pivotPoser.position).z),Vector2.up);
         MoveObject.localEulerAngles = new Vector3 (Mathf.Clamp(angle,Switch.x,Switch.y), 0);
         //hand position, if you need them not rotating
         //GetMyGrabPoserTransform (hand).position = RotationObject.position+ RotationObject.forward * distance; 

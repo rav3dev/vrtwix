@@ -11,7 +11,7 @@ public class PhysicalObject : CustomInteractible {
 	public bool GizmoVisible; //display line of hand swing on long grip
 	public Vector2 clampHandlePosZ; // grip limit
 	[Range(0,1)]
-	public float SqueezeCheack; // squeeze death zone difference
+	public float squeezeCheack; // squeeze death zone difference
     Vector3 LocalDirectionWithPivotLeft,LocalDirectionWithPivotRight; 
 	bool leftIsForvard; 
 
@@ -54,7 +54,7 @@ public class PhysicalObject : CustomInteractible {
 	}
 
 	public void GrabStart(CustomHand hand){
-		Vector3 tempPosHandLocal=transform.InverseTransformPoint (hand.GrabPoint());
+		Vector3 tempPosHandLocal=transform.InverseTransformPoint (hand.PointByPoint(hand.gripPoint));
 		tempPosHandLocal.x = 0;
 		tempPosHandLocal.y = 0;
 		MyRigidbody.useGravity = false;
@@ -95,15 +95,15 @@ public class PhysicalObject : CustomInteractible {
             bool leftIsForvardTemp = leftIsForvard;
 
             if (handleObject != null && handleObject.Count == 2) {
-                if ((leftHand.Squeeze - rightHand.Squeeze) > SqueezeCheack && rightMyGrabPoser == handleObject[1])
+                if ((leftHand.squeeze - rightHand.squeeze) > squeezeCheack && rightMyGrabPoser == handleObject[1])
                 {
-                    handleObject[1].transform.localPosition = new Vector3(0, 0, Mathf.Clamp(transform.InverseTransformPoint(rightHand.GrabPoint()).z, clampHandlePosZ.x, clampHandlePosZ.y));
+                    handleObject[1].transform.localPosition = new Vector3(0, 0, Mathf.Clamp(transform.InverseTransformPoint(rightHand.PointByPoint(hand.gripPoint)).z, clampHandlePosZ.x, clampHandlePosZ.y));
                     if (leftIsForvard)
                         leftIsForvard = !leftIsForvard;
                 }
-                if ((rightHand.Squeeze - leftHand.Squeeze) > SqueezeCheack && leftMyGrabPoser == handleObject[0])
+                if ((rightHand.squeeze - leftHand.squeeze) > squeezeCheack && leftMyGrabPoser == handleObject[0])
                 {
-                    handleObject[0].transform.localPosition = new Vector3(0, 0, Mathf.Clamp(transform.InverseTransformPoint(leftHand.GrabPoint()).z, clampHandlePosZ.x, clampHandlePosZ.y));
+                    handleObject[0].transform.localPosition = new Vector3(0, 0, Mathf.Clamp(transform.InverseTransformPoint(leftHand.PointByPoint(hand.gripPoint)).z, clampHandlePosZ.x, clampHandlePosZ.y));
                     if (!leftIsForvard)
                         leftIsForvard = !leftIsForvard;
                 }
@@ -111,12 +111,12 @@ public class PhysicalObject : CustomInteractible {
 			if (useSecondPose&&ifUseSecondPose()) {
 				if (secondPoses.Contains (leftHand.grabPoser)) {
                     MyRigidbody.centerOfMass = transform.InverseTransformPoint (GetMyGrabPoserTransform (rightHand).position);
-					MyRigidbody.velocity = (rightHand.PivotPoser.position - GetMyGrabPoserTransform (rightHand).position) / Time.fixedDeltaTime* hand.GetBlendPose();
-					MyRigidbody.angularVelocity = GetAngularVelocities (rightHand.PivotPoser.rotation, GetMyGrabPoserTransform (rightHand).rotation, hand.GetBlendPose());
+					MyRigidbody.velocity = (rightHand.pivotPoser.position - GetMyGrabPoserTransform (rightHand).position) / Time.fixedDeltaTime* hand.GetBlendPose();
+					MyRigidbody.angularVelocity = GetAngularVelocities (rightHand.pivotPoser.rotation, GetMyGrabPoserTransform (rightHand).rotation, hand.GetBlendPose());
 				} else {
 					MyRigidbody.centerOfMass = transform.InverseTransformPoint (GetMyGrabPoserTransform (leftHand).position);
-					MyRigidbody.velocity = (leftHand.PivotPoser.position - GetMyGrabPoserTransform (leftHand).position) / Time.fixedDeltaTime* hand.GetBlendPose();
-					MyRigidbody.angularVelocity = GetAngularVelocities (leftHand.PivotPoser.rotation, GetMyGrabPoserTransform (leftHand).rotation, hand.GetBlendPose());
+					MyRigidbody.velocity = (leftHand.pivotPoser.position - GetMyGrabPoserTransform (leftHand).position) / Time.fixedDeltaTime* hand.GetBlendPose();
+					MyRigidbody.angularVelocity = GetAngularVelocities (leftHand.pivotPoser.rotation, GetMyGrabPoserTransform (leftHand).rotation, hand.GetBlendPose());
 				}
 			} else {
                 if (!twoHandTypeOnlyBackHandRotation)
@@ -125,26 +125,26 @@ public class PhysicalObject : CustomInteractible {
                 {
                     if (leftIsForvardTemp)
                     {
-                        rightHand.ToolTransform.rotation = Quaternion.LookRotation(leftMyGrabPoser.transform.position - rightMyGrabPoser.transform.position, rightMyGrabPoser.transform.TransformDirection(LocalDirectionWithPivotRight) + leftMyGrabPoser.transform.TransformDirection(LocalDirectionWithPivotLeft));
-                        leftHand.ToolTransform.rotation = Quaternion.LookRotation(leftHand.PivotPoser.transform.position - rightHand.PivotPoser.transform.position, rightHand.PivotPoser.TransformDirection(LocalDirectionWithPivotRight) + leftHand.PivotPoser.TransformDirection(LocalDirectionWithPivotLeft));
+                        rightHand.toolTransform.rotation = Quaternion.LookRotation(leftMyGrabPoser.transform.position - rightMyGrabPoser.transform.position, rightMyGrabPoser.transform.TransformDirection(LocalDirectionWithPivotRight) + leftMyGrabPoser.transform.TransformDirection(LocalDirectionWithPivotLeft));
+                        leftHand.toolTransform.rotation = Quaternion.LookRotation(leftHand.pivotPoser.transform.position - rightHand.pivotPoser.transform.position, rightHand.pivotPoser.TransformDirection(LocalDirectionWithPivotRight) + leftHand.pivotPoser.TransformDirection(LocalDirectionWithPivotLeft));
                     }
                     else
                     {
-                        rightHand.ToolTransform.rotation = Quaternion.LookRotation(rightMyGrabPoser.transform.position - leftMyGrabPoser.transform.position, leftMyGrabPoser.transform.TransformDirection(LocalDirectionWithPivotLeft) + rightMyGrabPoser.transform.TransformDirection(LocalDirectionWithPivotRight));
-                        leftHand.ToolTransform.rotation = Quaternion.LookRotation(rightHand.PivotPoser.transform.position - leftHand.PivotPoser.transform.position, leftHand.PivotPoser.TransformDirection(LocalDirectionWithPivotLeft) + rightHand.PivotPoser.TransformDirection(LocalDirectionWithPivotRight));
+                        rightHand.toolTransform.rotation = Quaternion.LookRotation(rightMyGrabPoser.transform.position - leftMyGrabPoser.transform.position, leftMyGrabPoser.transform.TransformDirection(LocalDirectionWithPivotLeft) + rightMyGrabPoser.transform.TransformDirection(LocalDirectionWithPivotRight));
+                        leftHand.toolTransform.rotation = Quaternion.LookRotation(rightHand.pivotPoser.transform.position - leftHand.pivotPoser.transform.position, leftHand.pivotPoser.TransformDirection(LocalDirectionWithPivotLeft) + rightHand.pivotPoser.TransformDirection(LocalDirectionWithPivotRight));
                     }
                 }
                 else
                 {
                     if (leftIsForvardTemp)
                     {
-                        rightHand.ToolTransform.rotation = Quaternion.LookRotation(leftMyGrabPoser.transform.position - rightMyGrabPoser.transform.position, rightMyGrabPoser.transform.TransformDirection(LocalDirectionWithPivotRight));
-                        leftHand.ToolTransform.rotation = Quaternion.LookRotation(leftHand.PivotPoser.transform.position - rightHand.PivotPoser.transform.position, rightHand.PivotPoser.TransformDirection(LocalDirectionWithPivotRight));
+                        rightHand.toolTransform.rotation = Quaternion.LookRotation(leftMyGrabPoser.transform.position - rightMyGrabPoser.transform.position, rightMyGrabPoser.transform.TransformDirection(LocalDirectionWithPivotRight));
+                        leftHand.toolTransform.rotation = Quaternion.LookRotation(leftHand.pivotPoser.transform.position - rightHand.pivotPoser.transform.position, rightHand.pivotPoser.TransformDirection(LocalDirectionWithPivotRight));
                     }
                     else
                     {
-                        rightHand.ToolTransform.rotation = Quaternion.LookRotation(rightMyGrabPoser.transform.position - leftMyGrabPoser.transform.position, leftMyGrabPoser.transform.TransformDirection(LocalDirectionWithPivotLeft));
-                        leftHand.ToolTransform.rotation = Quaternion.LookRotation(rightHand.PivotPoser.transform.position - leftHand.PivotPoser.transform.position, leftHand.PivotPoser.TransformDirection(LocalDirectionWithPivotLeft));
+                        rightHand.toolTransform.rotation = Quaternion.LookRotation(rightMyGrabPoser.transform.position - leftMyGrabPoser.transform.position, leftMyGrabPoser.transform.TransformDirection(LocalDirectionWithPivotLeft));
+                        leftHand.toolTransform.rotation = Quaternion.LookRotation(rightHand.pivotPoser.transform.position - leftHand.pivotPoser.transform.position, leftHand.pivotPoser.TransformDirection(LocalDirectionWithPivotLeft));
                     }
                 }
 
@@ -152,21 +152,21 @@ public class PhysicalObject : CustomInteractible {
                 {
                     
                     MyRigidbody.centerOfMass = transform.InverseTransformPoint(rightMyGrabPoser.transform.position);
-                    MyRigidbody.velocity = (rightHand.PivotPoser.position - rightMyGrabPoser.transform.position) / Time.fixedDeltaTime* rightHand.GetBlendPose();
-                    MyRigidbody.angularVelocity = GetAngularVelocities(leftHand.ToolTransform.rotation, rightHand.ToolTransform.rotation, rightHand.GetBlendPose());
+                    MyRigidbody.velocity = (rightHand.pivotPoser.position - rightMyGrabPoser.transform.position) / Time.fixedDeltaTime* rightHand.GetBlendPose();
+                    MyRigidbody.angularVelocity = GetAngularVelocities(leftHand.toolTransform.rotation, rightHand.toolTransform.rotation, rightHand.GetBlendPose());
                 }
                 else
                 {
                     
                     MyRigidbody.centerOfMass = transform.InverseTransformPoint(leftMyGrabPoser.transform.position);
-                    MyRigidbody.velocity = (leftHand.PivotPoser.position - leftMyGrabPoser.transform.position) / Time.fixedDeltaTime* leftHand.GetBlendPose();
-                    MyRigidbody.angularVelocity = GetAngularVelocities(leftHand.ToolTransform.rotation, rightHand.ToolTransform.rotation, leftHand.GetBlendPose());
+                    MyRigidbody.velocity = (leftHand.pivotPoser.position - leftMyGrabPoser.transform.position) / Time.fixedDeltaTime* leftHand.GetBlendPose();
+                    MyRigidbody.angularVelocity = GetAngularVelocities(leftHand.toolTransform.rotation, rightHand.toolTransform.rotation, leftHand.GetBlendPose());
                 }
 			}
 		} else {//one hand
             MyRigidbody.centerOfMass = transform.InverseTransformPoint(GetMyGrabPoserTransform(hand).position);
-			MyRigidbody.velocity = (hand.PivotPoser.position - GetMyGrabPoserTransform(hand).position)/Time.fixedDeltaTime* hand.GetBlendPose();
-			MyRigidbody.angularVelocity = GetAngularVelocities (hand.PivotPoser.rotation, GetMyGrabPoserTransform(hand).rotation, hand.GetBlendPose());
+			MyRigidbody.velocity = (hand.pivotPoser.position - GetMyGrabPoserTransform(hand).position)/Time.fixedDeltaTime* hand.GetBlendPose();
+			MyRigidbody.angularVelocity = GetAngularVelocities (hand.pivotPoser.rotation, GetMyGrabPoserTransform(hand).rotation, hand.GetBlendPose());
 		}	
 	}
 
@@ -203,7 +203,7 @@ public class PhysicalObject : CustomInteractible {
 
 
 	public void GrabStartCustom(CustomHand hand){
-		Vector3 tempPosHandLocal=transform.InverseTransformPoint (hand.GrabPoint());
+		Vector3 tempPosHandLocal=transform.InverseTransformPoint (hand.PointByPoint(hand.gripPoint));
 		tempPosHandLocal.x = 0;
 		tempPosHandLocal.y = 0;
 		MyRigidbody.useGravity = false;
