@@ -21,6 +21,7 @@ And then setup bindings:
 
 ![f1vXam9](https://user-images.githubusercontent.com/23486183/83937716-0fc03d80-a784-11ea-94b5-08293b2b38d0.png)
 
+Also be sure that's your **SteamVR_Resources => SteamVR_Settings.assets**, **Pose Update Mode** is set **OnFixedUpdate** ( to prevent hads position lag )
 
 ## Current Status:
 Not stable ( refabrishing )
