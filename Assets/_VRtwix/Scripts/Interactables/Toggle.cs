@@ -23,7 +23,7 @@ public class Toggle : CustomInteractible
 	public void GrabStart(CustomHand hand){
 		SetInteractibleVariable(hand);
 		hand.SkeletonUpdate();
-		Grab.Invoke ();
+		onGrab.Invoke ();
 	}
 
 
@@ -42,6 +42,6 @@ public class Toggle : CustomInteractible
             SwithOff.Invoke();
         MoveObject.localEulerAngles = new Vector3(angle<0?Switch.x:Switch.y, 0);
         DettachHand (hand);
-		ReleaseHand.Invoke ();
+		onHandRelease.Invoke ();
 	}
 }

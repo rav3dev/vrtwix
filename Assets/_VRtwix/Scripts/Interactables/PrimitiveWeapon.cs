@@ -23,9 +23,9 @@ public class PrimitiveWeapon : PhysicalObject
 //	[HideInInspector]
 	public Collider[] myCollidersToIgnore; //to ignore mag colliders
 	[Header("Sounds Events")]
-	public UnityEvent ShootEvent;
-	public UnityEvent ShootEmptyEvent;
-	public UnityEvent MagazineLoad,MagazineUnload;
+	public UnityEvent onShoot;
+	public UnityEvent onEmptyShot;
+	public UnityEvent onMagazineLoad,onMagazineUnload;
 
     void Start()
     {
@@ -49,8 +49,8 @@ public class PrimitiveWeapon : PhysicalObject
 		if (GetMyGrabPoser(hand)==triggerPoser)
 		trigger.customUpdate (hand);
 		if (recoil) {
-			MyRigidbody.velocity += transform.TransformDirection (recoil.localPosition/Time.fixedDeltaTime);
-			MyRigidbody.angularVelocity += PhysicalObject.GetAngularVelocities (transform.rotation, recoil.rotation, hand.GetBlendPose());
+			myRigidbody.velocity += transform.TransformDirection (recoil.localPosition/Time.fixedDeltaTime);
+			myRigidbody.angularVelocity += PhysicalObject.GetAngularVelocities (transform.rotation, recoil.rotation, hand.GetBlendPose());
 		}
 
 
@@ -90,7 +90,7 @@ public class PrimitiveWeapon : PhysicalObject
 			bulletInside.transform.rotation = reloadBulletSpawn.rotation;
 
 			bulletInside.OutMagazine ();
-			bulletInside.MyRigidbody.AddRelativeForce (outBulletSpeed, ForceMode.VelocityChange);
+			bulletInside.myRigidbody.AddRelativeForce (outBulletSpeed, ForceMode.VelocityChange);
 			bulletInside=null;
 			armed = false;
 		}
@@ -140,16 +140,16 @@ public class PrimitiveWeapon : PhysicalObject
 			}
 		}
 		if (IsShoot) {
-			ShootEvent.Invoke ();
+			onShoot.Invoke ();
 		} else {
-			ShootEmptyEvent.Invoke ();
+			onEmptyShot.Invoke ();
 		}
 		return IsShoot;
 	}
 
 	public void UnloadMagazine(){
 		attachMagazine.UnloadMagazine (outBulletSpeed);
-		MagazineUnload.Invoke ();
+		onMagazineUnload.Invoke ();
 	}
 
 	void OnTriggerEnter(Collider c){
@@ -167,7 +167,7 @@ public class PrimitiveWeapon : PhysicalObject
                 if (tempPhysicalObject)
                 {
                     tempPhysicalObject.DettachHands();
-                    tempPhysicalObject.MyRigidbody.isKinematic = true;
+                    tempPhysicalObject.myRigidbody.isKinematic = true;
                 }
 				tempMagazine.transform.parent = magazineAttachPoint;
 				tempMagazine.transform.localPosition = Vector3.zero;
@@ -175,7 +175,7 @@ public class PrimitiveWeapon : PhysicalObject
 				attachMagazine = tempMagazine;
 				tempMagazine.primitiveWeapon = this;
 				tempMagazine.canLoad = false;
-				MagazineLoad.Invoke ();
+				onMagazineLoad.Invoke ();
 				return;
 			}
 				

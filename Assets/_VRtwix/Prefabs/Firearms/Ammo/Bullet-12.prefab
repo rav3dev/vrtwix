@@ -55,10 +55,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aea0eba441170fc4b9446efc6bb7d08d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -148,27 +149,24 @@ MonoBehaviour:
   rightHand: {fileID: 0}
   leftMyGrabPoser: {fileID: 0}
   rightMyGrabPoser: {fileID: 0}
-  TwoHanded: 0
-  useSecondPose: 0
-  HideController: 0
+  twoHanded: 0
+  countSecondHandRotation: 0
+  hideController: 0
   grabType: 3
-  pickReleaseOnce: 0
-  Grab:
+  pickReleasePlayOnce: 0
+  onGrab:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  ReleaseHand:
+  onHandRelease:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  twoHandAverageRotation: 0
   twoHandTypeOnlyBackHandRotation: 0
   handleObject: []
-  MyRigidbody: {fileID: 0}
+  myRigidbody: {fileID: 0}
   GizmoVisible: 0
   clampHandlePosZ: {x: 0, y: 0}
-  SqueezeCheack: 0
+  squeezeCheack: 0
   saveVariables:
     maxAngelarVelicity: 0
     mass: 0

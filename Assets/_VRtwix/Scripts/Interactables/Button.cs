@@ -23,7 +23,7 @@ public class Button : CustomInteractible
         SetInteractibleVariable(hand);
         hand.SkeletonUpdate();
         hand.grabType = CustomHand.GrabType.Select;
-		Grab.Invoke ();
+		onGrab.Invoke ();
     }
 
     void GrabUpdate(CustomHand hand)
@@ -66,6 +66,6 @@ public class Button : CustomInteractible
 
             GetComponentInChildren<MeshRenderer>().material.color = Color.green;
         //}
-		ReleaseHand.Invoke ();
+		onHandRelease.Invoke ();
     }
 }
