@@ -133,7 +133,7 @@ public class Magazine : MonoBehaviour
 			if (stickingAmmo [i]) {
 				stickingAmmo [i].transform.parent = null;
 				stickingAmmo [i].OutMagazine ();
-				stickingAmmo [i].MyRigidbody.AddRelativeForce (outBulletSpeed, ForceMode.VelocityChange);
+				stickingAmmo [i].myRigidbody.AddRelativeForce (outBulletSpeed, ForceMode.VelocityChange);
 				stickingAmmo [i] = null;
 			}
 		}

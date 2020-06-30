@@ -39,8 +39,8 @@ public class CustomHand : MonoBehaviour
 
     //SYSTEM VARIABLES
     [HideInInspector] public bool smoothBlendPhysicsObject;// smooth pickup of physical object
-    [HideInInspector] public Collider[] selectedGpibColliders, selectedIndexColliders, selectedPinchColliders;//colliders in a grab radius
-    [HideInInspector] public CustomInteractible selectedIndexInteractible, selectedPinchInteractible, selectedGpibInteractible, grabInteractible;// nearest interaction objects and object is currently interacting with
+    [HideInInspector] public Collider[] selectedGripColliders, selectedIndexColliders, selectedPinchColliders;//colliders in a grab radius
+     public CustomInteractible selectedIndexInteractible, selectedPinchInteractible, selectedGripInteractible, grabInteractible;// nearest interaction objects and object is currently interacting with
     [HideInInspector] public SteamVR_Behaviour_Skeleton skeleton;// current hand's skeleton
     [HideInInspector] public SteamVR_Skeleton_Poser grabPoser;// poser of object currently interacting with
     [HideInInspector] public Vector3 posSavePoser, rotSavePoser, inverceLocalPosition;//magic variables, which are need to calculate something ( need to know )
@@ -99,7 +99,7 @@ public class CustomHand : MonoBehaviour
         }
         
         SelectObject(PointByPoint(pinchPoint), GrabType.Pinch, selectedPinchColliders, ref selectedPinchInteractible);
-        SelectObject(PointByPoint(gripPoint), GrabType.Grip, selectedGpibColliders, ref selectedGpibInteractible);
+        SelectObject(PointByPoint(gripPoint), GrabType.Grip, selectedGripColliders, ref selectedGripInteractible);
 
     }
     IEnumerator hideControllerCoroutine() {
@@ -145,9 +145,9 @@ public class CustomHand : MonoBehaviour
                 grabInteractible = selectedPinchInteractible;
                 InteractionProcessor(oldgrabInteractible, grabInteractible, GrabType.Pinch);
             }
-            else if (selectedGpibInteractible && grabButton.GetStateDown(handType))
+            else if (selectedGripInteractible && grabButton.GetStateDown(handType))
             {
-                grabInteractible = selectedGpibInteractible;
+                grabInteractible = selectedGripInteractible;
                 InteractionProcessor(oldgrabInteractible, grabInteractible, GrabType.Grip);
             }
         }

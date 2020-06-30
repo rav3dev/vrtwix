@@ -36,7 +36,7 @@ public class Bullet : PhysicalObject
 
 	public void DettachBullet(){
 		DettachHands ();
-		saveVariables.LoadProperty (MyRigidbody);
+		saveVariables.LoadProperty (myRigidbody);
 	}
 
 	public void EnterMagazine(){
@@ -44,7 +44,7 @@ public class Bullet : PhysicalObject
 		for (int i = 0; i < tempCollider.Length; i++) {
 			tempCollider [i].enabled = false;
 		}
-		MyRigidbody.isKinematic = true;
+		myRigidbody.isKinematic = true;
 	}
 
 	public void OutMagazine(){
@@ -52,6 +52,6 @@ public class Bullet : PhysicalObject
 		for (int i = 0; i < tempCollider.Length; i++) {
 			tempCollider [i].enabled = true;
 		}
-		MyRigidbody.isKinematic = false;
+		myRigidbody.isKinematic = false;
 	}
 }
